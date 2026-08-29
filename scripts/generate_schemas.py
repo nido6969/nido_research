@@ -512,10 +512,10 @@ def update_index_html():
     
     updated_html = re.sub(pattern, new_script, html, flags=re.DOTALL)
     
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(updated_html)
+    with open("src/data/schemaGraph.json", "w", encoding="utf-8") as f:
+        f.write(schema_json)
 
-    print(f"Successfully updated index.html with {len(graph)} schema objects!")
+    print(f"Successfully generated src/data/schemaGraph.json and updated index.html with {len(graph)} schema objects!")
 
 if __name__ == "__main__":
     update_index_html()

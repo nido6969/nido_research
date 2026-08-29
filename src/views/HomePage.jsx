@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../lib/navigation';
 import HeroSection from '../components/HeroSection';
 import FeaturedStudySection from '../components/FeaturedStudySection';
 import ResearchUpdatesBar from '../components/ResearchUpdatesBar';

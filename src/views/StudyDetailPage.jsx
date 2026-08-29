@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate } from '../lib/navigation';
 import { 
   ArrowLeft, 
   ArrowRight, 

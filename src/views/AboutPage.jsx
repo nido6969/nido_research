@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import { MapPin, ExternalLink, Mail, Phone } from 'lucide-react';
 import { ABOUT_DATA, INSTITUTION_INFO } from '../data/researchData';
 import BorderGlow from '../components/BorderGlow';

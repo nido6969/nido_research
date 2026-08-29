@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import { CheckCircle2, ChevronRight } from 'lucide-react';
 import { PARENT_INSIGHTS_DATA } from '../data/researchData';
 import SpecularButton from '../components/SpecularButton';

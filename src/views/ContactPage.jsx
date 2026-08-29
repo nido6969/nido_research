@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import { MapPin, Mail, Phone, Send, CheckCircle2, ExternalLink } from 'lucide-react';
 import { INSTITUTION_INFO } from '../data/researchData';
 import SpecularButton from '../components/SpecularButton';

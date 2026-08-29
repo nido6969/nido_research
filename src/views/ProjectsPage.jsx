@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import { Clock } from 'lucide-react';
 import { PROJECTS_DATA } from '../data/researchData';
 import BorderGlow from '../components/BorderGlow';

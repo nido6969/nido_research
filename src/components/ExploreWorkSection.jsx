@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../lib/navigation';
 import { ArrowRight, Compass, Layers, Eye, ShieldCheck } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 

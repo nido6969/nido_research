@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import { MapPin, Mail, Phone, X, Shield, FileText } from 'lucide-react';
 import NidoLogo from './NidoLogo';
 

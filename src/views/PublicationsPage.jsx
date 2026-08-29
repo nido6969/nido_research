@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from '../lib/navigation';
 import { ArrowRight } from 'lucide-react';
 import { FEATURED_STUDIES, PUBLICATIONS_DATA } from '../data/researchData';
 import BorderGlow from '../components/BorderGlow';

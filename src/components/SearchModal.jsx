@@ -1,5 +1,6 @@
+'use client';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../lib/navigation';
 import { Search, X } from 'lucide-react';
 import { FEATURED_STUDIES, PARENT_INSIGHTS_DATA, RESOURCES_DATA, RESEARCH_TAB_DATA } from '../data/researchData';
 

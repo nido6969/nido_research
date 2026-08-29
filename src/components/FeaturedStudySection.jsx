@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { ArrowRight, FileText } from 'lucide-react';
 import { FEATURED_STUDIES } from '../data/researchData';

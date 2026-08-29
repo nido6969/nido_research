@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from '../lib/navigation';
 import { Search, ChevronDown, ExternalLink, Menu, X, ArrowRight } from 'lucide-react';
 import NidoLogo from './NidoLogo';
 import SpecularButton from './SpecularButton';

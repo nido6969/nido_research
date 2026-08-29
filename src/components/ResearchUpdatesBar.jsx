@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { ArrowRight, FileText, Calendar, PenTool, BookOpen } from 'lucide-react';
 import { RESEARCH_UPDATES } from '../data/researchData';
