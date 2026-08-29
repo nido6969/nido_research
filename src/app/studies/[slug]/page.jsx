@@ -7,8 +7,10 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  const study = FEATURED_STUDIES.find(s => s.slug === params.slug || s.id === params.slug) || FEATURED_STUDIES[0];
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+  const study = FEATURED_STUDIES.find(s => s.slug === slug || s.id === slug) || FEATURED_STUDIES[0];
   return {
     title: study.title,
     description: study.fullOverview ? study.fullOverview.slice(0, 160) : study.summary,
