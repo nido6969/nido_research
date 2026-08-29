@@ -1,0 +1,29 @@
+{
+  "name": "NIDO Research Institute - Nido Montessori Preschool",
+  "short_name": "NIDO Research",
+  "description": "Evidence-based early childhood development research and AMI Montessori case studies from Nido Montessori Preschool (Bachupally) & Blue Blocks School (Hyderabad).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF3E2",
+  "theme_color": "#234338",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "research",
+    "parenting"
+  ]
+}

@@ -1,0 +1,38 @@
+# NIDO Research Institute (Nido Montessori School & Blue Blocks School)
+
+> NIDO Research Institute is the dedicated pedagogical and developmental research arm of Nido Montessori Preschool (Bachupally, Hyderabad) in collaboration with Blue Blocks Complete Montessori School (Gachibowli/Tellapur, Hyderabad). We conduct embedded, naturalistic, longitudinal research investigating child development, Montessori pedagogy, cognitive agency, executive function, and human potential from infancy through adolescence.
+
+## Core Institutional Information
+- Organization: Nido Research Institute / Nido Montessori School
+- Associated Campus: Blue Blocks Complete Montessori School (Gachibowli, Tellapur, Hyderabad)
+- Location: Bachupally, Hyderabad, Telangana 500090, India
+- Website: https://research.nidomontessori.in/
+- Parent Portal: https://nidomontessori.in/
+- Contact: info@nidomontessori.in | +91 96188 53888
+- Accreditations: Association Montessori Internationale (AMI) Standards, International Montessori Foundation (IMF) Flagship School
+
+## Research Domains & Focus Areas
+1. Spatial Cognition & Sensorimotor Geometry: Tracking how manipulation of sensorial Montessori materials builds mathematical intuition and spatial reasoning.
+2. Self-Regulation & Deep Concentration Cycles: Longitudinal analysis of 3-hour uninterrupted Montessori work periods on executive function and attentional endurance.
+3. Language Acquisition & Phonetic Exploration: How tactile Sandpaper Letters and movable alphabets accelerate multilingual literacy and vocabulary mastery.
+4. Mathematical Reasoning & Concrete Abstraction: Empirical progression from concrete golden bead quantities to abstract algebraic operations.
+5. Agency, Independence & Practical Life: Developing executive autonomy through purposeful motor tasks and self-directed activity.
+6. Social Development in Mixed-Age Cohorts: Peer mentorship, spontaneous empathy, conflict resolution, and leadership dynamics across 3-year age spans.
+7. Movement, Vestibular Integration & Physical Agency: Correlation between gross/fine motor freedom and neurodevelopmental readiness.
+8. Emotional Regulation & Classroom Normalization: The transition from dysregulated energy to joyful, focused purpose in prepared environments.
+
+## Featured Research Publications & Manuscripts
+- Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally (by Shobha Goyal, DOI: 10.5281/zenodo.nido.2026.01, ORCID: 0009-0004-8823-119X): Comprehensive 30-page longitudinal empirical case study documenting the 5 founding phases (Conceptualization, Site Construction & Registration, Prepared Environment & Sourcing, Human Environment Recruitment & AMI Training, Community Outreach & Admissions). Full text available at https://research.nidomontessori.in/research-studies/building-a-montessori-school-from-the-ground-up-case-study
+- Play-Based Learning & Executive Function in Early Childhood: Longitudinal analysis of Montessori structured self-chosen work on working memory and inhibitory control.
+- Independence in Action: A Montessori Perspective: Naturalistic observational research on early autonomy and problem-solving confidence.
+- The Role of Mixed-Age Classrooms in Social Development: Peer scaffolding and prosocial behavior in 3-to-6 year multi-age communities.
+
+## Links & Feeds
+- Full AI Dataset: https://research.nidomontessori.in/llms-full.txt
+- XML Sitemap: https://research.nidomontessori.in/sitemap.xml
+- Research Publications: https://research.nidomontessori.in/publications
+- Ongoing Longitudinal Projects: https://research.nidomontessori.in/projects
+- Parent Observation Insights: https://research.nidomontessori.in/parent-insights
+- Pedagogical Articles: https://research.nidomontessori.in/resources
+- Institutional Background: https://research.nidomontessori.in/about
+- Admissions & Campus Contact: https://research.nidomontessori.in/contact

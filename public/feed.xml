@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NIDO Research Institute - Publications &amp; Case Studies</title>
+    <link>https://research.nidomontessori.in/</link>
+    <description>Empirical early childhood research, authentic AMI Montessori case studies, and naturalistic observation datasets from Nido Montessori Preschool (Bachupally) &amp; Blue Blocks School (Hyderabad).</description>
+    <language>en-IN</language>
+    <lastBuildDate>Sat, 29 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://research.nidomontessori.in/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally</title>
+      <link>https://research.nidomontessori.in/research-studies/building-a-montessori-school-from-the-ground-up-case-study</link>
+      <guid>https://doi.org/10.5281/zenodo.nido.2026.01</guid>
+      <pubDate>Mon, 01 Jan 2026 00:00:00 GMT</pubDate>
+      <description>A 30-page observational case study documenting the six founding phases, mixed-age normalization dynamics, executive function metrics, and prepared environment design at Nido Montessori Preschool Bachupally.</description>
+      <author>Shobha Goyal</author>
+    </item>
+
+    <item>
+      <title>The Architecture of Attention: Three-Hour Work Cycles and Executive Function in Early Childhood</title>
+      <link>https://research.nidomontessori.in/research-studies/architecture-of-attention-3-hour-work-cycle</link>
+      <guid>https://doi.org/10.5281/zenodo.nido.2026.02</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Quantitative and qualitative tracking of sustained concentration, task persistence, and deep flow states during uninterrupted three-hour work cycles in 3-6 primary Montessori environments.</description>
+      <author>NIDO Research Team</author>
+    </item>
+
+    <item>
+      <title>Mathematical Intuition Through Sensorial Materials: From Concrete Manipulation to Abstract Reasoning</title>
+      <link>https://research.nidomontessori.in/research-studies/mathematical-intuition-through-sensorial-materials</link>
+      <guid>https://doi.org/10.5281/zenodo.nido.2026.03</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Longitudinal tracking of mathematical schemas comparing traditional didactic arithmetic instruction with tactile Montessori Golden Beads, Bead Stair, and Stamp Game apparatus.</description>
+      <author>NIDO Research Team</author>
+    </item>
+
+    <item>
+      <title>Language Emergence in the Prepared Infant-Toddler Environment: A Naturalistic Observation Study</title>
+      <link>https://research.nidomontessori.in/research-studies/language-emergence-prepared-environment</link>
+      <guid>https://doi.org/10.5281/zenodo.nido.2026.04</guid>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Acoustic mapping and phonological emergence tracking in infant-toddler environments comparing adult-directed linguistic environments with Montessori classified vocabulary cards and natural speech.</description>
+      <author>NIDO Research Team</author>
+    </item>
+  </channel>
+</rss>

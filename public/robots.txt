@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://research.nidomontessori.in/sitemap.xml
+
+# LLMs & AI Crawler Knowledge Documents
+# https://llmstxt.org/
+# Discover full AI dataset at /llms.txt and /llms-full.txt

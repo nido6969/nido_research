@@ -1,117 +1,209 @@
 import React from 'react';
-import { BookOpen, FileText, CheckCircle2 } from 'lucide-react';
-import { RESEARCH_STUDIES } from '../data/researchData';
+import { ArrowRight, FileText } from 'lucide-react';
+import { FEATURED_STUDIES } from '../data/researchData';
+import SpecularButton from './SpecularButton';
+import BorderGlow from './BorderGlow';
 
-export default function FeaturedStudySection({ onSelectPaper }) {
-  const featured = RESEARCH_STUDIES[0]; // Landmark 7-year panel study
+export default function FeaturedStudySection({ onSelectPaper, onViewAll }) {
+  const featuredCards = FEATURED_STUDIES.map((study) => ({
+    id: study.id,
+    badge: study.badge || 'PUBLISHED',
+    icon: <FileText size={16} color="#234338" />,
+    date: study.date || '2026',
+    title: study.title,
+    snippet: study.summary || study.question,
+    image: study.image,
+    rawPaper: study
+  }));
 
   return (
-    <section style={{ padding: '6rem 0', backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid var(--border-subtle)' }}>
+    <section id="featured-studies" style={{
+      padding: '4rem 0 3.5rem 0',
+      backgroundColor: '#FAF3E2'
+    }}>
       <div className="container-standard">
         
-        {/* Editorial Header */}
-        <div style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-ochre-dark)', marginBottom: '0.75rem' }}>
-          Spotlight Research Feature
+        {/* Section Header Row */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: '2rem'
+        }}>
+          <h2 style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.12em',
+            color: '#1A1714'
+          }}>
+            FEATURED STUDIES
+          </h2>
+
+          <SpecularButton
+            size="sm"
+            radius={6}
+            tint="#FAF3E2"
+            tintOpacity={1}
+            textColor="#24201C"
+            lineColor="#234338"
+            baseColor="#ECE7DF"
+            intensity={1.2}
+            shineSize={16}
+            onClick={onViewAll}
+          >
+            <span>View All Studies</span>
+            <ArrowRight size={14} />
+          </SpecularButton>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '4rem', alignItems: 'center' }} className="featured-grid">
-          
-          {/* Left: Study Details & Findings */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <span className={`status-badge ${featured.statusClass}`}>
-                {featured.status}
-              </span>
-              <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                DOI: {featured.doi}
-              </span>
-            </div>
-
-            <h2 style={{ fontFamily: 'var(--font-serif-heading)', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 500, color: 'var(--text-heading)', lineHeight: 1.2, marginBottom: '1.25rem' }}>
-              {featured.title}
-            </h2>
-
-            <p style={{ fontSize: '1.08rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.75rem' }}>
-              {featured.abstract}
-            </p>
-
-            {/* Key Findings Box */}
-            <div style={{ backgroundColor: 'var(--bg-parchment)', border: '1px solid var(--border-medium)', borderRadius: '8px', padding: '1.5rem', marginBottom: '2rem' }}>
-              <h4 style={{ fontFamily: 'var(--font-serif-heading)', fontSize: '1.2rem', color: 'var(--text-heading)', marginBottom: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.5rem' }}>
-                Key Empirical Insights
-              </h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                {featured.findings.map((f, idx) => (
-                  <li key={idx} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
-                    <CheckCircle2 size={16} color="var(--color-sage)" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* CTAs */}
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <button 
-                onClick={() => onSelectPaper(featured)}
-                className="btn-primary" 
-                style={{ padding: '0.8rem 1.6rem', fontSize: '0.92rem' }}
-              >
-                <BookOpen size={16} />
-                <span>Read Full Abstract & Citation</span>
-              </button>
-
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                Sample: <strong>{featured.sampleSize}</strong>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right: Archival Journal Visual */}
-          <div style={{ position: 'relative' }}>
-            <div style={{ backgroundColor: 'var(--bg-parchment)', border: '1px solid var(--border-medium)', borderRadius: '8px', padding: '2rem', boxShadow: 'var(--shadow-card)' }}>
-              
-              <div style={{ borderBottom: '2px solid var(--color-ochre)', paddingBottom: '1rem', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <span style={{ fontFamily: 'var(--font-serif-heading)', fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-heading)' }}>
-                    NIDO Journal of Developmental Pedagogy
+        {/* 3-Column Card Grid with BorderGlow */}
+        <div className="featured-studies-grid">
+          {featuredCards.map((card) => (
+            <BorderGlow
+              key={card.id}
+              borderRadius={10}
+              backgroundColor="#FFFFFF"
+              edgeSensitivity={28}
+              glowRadius={30}
+              colors={['#234338', '#DDBB7B', '#4D8A74']}
+              className="study-card hover-lift"
+              onClick={() => onSelectPaper(card.rawPaper)}
+            >
+              <div style={{
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
+              }}>
+                {/* Card Image Container */}
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '215px',
+                  overflow: 'hidden',
+                  borderRadius: '10px 10px 0 0',
+                  backgroundColor: '#EDE8DE'
+                }}>
+                  <img 
+                    src={card.image} 
+                    alt={card.title} 
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                  />
+                  
+                  {/* Top Badge */}
+                  <span style={{
+                    position: 'absolute',
+                    top: '0.85rem',
+                    left: '0.85rem',
+                    backgroundColor: '#FFFFFF',
+                    color: '#1A1714',
+                    fontSize: '0.66rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    padding: '0.25rem 0.6rem',
+                    borderRadius: '4px',
+                    boxShadow: '0 2px 5px rgba(0,0,0,0.12)'
+                  }}>
+                    {card.badge}
                   </span>
-                  <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', uppercase: 'true' }}>
-                    Vol. 12, Issue 1 — Open Access
-                  </span>
+
+                  {/* Circular Action Badge at bottom right of photo */}
+                  <div 
+                    className="study-circle-badge"
+                    style={{
+                      position: 'absolute',
+                      bottom: '0.85rem',
+                      right: '0.85rem',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 3px 8px rgba(0,0,0,0.14)',
+                      transition: 'all 0.25s ease'
+                    }}
+                  >
+                    {card.icon}
+                  </div>
                 </div>
-                <FileText size={24} color="var(--color-ochre)" />
-              </div>
 
-              <div style={{ marginBottom: '1.5rem' }}>
-                <img 
-                  src="/images/nido-research-notebook.png" 
-                  alt="Archival notebook and observation log"
-                  style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '4px', border: '1px solid var(--border-subtle)', marginBottom: '1rem' }}
-                />
-                <div style={{ fontFamily: 'var(--font-handwriting)', fontSize: '1.25rem', color: 'var(--color-sage-dark)', lineHeight: 1.3 }}>
-                  "Figure 4.2: False Fatigue concentration curve recorded during morning work cycles."
+                {/* Card Content Area */}
+                <div style={{
+                  padding: '1.4rem 1.4rem 1.6rem 1.4rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1
+                }}>
+                  {/* Date */}
+                  <div style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    color: '#948D82',
+                    marginBottom: '0.55rem'
+                  }}>
+                    {card.date}
+                  </div>
+
+                  {/* Title */}
+                  <h3 style={{
+                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
+                    fontSize: '1.18rem',
+                    fontWeight: 600,
+                    color: '#1A1714',
+                    lineHeight: 1.3,
+                    marginBottom: '0.75rem'
+                  }}>
+                    {card.title}
+                  </h3>
+
+                  {/* Excerpt */}
+                  <p style={{
+                    fontSize: '0.88rem',
+                    color: '#5C564E',
+                    lineHeight: 1.55,
+                    marginBottom: '1.5rem',
+                    flex: 1
+                  }}>
+                    {card.snippet}
+                  </p>
+
+                  {/* Link */}
+                  <div 
+                    className="read-study-link"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      fontSize: '0.85rem',
+                      fontWeight: 600,
+                      color: '#234338',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span>Read Study</span>
+                    <ArrowRight size={14} />
+                  </div>
                 </div>
               </div>
-
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', backgroundColor: 'var(--bg-surface)', padding: '1rem', borderRadius: '4px', border: '1px solid var(--border-subtle)' }}>
-                <strong>Authors:</strong> {featured.leadResearcher}<br />
-                <strong>Methodology:</strong> 42,000+ non-intrusive micro-observations logged by embedded fellows over 7 consecutive years.
-              </div>
-
-            </div>
-          </div>
-
+            </BorderGlow>
+          ))}
         </div>
 
       </div>
-
-      <style>{`
-        @media (max-width: 992px) {
-          .featured-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-        }
-      `}</style>
     </section>
   );
 }

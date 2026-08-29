@@ -1,137 +1,481 @@
 import React, { useState } from 'react';
-import { BookOpen, Menu, X, ChevronRight } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Search, ChevronDown, ExternalLink, Menu, X, ArrowRight } from 'lucide-react';
+import NidoLogo from './NidoLogo';
+import SpecularButton from './SpecularButton';
 
-export default function Header({ activeView, setActiveView, onOpenCollaborate }) {
+export default function Header({ onOpenSearch }) {
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [researchDropdownOpen, setResearchDropdownOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'institute', label: 'The Institute' },
-    { id: 'research-areas', label: 'Research Areas' },
-    { id: 'publications', label: 'Publications' },
-    { id: 'methodology', label: 'Methodology' },
-    { id: 'field-notes', label: 'Field Notes' },
-    { id: 'team', label: 'People' },
-    { id: 'ethics', label: 'Ethics & Privacy' },
-    { id: 'resources', label: 'Resources' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
-  const handleNavClick = (id) => {
-    setActiveView(id);
-    setMobileMenuOpen(false);
-    window.location.hash = id;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
   };
 
   return (
-    <header className="header-sticky">
-      {/* Top Banner Notice */}
-      <div style={{ backgroundColor: '#F0ECE1', borderBottom: '1px solid #E2D7C5', padding: '0.35rem 1rem', fontSize: '0.8rem', color: '#574F46', textAlign: 'center' }}>
-        <span style={{ fontWeight: 600, color: '#C49237' }}>NIDO Research Institute</span> — An independent research initiative connected to <a href="https://nidomontessori.in" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', color: '#3F4F40' }}>NIDO Montessori Preschool</a>
-      </div>
-
-      <div className="container-wide" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
-        {/* Brand Identity / Logo */}
-        <div 
-          onClick={() => handleNavClick('home')} 
-          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.9rem' }}
-        >
-          {/* Logo Mark */}
-          <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-            <img 
-              src="/images/nido-logo.png" 
-              alt="NIDO Logo" 
-              style={{ height: '48px', objectFit: 'contain' }}
-            />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', borderLeft: '1px solid var(--border-medium)', paddingLeft: '0.8rem' }}>
-            <span style={{ fontFamily: 'var(--font-serif-heading)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-heading)', letterSpacing: '0.04em', lineHeight: 1.1 }}>
-              NIDO
+    <header style={{ position: 'sticky', top: 0, zIndex: 100, backgroundColor: 'var(--bg-parchment, #FAF3E2)' }}>
+      {/* Top Dark Forest Green Announcement Bar */}
+      {showAnnouncement && (
+        <div style={{
+          backgroundColor: '#1E351C',
+          color: '#FFFFFF',
+          padding: '0.4rem 1.25rem',
+          fontSize: '0.8rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          borderBottom: '1px solid rgba(255,255,255,0.08)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center', paddingRight: '1.5rem' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#DDBB7B', fontWeight: 600 }}>
+              <span>Case Study:</span>
             </span>
-            <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--color-ochre-dark)', fontWeight: 600 }}>
-              Research Institute
+            <span style={{ color: '#F0F4F2', fontSize: '0.78rem' }}>
+              Building a Montessori School from the Ground Up
             </span>
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav style={{ display: 'none', gap: '0.2rem', alignItems: 'center' }} className="desktop-nav">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`nav-link ${activeView === item.id ? 'active' : ''}`}
-              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            
+            <SpecularButton
+              size="sm"
+              radius={6}
+              tint="#1E3E33"
+              tintOpacity={0.9}
+              textColor="#DDBB7B"
+              lineColor="#FFE8A3"
+              baseColor="#142E25"
+              intensity={1.5}
+              onClick={() => navigate('/research-studies/building-a-montessori-school-from-the-ground-up-case-study')}
+              style={{ padding: '3px 10px', fontSize: '0.74rem' }}
             >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+              <span>Read</span>
+              <ArrowRight size={11} />
+            </SpecularButton>
+          </div>
 
-        {/* Action CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <button 
-            onClick={() => handleNavClick('publications')}
-            className="btn-secondary" 
-            style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
-          >
-            <BookOpen size={15} />
-            <span>Archive</span>
-          </button>
-          <button 
-            onClick={onOpenCollaborate}
-            className="btn-primary" 
-            style={{ padding: '0.55rem 1.1rem', fontSize: '0.85rem' }}
-          >
-            <span>Collaborate</span>
-            <ChevronRight size={14} />
-          </button>
-
-          {/* Mobile Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ background: 'none', border: '1px solid var(--border-medium)', borderRadius: '4px', padding: '0.4rem', color: 'var(--text-primary)', cursor: 'pointer' }}
-            className="mobile-menu-toggle"
-            aria-label="Toggle menu"
+            onClick={() => setShowAnnouncement(false)}
+            style={{
+              position: 'absolute',
+              right: '0.85rem',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'none',
+              border: 'none',
+              color: 'rgba(255,255,255,0.7)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              padding: '0.25rem'
+            }}
+            aria-label="Dismiss announcement"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            <X size={15} />
           </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
-        <div style={{ backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid var(--border-medium)', padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              style={{
-                textAlign: 'left',
-                padding: '0.75rem',
-                background: activeView === item.id ? 'rgba(196, 146, 55, 0.12)' : 'transparent',
-                border: 'none',
-                borderLeft: activeView === item.id ? '3px solid var(--color-ochre)' : '3px solid transparent',
-                color: 'var(--text-heading)',
-                fontSize: '1rem',
-                fontFamily: 'var(--font-body)',
-                cursor: 'pointer',
-                borderRadius: '4px'
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
         </div>
       )}
 
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-          .mobile-menu-toggle { display: none !important; }
-        }
-      `}</style>
+      {/* Main Navigation Bar */}
+      <div style={{
+        backgroundColor: 'var(--bg-parchment, #FAF3E2)',
+        borderBottom: '1px solid #E5DAC0',
+        boxShadow: '0 1px 4px rgba(43, 35, 25, 0.03)'
+      }}>
+        <div className="container-wide" style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0.65rem 2rem',
+          height: '72px'
+        }}>
+          
+          {/* Logo & Brand Identity */}
+          <Link 
+            to="/"
+            style={{ 
+              textDecoration: 'none', 
+              display: 'flex', 
+              alignItems: 'center',
+              marginLeft: '0.75rem'
+            }}
+          >
+            <NidoLogo size="medium" />
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="header-desktop-nav">
+            <Link 
+              to="/"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/') && location.pathname === '/' ? 600 : 500,
+                color: isActive('/') && location.pathname === '/' ? '#234338' : '#554F47',
+                borderBottom: isActive('/') && location.pathname === '/' ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Home
+            </Link>
+
+            {/* Research Dropdown */}
+            <div 
+              style={{ position: 'relative' }}
+              onMouseEnter={() => setResearchDropdownOpen(true)}
+              onMouseLeave={() => setResearchDropdownOpen(false)}
+            >
+              <button 
+                onClick={() => navigate('/research')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: isActive('/research') ? 600 : 500,
+                  color: isActive('/research') ? '#234338' : '#554F47',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.25rem',
+                  padding: '0.4rem 0.15rem',
+                  cursor: 'pointer'
+                }}
+              >
+                <span>Research</span>
+                <ChevronDown size={14} style={{ transform: researchDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+              </button>
+
+              {researchDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #ECE7DF',
+                  borderRadius: '8px',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                  padding: '0.5rem 0',
+                  minWidth: '230px',
+                  zIndex: 200
+                }}>
+                  <Link 
+                    to="/research/approach"
+                    onClick={() => setResearchDropdownOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '0.65rem 1.25rem',
+                      fontSize: '0.85rem',
+                      color: '#24201C',
+                      textDecoration: 'none',
+                      fontWeight: 500
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F7F5EE'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  >
+                    Our Research Approach
+                  </Link>
+                  <Link 
+                    to="/research/areas"
+                    onClick={() => setResearchDropdownOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '0.65rem 1.25rem',
+                      fontSize: '0.85rem',
+                      color: '#24201C',
+                      textDecoration: 'none',
+                      fontWeight: 500
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F7F5EE'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  >
+                    Research Areas
+                  </Link>
+                  <Link 
+                    to="/research/methodology"
+                    onClick={() => setResearchDropdownOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '0.65rem 1.25rem',
+                      fontSize: '0.85rem',
+                      color: '#24201C',
+                      textDecoration: 'none',
+                      fontWeight: 500
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F7F5EE'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  >
+                    Observation & Methodology
+                  </Link>
+                  <Link 
+                    to="/research/ethics"
+                    onClick={() => setResearchDropdownOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '0.65rem 1.25rem',
+                      fontSize: '0.85rem',
+                      color: '#24201C',
+                      textDecoration: 'none',
+                      fontWeight: 500
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F7F5EE'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  >
+                    Research Ethics
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link 
+              to="/publications"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/publications') || isActive('/research-studies') ? 600 : 500,
+                color: isActive('/publications') || isActive('/research-studies') ? '#234338' : '#554F47',
+                borderBottom: isActive('/publications') || isActive('/research-studies') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Publications
+            </Link>
+
+            <Link 
+              to="/projects"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/projects') ? 600 : 500,
+                color: isActive('/projects') ? '#234338' : '#554F47',
+                borderBottom: isActive('/projects') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Projects
+            </Link>
+
+            <Link 
+              to="/parent-insights"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/parent-insights') ? 600 : 500,
+                color: isActive('/parent-insights') ? '#234338' : '#554F47',
+                borderBottom: isActive('/parent-insights') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Insights
+            </Link>
+
+            <Link 
+              to="/resources"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/resources') ? 600 : 500,
+                color: isActive('/resources') ? '#234338' : '#554F47',
+                borderBottom: isActive('/resources') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Resources
+            </Link>
+
+            <Link 
+              to="/about"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/about') ? 600 : 500,
+                color: isActive('/about') ? '#234338' : '#554F47',
+                borderBottom: isActive('/about') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              About
+            </Link>
+          </nav>
+
+          {/* Right Action Items */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            {/* Search Icon Button */}
+            <button 
+              onClick={onOpenSearch}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#4A463F',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '0.45rem',
+                borderRadius: '50%',
+                transition: 'color 0.2s, background-color 0.2s'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#234338';
+                e.currentTarget.style.backgroundColor = '#F5F3EC';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#4A463F';
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+              aria-label="Search research archive"
+            >
+              <Search size={18} />
+            </button>
+
+            {/* Visit Nido Montessori SpecularButton (Hidden on tiny screens) */}
+            <div className="d-none d-sm-block">
+              <SpecularButton
+                size="sm"
+                radius={9999}
+                tint="#234338"
+                tintOpacity={1}
+                textColor="#FFFFFF"
+                lineColor="#DDBB7B"
+                baseColor="#143229"
+                intensity={1.4}
+                shineSize={16}
+                onClick={() => window.open('https://nidomontessori.in', '_blank')}
+              >
+                <span>Visit Nido</span>
+                <ExternalLink size={12} />
+              </SpecularButton>
+            </div>
+
+            {/* Mobile Menu Toggle Button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="header-mobile-toggle"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+
+        </div>
+
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div style={{
+            backgroundColor: '#FFFFFF',
+            borderTop: '1px solid #ECE7DF',
+            padding: '1rem 1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.65rem'
+          }}>
+            <Link 
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/') && location.pathname === '/' ? 700 : 500,
+                color: isActive('/') && location.pathname === '/' ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/research"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/research') ? 700 : 500,
+                color: isActive('/research') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Research
+            </Link>
+            <Link 
+              to="/publications"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/publications') ? 700 : 500,
+                color: isActive('/publications') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Publications
+            </Link>
+            <Link 
+              to="/projects"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/projects') ? 700 : 500,
+                color: isActive('/projects') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Projects
+            </Link>
+            <Link 
+              to="/parent-insights"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/parent-insights') ? 700 : 500,
+                color: isActive('/parent-insights') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Parent Insights
+            </Link>
+            <Link 
+              to="/resources"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/resources') ? 700 : 500,
+                color: isActive('/resources') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Resources
+            </Link>
+            <Link 
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/about') ? 700 : 500,
+                color: isActive('/about') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/contact') ? 700 : 500,
+                color: isActive('/contact') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Contact & Inquiries
+            </Link>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
