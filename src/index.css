@@ -91,14 +91,21 @@ body {
 /* Typography Defaults: Headings in Green, Subheadings in Black, Italics in Orange */
 h1, h2, .heading-green {
   font-family: var(--font-serif-heading);
-  color: var(--color-forest, #234338) !important;
+  color: var(--color-forest, #234338);
   font-weight: 600;
   line-height: 1.22;
 }
 
+.newsletter-box h2,
+.newsletter-heading,
+.dark-container h1,
+.dark-container h2 {
+  color: #FFFFFF !important;
+}
+
 h3, h4, h5, h6, .subheading-black {
   font-family: var(--font-serif-heading);
-  color: #1A1714 !important;
+  color: #1A1714;
   font-weight: 600;
   line-height: 1.3;
 }
