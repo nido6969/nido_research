@@ -1,240 +1,241 @@
 'use client';
 import React from 'react';
-import { Link } from '../lib/navigation';
-import { Clock } from 'lucide-react';
+import { Link, useNavigate } from '../lib/navigation';
+import { ArrowRight } from 'lucide-react';
 import { PROJECTS_DATA } from '../data/researchData';
-import BorderGlow from '../components/BorderGlow';
-import LightTunnel from '../components/LightTunnel';
+import SpecularButton from '../components/SpecularButton';
+import TrustBar from '../components/TrustBar';
 import SEO from '../components/SEO';
 
 export default function ProjectsPage() {
-  const hero = PROJECTS_DATA?.hero || {
-    eyebrow: "ONGOING PROJECTS",
-    heading: "Some Questions Deserve Time.",
-    intro: "Not every question can be answered in a few weeks. Some require months of observation while others grow into entirely new questions along the way."
-  };
-
+  const navigate = useNavigate();
+  const hero = PROJECTS_DATA?.hero || {};
   const projects = PROJECTS_DATA?.projects || [];
-  const journey = PROJECTS_DATA?.journey || {
-    eyebrow: "HOW RESEARCH UNFOLDS",
-    heading: "The Project Journey",
-    intro: "Every research project at Nido moves through a disciplined, patient sequence of classroom observation and reflection.",
-    stages: []
-  };
+  const banner = PROJECTS_DATA?.banner || {};
 
   return (
-    <div style={{ backgroundColor: '#FAF3E2', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
+    <div style={{ backgroundColor: '#FAF8F5', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
       <SEO 
-        title="Ongoing Longitudinal Projects & Inquiries | Montessori Research"
-        description="Explore ongoing multi-year longitudinal research cohorts investigating executive function, spatial cognition, language acquisition, and mixed-age dynamics."
+        title="Current Research Projects | Nido Montessori"
+        description="Some questions deserve time. Explore ongoing longitudinal research projects into toddler independence, Montessori at home, concentration, and mixed-age peer learning."
         keywords="Montessori Projects, Longitudinal Child Studies, Ongoing Research Cohorts Hyderabad, Nido Montessori Inquiries, Early Childhood Science"
       />
       <div className="container-standard">
         
         {/* Breadcrumbs */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: '#7E766D', marginBottom: '1rem' }}>
-          <Link to="/" style={{ color: '#554F47', textDecoration: 'none' }}>Home</Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: '#7E766D', marginBottom: '1.25rem' }}>
+          <Link href="/" style={{ color: '#554F47', textDecoration: 'none' }}>Home</Link>
           <span>/</span>
           <span style={{ color: '#234338', fontWeight: 600 }}>Projects</span>
         </div>
 
-        {/* Hero Section with Interactive <LightTunnel /> */}
-        <div className="page-hero-banner" style={{ backgroundColor: '#1E351C' }}>
-          {/* LightTunnel Canvas */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'auto' }}>
-            <LightTunnel
-              cableColor="#C88528"
-              pulseColor="#5A713C"
-              tunnelColor="#152614"
-              tunnelOpacity={0.25}
-              speed={0.12}
-              flowDirection="outward"
-              pulseSpeed={2.2}
-              pulseLength={0.28}
-              pulseBlend={1}
-              pulseWidth={1}
-              cableCount={22}
-              thickness={0.35}
-              rimWidth={0.15}
-              waviness={0.3}
-              sway={0.5}
-              size={1.0}
-              centerX={0.0}
-              centerY={0.0}
-              glow={1.2}
-              fadeNear={0.5}
-              fadeFar={2}
-              brightness={1.05}
-              colorVariance={true}
-              grain={true}
-              grainIntensity={0.04}
-              opacity={0.95}
-              mouseInteraction={true}
-              mouseStrength={0.12}
-            />
+        {/* Hero Section (Seamless, No Background Container) */}
+        <div style={{
+          backgroundColor: 'transparent',
+          border: 'none',
+          boxShadow: 'none',
+          padding: '0.5rem 0 1.5rem 0',
+          marginBottom: '1.5rem'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.45rem',
+            fontSize: '0.72rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#234338',
+            backgroundColor: '#EEF4F0',
+            padding: '0.3rem 0.75rem',
+            borderRadius: '9999px',
+            border: '1px solid #D6E4DB',
+            marginBottom: '0.75rem'
+          }}>
+            <span>{hero.eyebrow}</span>
           </div>
-
-          {/* Foreground Hero Content */}
-          <div className="page-hero-content">
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.45rem',
-              fontSize: '0.72rem',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: '#FFFFFF',
-              backgroundColor: 'rgba(15, 36, 29, 0.75)',
-              backdropFilter: 'blur(8px)',
-              padding: '0.25rem 0.75rem',
-              borderRadius: '9999px',
-              border: '1px solid rgba(221, 187, 123, 0.35)',
-              marginBottom: '0.75rem'
-            }}>
-              <span style={{ color: '#DDBB7B' }}>{hero.eyebrow}</span>
-            </div>
-            
-            <h1 style={{
-              fontFamily: "'Newsreader', Georgia, serif",
-              fontSize: 'clamp(2rem, 3.8vw, 3.2rem)',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              lineHeight: 1.15,
-              marginBottom: '0.75rem',
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)'
-            }}>
-              {hero.heading}
-            </h1>
-            
-            <p style={{
-              fontSize: '1rem',
-              color: '#F0F7F3',
-              maxWidth: '820px',
-              lineHeight: 1.55,
-              margin: 0,
-              textShadow: '0 1px 6px rgba(0, 0, 0, 0.4)'
-            }}>
-              {hero.intro}
-            </p>
-          </div>
-        </div>
-
-        {/* 4 Ongoing Projects Grid */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)', fontWeight: 600, color: '#1A1714' }}>
-              Active Research Cohorts & Studies
-            </h2>
-            <span style={{ fontSize: '0.82rem', color: '#7E766D' }}>
-              {projects.length} Inquiries
-            </span>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-            {projects.map((proj, idx) => (
-              <BorderGlow
-                key={proj.id || idx}
-                borderRadius={12}
-                backgroundColor="#FFFFFF"
-                edgeSensitivity={30}
-                glowRadius={30}
-                colors={['#234338', '#DDBB7B', '#4D8A74']}
-                className="hover-lift"
-              >
-                <div style={{
-                  padding: '1.35rem 1.25rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
-                    <span style={{
-                      fontSize: '0.65rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      backgroundColor: '#EEF4F0',
-                      color: '#234338',
-                      padding: '0.2rem 0.5rem',
-                      borderRadius: '4px'
-                    }}>
-                      {proj.status || 'Ongoing'}
-                    </span>
-                    <span style={{ fontSize: '0.72rem', color: '#888075', fontWeight: 600 }}>
-                      PROJECT 0{idx + 1}
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#1A1714', lineHeight: 1.3, marginBottom: '0.5rem' }}>
-                    {proj.title}
-                  </h3>
-
-                  <div style={{ fontSize: '0.88rem', fontStyle: 'italic', color: '#C99428', fontWeight: 600, marginBottom: '0.65rem' }}>
-                    "{proj.question}"
-                  </div>
-
-                  <p style={{ fontSize: '0.86rem', color: '#554F47', lineHeight: 1.55, marginBottom: '1.25rem', flex: 1 }}>
-                    {proj.description}
-                  </p>
-
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.8rem', color: '#234338', fontWeight: 600, paddingTop: '0.85rem', borderTop: '1px solid #F0ECE4' }}>
-                    <Clock size={14} />
-                    <span>Longitudinal observation in progress</span>
-                  </div>
-                </div>
-              </BorderGlow>
+          
+          <h1 style={{
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: 'clamp(2.2rem, 4vw, 3rem)',
+            fontWeight: 700,
+            color: '#234338',
+            lineHeight: 1.2,
+            margin: '0 0 1rem 0'
+          }}>
+            {hero.heading}
+          </h1>
+          
+          <div style={{
+            fontSize: '1rem',
+            color: '#1A1714',
+            maxWidth: '860px',
+            lineHeight: 1.7,
+            margin: 0
+          }}>
+            {hero.body?.map((p, idx) => (
+              <p key={idx} style={{ marginBottom: idx < hero.body.length - 1 ? '0.75rem' : 0, color: '#1A1714' }}>
+                {p}
+              </p>
             ))}
           </div>
         </div>
 
-        {/* Project Journey Lifecycle */}
-        {journey && journey.stages && (
-          <BorderGlow
-            borderRadius={12}
-            backgroundColor="#FFFFFF"
-            glowRadius={32}
-            colors={['#234338', '#C99428', '#386684']}
-          >
-            <div className="card-pad-standard">
-              <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
-                {journey.eyebrow}
-              </div>
-              <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.65rem)', fontWeight: 600, color: '#1A1714', marginBottom: '0.5rem' }}>
-                {journey.heading}
-              </h2>
-              <p style={{ fontSize: '0.92rem', color: '#554F47', marginBottom: '1.5rem', maxWidth: '750px' }}>
-                {journey.intro}
-              </p>
+        {/* Current Research Projects Grid */}
+        <div style={{ marginBottom: '3.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)', fontWeight: 700, color: '#234338', margin: 0 }}>
+              Current Research Projects
+            </h2>
+            <span style={{ fontSize: '0.85rem', color: '#8A8275', fontWeight: 600 }}>
+              {projects.length} Ongoing Projects
+            </span>
+          </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                {journey.stages.map((st, idx) => (
-                  <BorderGlow
-                    key={idx}
-                    borderRadius={8}
-                    backgroundColor="#FAF3E2"
-                    edgeSensitivity={25}
-                    glowRadius={22}
-                    colors={['#234338', '#DDBB7B', '#5A9B80']}
-                  >
-                    <div style={{ padding: '1rem' }}>
-                      <div style={{ fontSize: '0.68rem', fontWeight: 700, color: '#234338', marginBottom: '0.25rem' }}>
-                        STAGE {st.step || `0${idx + 1}`}
-                      </div>
-                      <div style={{ fontFamily: "'Newsreader', serif", fontSize: '1.05rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.25rem' }}>
-                        {st.name}
-                      </div>
-                      <div style={{ fontSize: '0.8rem', color: '#6A635B', lineHeight: 1.4 }}>
-                        {st.description}
-                      </div>
-                    </div>
-                  </BorderGlow>
-                ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
+            {projects.map((proj) => (
+              <div
+                key={proj.id}
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid #E5DFD2',
+                  padding: '1.85rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  boxShadow: '0 4px 16px rgba(24, 21, 18, 0.04)',
+                  transition: 'all 0.25s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.borderColor = '#234338';
+                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(35, 67, 56, 0.12)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = '#E5DFD2';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(24, 21, 18, 0.04)';
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
+                  <span style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    color: '#234338',
+                    backgroundColor: '#EEF4F0',
+                    padding: '0.25rem 0.65rem',
+                    borderRadius: '6px',
+                    border: '1px solid #D6E4DB'
+                  }}>
+                    {proj.number}
+                  </span>
+                  <span style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    backgroundColor: '#FAF3E2',
+                    color: '#C88528',
+                    padding: '0.25rem 0.6rem',
+                    borderRadius: '4px',
+                    border: '1px solid #EADBBA'
+                  }}>
+                    Status: {proj.status}
+                  </span>
+                </div>
+
+                {/* Subheading in Black */}
+                <h3 style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontSize: '1.3rem',
+                  fontWeight: 700,
+                  color: '#1A1714',
+                  lineHeight: 1.3,
+                  marginBottom: '0.65rem'
+                }}>
+                  {proj.title}
+                </h3>
+
+                {/* Question in Warm Orange, Italic */}
+                <div style={{
+                  fontSize: '0.94rem',
+                  fontStyle: 'italic',
+                  color: '#C88528',
+                  fontWeight: 500,
+                  lineHeight: 1.5,
+                  marginBottom: '0.85rem',
+                  fontFamily: "'Newsreader', Georgia, serif"
+                }}>
+                  "{proj.question}"
+                </div>
+
+                {/* Description in Deep Black */}
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: '#1A1714',
+                  lineHeight: 1.65,
+                  margin: 0
+                }}>
+                  {proj.description}
+                </p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Project Journey Section (Verbatim from PDF page 10) */}
+        {PROJECTS_DATA?.journey && (
+          <div style={{
+            backgroundColor: '#FFFFFF',
+            borderRadius: '16px',
+            border: '1px solid #E5DFD2',
+            padding: '2.5rem 3rem',
+            boxShadow: '0 4px 20px rgba(24, 21, 18, 0.04)',
+            marginBottom: '3.5rem'
+          }}>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.85rem',
+              alignItems: 'flex-start'
+            }}>
+              <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C88528' }}>
+                RESEARCH LIFECYCLE
+              </div>
+              <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#234338', margin: 0 }}>
+                {PROJECTS_DATA.journey.title}
+              </h2>
+              <div style={{
+                fontSize: '1.05rem',
+                fontWeight: 700,
+                color: '#1A1714',
+                letterSpacing: '0.04em',
+                padding: '0.75rem 1.25rem',
+                backgroundColor: '#FAF8F5',
+                borderRadius: '8px',
+                border: '1px solid #E5DFD2'
+              }}>
+                {PROJECTS_DATA.journey.steps}
+              </div>
+              <p style={{
+                fontSize: '0.98rem',
+                fontStyle: 'italic',
+                color: '#C88528',
+                lineHeight: 1.6,
+                margin: 0
+              }}>
+                {PROJECTS_DATA.journey.tagline}
+              </p>
             </div>
-          </BorderGlow>
+          </div>
         )}
 
+      </div>
+
+      <div style={{ marginTop: '2rem' }}>
+        <TrustBar />
       </div>
     </div>
   );

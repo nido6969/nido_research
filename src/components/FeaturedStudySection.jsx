@@ -12,7 +12,8 @@ export default function FeaturedStudySection({ onSelectPaper, onViewAll }) {
     icon: <FileText size={16} color="#234338" />,
     date: study.date || '2026',
     title: study.title,
-    snippet: study.summary || study.question,
+    question: study.question,
+    summary: study.summary,
     image: study.image,
     rawPaper: study
   }));
@@ -171,15 +172,28 @@ export default function FeaturedStudySection({ onSelectPaper, onViewAll }) {
                     {card.title}
                   </h3>
 
-                  {/* Excerpt */}
+                  {/* Question / Subtitle */}
+                  {card.question && (
+                    <div style={{
+                      fontSize: '0.88rem',
+                      fontStyle: 'italic',
+                      color: '#C88528',
+                      lineHeight: 1.45,
+                      marginBottom: '0.65rem'
+                    }}>
+                      "{card.question}"
+                    </div>
+                  )}
+
+                  {/* Summary */}
                   <p style={{
-                    fontSize: '0.88rem',
+                    fontSize: '0.86rem',
                     color: '#5C564E',
                     lineHeight: 1.55,
                     marginBottom: '1.5rem',
                     flex: 1
                   }}>
-                    {card.snippet}
+                    {card.summary}
                   </p>
 
                   {/* Link */}

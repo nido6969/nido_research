@@ -57,15 +57,15 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
               marginBottom: '1rem'
             }}>
               <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: '#C88528', display: 'inline-block' }}></span>
-              <span>EVIDENCE. OBSERVE. NURTURE.</span>
+              <span>EVIDENCE. OBSERVATION. NATURE.</span>
             </div>
 
-            {/* Huge Serif Headline */}
+            {/* Huge Serif Headline - Green */}
             <h1 style={{
               fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
               fontSize: 'clamp(2.4rem, 4.2vw, 3.8rem)',
               fontWeight: 600,
-              color: '#1A1714',
+              color: '#234338',
               lineHeight: 1.14,
               marginBottom: '1.25rem',
               letterSpacing: '-0.025em'
@@ -75,16 +75,33 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
               Real Children.
             </h1>
 
-            {/* Subtitle */}
-            <p style={{
-              fontSize: '1rem',
-              color: '#554F47',
-              lineHeight: 1.6,
-              maxWidth: '510px',
-              marginBottom: '2rem'
+            {/* Full Body Copy */}
+            <div style={{
+              fontSize: '0.94rem',
+              color: '#443F39',
+              lineHeight: 1.65,
+              maxWidth: '540px',
+              marginBottom: '1.75rem'
             }}>
-              Nido Montessori Research Updates shares evidence-based insights from our classrooms to contribute to the global Montessori community and inspire better learning outcomes.
-            </p>
+              <p style={{ fontWeight: 600, color: '#1A1714', marginBottom: '0.65rem' }}>
+                At Nido Montessori, research begins with a simple act: <span style={{ color: '#C88528' }}>paying attention.</span>
+              </p>
+              <p style={{ color: '#554F47', marginBottom: '0.85rem' }}>
+                Through our research, we hope to observe small but meaningful changes in children over time and understand what the Montessori environment contributes to this journey. We observe children as they move, choose, concentrate, communicate, collaborate and become increasingly independent. We turn these everyday observations into questions worth exploring—and share what we learn with educators, parents and the wider Montessori community. The goal is simple “ To look closely at the child, document what we observe, and learn from the process rather than assume what development should look like. In doing so, we hope to contribute to a more thoughtful understanding of independence in early childhood and to the ongoing practice of Montessori education at Nido.”
+              </p>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.25rem',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                color: '#C88528'
+              }}>
+                <div>• Research rooted in real classrooms.</div>
+                <div>• Curiosity guided by evidence.</div>
+                <div>• Always with the child at the centre.</div>
+              </div>
+            </div>
 
             {/* Action Buttons using SpecularButton */}
             <div style={{ display: 'flex', gap: '0.85rem', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -129,7 +146,7 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
               className="hero-arch-frame"
               style={{
                 width: '100%',
-                height: '400px',
+                height: '380px',
                 borderRadius: '200px 200px 16px 16px',
                 overflow: 'hidden',
                 position: 'relative',
@@ -198,46 +215,51 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
                     </div>
                   </div>
 
-                  {/* 4 Animated Counter Metrics */}
+                  {/* 3 Animated Counter Metrics */}
                   <div 
                     className="hero-metrics-grid"
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(4, 1fr)',
+                      gridTemplateColumns: 'repeat(3, 1fr)',
                       gap: '0.75rem',
                       textAlign: 'left'
                     }}
                   >
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.2rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
-                        <Counter value={12} fontSize={19} fontWeight={700} textColor="#1A1714" />
+                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.25rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
+                        <Counter value={2} fontSize={20} fontWeight={700} textColor="#1A1714" />
                         <span>+</span>
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.15rem' }}>Studies Published</div>
+                      <div style={{ fontSize: '0.72rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.2rem' }}>Studies Published</div>
                     </div>
 
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.2rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
-                        <Counter value={7} fontSize={19} fontWeight={700} textColor="#1A1714" />
+                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.25rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
+                        <Counter value={7} fontSize={20} fontWeight={700} textColor="#1A1714" />
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.15rem' }}>Ongoing Projects</div>
+                      <div style={{ fontSize: '0.72rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.2rem' }}>Ongoing Research Projects</div>
                     </div>
 
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.2rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
-                        <Counter value={850} fontSize={19} fontWeight={700} textColor="#1A1714" />
+                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.25rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
+                        <Counter value={5} fontSize={20} fontWeight={700} textColor="#1A1714" />
                         <span>+</span>
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.15rem' }}>Children Observed</div>
+                      <div style={{ fontSize: '0.72rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.2rem' }}>Educators & Contributors</div>
                     </div>
+                  </div>
 
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', fontSize: '1.2rem', fontWeight: 700, color: '#1A1714', lineHeight: 1.1 }}>
-                        <Counter value={25} fontSize={19} fontWeight={700} textColor="#1A1714" />
-                        <span>+</span>
-                      </div>
-                      <div style={{ fontSize: '0.7rem', color: '#7E766D', lineHeight: 1.25, marginTop: '0.15rem' }}>Educators</div>
-                    </div>
+                  {/* Community Growth Statement */}
+                  <div style={{
+                    marginTop: '0.85rem',
+                    paddingTop: '0.65rem',
+                    borderTop: '1px solid #F2EFE8',
+                    fontSize: '0.75rem',
+                    fontStyle: 'italic',
+                    color: '#C88528',
+                    lineHeight: 1.45
+                  }}>
+                    Our research grows alongside our community… Stay tuned for our growing contributions towards the far-reaching goals of nurturing independent generations.
                   </div>
                 </div>
               </BorderGlow>

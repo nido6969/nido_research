@@ -16,8 +16,7 @@ export const INSTITUTION_INFO = {
   stats: {
     studiesPublished: "2+",
     ongoingProjects: "7",
-    educatorsContributors: "5+",
-    childrenObserved: "850+"
+    educatorsContributors: "5+"
   },
   statsNote: "Our research grows alongside our community… Stay tuned for our growing contributions towards the far-reaching goals of nurturing independent generations.",
   contact: {
@@ -510,15 +509,6 @@ export const FEATURED_STUDIES = [
 
 export const RESEARCH_UPDATES = [
   {
-    id: "up-0",
-    date: "28 AUG 2026",
-    title: "Building a Montessori School from the Ground Up: Founding Case Study",
-    excerpt: "An observational case study documenting the 5 phases of establishing Nido Montessori Preschool—from conceptualization to the first cohort.",
-    linkText: "Read Case Study →",
-    targetStudyId: "study-founding-case-study"
-  },
-
-  {
     id: "up-1",
     date: "20 JUL 2026",
     title: "New Study Published on Play & Executive Function",
@@ -755,7 +745,7 @@ export const PUBLICATIONS_DATA = {
   }
 };
 
-// SECTION 4: PROJECTS
+// SECTION 4: PROJECTS (Verbatim from PDF page 10)
 export const PROJECTS_DATA = {
   hero: {
     eyebrow: "ONGOING PROJECTS",
@@ -765,6 +755,7 @@ export const PROJECTS_DATA = {
   projects: [
     {
       id: "project-01",
+      number: "Project 1",
       title: "Understanding Independence in the Toddler Years",
       status: "Ongoing",
       question: "What does independence look like between one small step and another?",
@@ -772,6 +763,7 @@ export const PROJECTS_DATA = {
     },
     {
       id: "project-02",
+      number: "Project 2",
       title: "Montessori at Home",
       status: "Ongoing",
       question: "Montessori is often described as an educational approach, but for families it also becomes a way of seeing the child.",
@@ -779,6 +771,7 @@ export const PROJECTS_DATA = {
     },
     {
       id: "project-03",
+      number: "Project 3",
       title: "Concentration in the Prepared Environment",
       status: "Ongoing",
       question: "What makes a child stay?",
@@ -786,6 +779,7 @@ export const PROJECTS_DATA = {
     },
     {
       id: "project-04",
+      number: "Project 4",
       title: "Mixed-Age Learning",
       status: "Ongoing",
       question: "What can children learn from one another that adults cannot teach in quite the same way?",
@@ -793,43 +787,9 @@ export const PROJECTS_DATA = {
     }
   ],
   journey: {
-    eyebrow: "HOW RESEARCH UNFOLDS",
-    heading: "The Project Journey",
-    intro: "Every research project at Nido moves through a disciplined, patient sequence of classroom observation and reflection.",
-    tagline: "Every project moves at the pace the question requires.",
-    steps: ["QUESTION", "DESIGN", "OBSERVE", "DOCUMENT", "ANALYSE", "SHARE"],
-    stages: [
-      {
-        step: "01",
-        name: "Question",
-        description: "Every project begins with a genuine question emerging from everyday classroom life."
-      },
-      {
-        step: "02",
-        name: "Design",
-        description: "We develop a thoughtful observational framework and ethical documentation protocols."
-      },
-      {
-        step: "03",
-        name: "Observe",
-        description: "Educators and researchers observe children naturally in their prepared environments."
-      },
-      {
-        step: "04",
-        name: "Document",
-        description: "Detailed observational logs, time-on-task, and developmental milestones are recorded."
-      },
-      {
-        step: "05",
-        name: "Analyse",
-        description: "Qualitative patterns and quantitative data are evaluated alongside Montessori pedagogy."
-      },
-      {
-        step: "06",
-        name: "Share",
-        description: "Findings are published as accessible studies, family insights, and educator papers."
-      }
-    ]
+    title: "Project Journey",
+    steps: "QUESTION → DESIGN → OBSERVE → DOCUMENT → ANALYSE → SHARE",
+    tagline: "Every project moves at the pace the question requires."
   }
 };
 
@@ -845,6 +805,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-01",
       topicNumber: 1,
+      slug: "independence-at-home",
       title: "Independence at Home",
       quote: "“Let me do it!”",
       body: [
@@ -870,6 +831,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-02",
       topicNumber: 2,
+      slug: "toddler-behaviour",
       title: "Toddler Behaviour",
       quote: "Your toddler isn't giving you a hard time. Something is hard for your toddler.",
       body: [
@@ -893,6 +855,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-03",
       topicNumber: 3,
+      slug: "concentration",
       title: "Concentration",
       quote: "“My child doesn't concentrate!”",
       body: [
@@ -914,6 +877,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-04",
       topicNumber: 4,
+      slug: "movement",
       title: "Movement",
       quote: "Your child isn't “too active”. Your child is growing through movement.",
       body: [
@@ -935,6 +899,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-05",
       topicNumber: 5,
+      slug: "food-and-self-feeding",
       title: "Food & Self-Feeding",
       quote: "Mealtimes don't have to become a daily negotiation.",
       body: [
@@ -955,6 +920,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-06",
       topicNumber: 6,
+      slug: "screen-time",
       title: "Screen Time",
       quote: "The better question may not be “How much screen time?” Parents often ask for the perfect number (Twenty minutes? Thirty? One hour?).",
       body: [
@@ -975,6 +941,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-07",
       topicNumber: 7,
+      slug: "language-development",
       title: "Language Development",
       quote: "Talk less like a teacher. Talk more like a person.",
       body: [
@@ -991,6 +958,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-08",
       topicNumber: 8,
+      slug: "big-feelings",
       title: "Big Feelings",
       quote: "A big feeling is not bad behaviour that needs to disappear immediately.",
       body: [
@@ -1006,6 +974,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-09",
       topicNumber: 9,
+      slug: "sleep-and-routines",
       title: "Sleep & Routines",
       quote: "Children often cope better when the day makes sense.",
       body: [
@@ -1020,6 +989,7 @@ export const PARENT_INSIGHTS_DATA = {
     {
       id: "insight-10",
       topicNumber: 10,
+      slug: "play",
       title: "Play",
       quote: "Your child doesn't need to be entertained all day.",
       body: [
@@ -1042,12 +1012,21 @@ export const RESOURCES_DATA = {
   hero: {
     eyebrow: "RESOURCES",
     heading: "Useful Things, Thoughtfully Chosen.",
-    intro: "The internet is full of information about children. Not all of it deserves your time or trust. We are building a collection of resources that help parents and educators navigate Montessori and early childhood development with greater clarity."
+    intro: "The internet has no shortage of parenting advice, activity ideas and early childhood content. What is often missing is context: Why does this material work? Why does this routine matter? What does the child actually need right now?",
+    subIntro: "Our resources section is designed to cut through that noise. Here, we share:",
+    bullets: [
+      "recommended reading on Montessori education and early childhood",
+      "downloadable observation guides and reflection sheets for parents",
+      "articles and essays exploring everyday questions in greater depth",
+      "a curated list of materials and resources we trust and recommend"
+    ],
+    closing: "Everything here has been chosen or created with one standard in mind: Is it genuinely useful to families and educators trying to understand and support the children in their care?"
   },
   articles: [
     {
       id: "res-01",
       number: 1,
+      slug: "why-does-my-child-want-to-do-everything-by-themselves",
       title: "“Why Does My Child Want to Do Everything by Themselves?”",
       subtitle: "Simple ways to understand Montessori principles without trying to recreate a classroom in your living room.",
       quote: "“I can do it!”",
@@ -1077,6 +1056,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-02",
       number: 2,
+      slug: "do-i-really-need-to-buy-montessori-toys",
       title: "“Do I Really Need to Buy Montessori Toys?”",
       subtitle: "What your child may need from home has surprisingly little to do with what you buy.",
       quote: "Montessori was never meant to be a shopping list.",
@@ -1102,6 +1082,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-03",
       number: 3,
+      slug: "why-does-my-child-keep-doing-the-same-thing-again-and-again",
       title: "“Why Does My Child Keep Doing the Same Thing Again and Again?”",
       subtitle: "When “again!” may actually be a sign of something important happening.",
       quote: "What looks repetitive to an adult may be refinement to a child.",
@@ -1119,6 +1100,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-04",
       number: 4,
+      slug: "why-wont-my-child-sit-still",
       title: "“Why Won't My Child Sit Still?”",
       subtitle: "What if your child's need to move is telling you something?",
       quote: "Movement is not separate from development.",
@@ -1136,6 +1118,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-05",
       number: 5,
+      slug: "my-child-makes-a-mess-all-day-what-am-i-supposed-to-do",
       title: "“My Child Makes a Mess All Day. What Am I Supposed to Do?”",
       subtitle: "Before stopping the mess, look at what your child is trying to do.",
       quote: "Is this mess a problem—or is it part of the learning?",
@@ -1153,6 +1136,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-06",
       number: 6,
+      slug: "my-child-cries-every-morning-at-school-should-i-be-worried",
       title: "“My Child Cries Every Morning at School. Should I Be Worried?”",
       subtitle: "What crying at separation can and cannot tell us.",
       quote: "Crying tells us that something is difficult. But it does not tell the whole story.",
@@ -1170,6 +1154,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-07",
       number: 7,
+      slug: "my-child-can-do-it-at-school-but-not-at-home-why",
       title: "“My Child Can Do It at School—but Not at Home. Why?”",
       subtitle: "Why independence sometimes disappears the moment children walk through the front door.",
       quote: "Capability needs opportunity.",
@@ -1187,6 +1172,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-08",
       number: 8,
+      slug: "is-my-child-actually-learning-if-they-arent-doing-worksheets",
       title: "“Is My Child Actually Learning If They Aren't Doing Worksheets?”",
       subtitle: "What learning looks like before it looks like school.",
       quote: "The absence of a worksheet does not mean the absence of learning.",
@@ -1204,6 +1190,7 @@ export const RESOURCES_DATA = {
     {
       id: "res-09",
       number: 9,
+      slug: "why-doesnt-montessori-give-children-more-homework",
       title: "“Why Doesn't Montessori Give Children More Homework?”",
       subtitle: "If children aren't bringing worksheets home, what are they actually doing?",
       quote: "Work is not always written work.",
@@ -1217,12 +1204,35 @@ export const RESOURCES_DATA = {
           content: `Instead of worksheet drills, invite your child to count plates for dinner, sort laundry, measure ingredients, notice numbers around the house, make marks, write a shopping list together, or tell a story.\n\nLive thoughtfully with your child: talk, read, cook, walk, listen, let them help, answer questions, visit places, give them time to play and experience boredom. Try asking: “What meaningful work can my child participate in today?”\n\nMontessori does not mean children never practise. It means we think carefully about what kind of practice serves the child—and why.`
         }
       ]
+    },
+    {
+      id: "res-10",
+      number: 10,
+      slug: "how-do-i-set-boundaries-without-punishments-or-rewards",
+      title: "“How Do I Set Boundaries Without Punishments or Rewards?”",
+      subtitle: "Why kindness and firmness must work together in the Montessori home.",
+      quote: "Freedom within limits is not the absence of boundaries; it is the presence of respect.",
+      sections: [
+        {
+          heading: "The Misunderstanding of Freedom",
+          content: `When parents first encounter Montessori, they often hear about “freedom of choice” and “child-led learning.” Some worry this means complete permissiveness: letting children do whatever they want, whenever they want. Others swing to the opposite extreme, relying on sticker charts, bribes, time-outs, or punishments to enforce compliance.\n\nMontessori offers a different path: Freedom within limits. Freedom and discipline are two sides of the same coin. A child cannot be truly free if they cannot control their own impulses; and a child cannot learn self-control if adults constantly control them through fear or external bribes.`
+        },
+        {
+          heading: "Natural and Logical Consequences",
+          content: `In a Montessori environment, limits are held without anger or shame. When a child spills water, the consequence is not scolding or losing privileges; it is getting a cloth and being shown how to wipe the floor. When a child misuses a material or endangers someone, the adult calmly steps in: “I cannot let you throw that. It might break or hurt someone. Let's put it on the shelf until you are ready to use it gently.”\n\nThe boundary is clear and unshakeable, but the adult remains a safe, regulated ally rather than an angry adversary.`
+        },
+        {
+          heading: "Staying Calm and Consistent",
+          content: `Children test limits not because they are manipulative, but because they are scientists testing the solidity of their world. If a boundary bends when they scream, they learn that screaming is effective. If the boundary remains steady, gentle, and predictable, the child feels safe.\n\nNext time a limit is needed, speak less. Don't lecture. Hold the boundary physically and kindly: “I'm keeping your hands safe. I will stay with you while you feel angry.”\n\nDiscipline is not something we do TO a child; it is a capacity we help build WITHIN the child.`
+        }
+      ]
     }
   ],
   librarySearch: {
+    eyebrow: "RESEARCH LIBRARY",
     heading: "Research Library",
     tagline: "LOOKING FOR SOMETHING SPECIFIC?",
-    description: "Search our growing collection of studies, articles, observations and resources. In case you don't find it, we take it up on ourselves to find you an answer.",
+    intro: "Search our growing collection of studies, articles, observations and resources. In case you don’t find it, we take it up on ourselves to find you an answer.",
     inputPlaceholder: "Visitor Suggests...",
     buttonText: "Search the Research Library →"
   }

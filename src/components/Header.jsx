@@ -6,7 +6,6 @@ import NidoLogo from './NidoLogo';
 import SpecularButton from './SpecularButton';
 
 export default function Header({ onOpenSearch }) {
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [researchDropdownOpen, setResearchDropdownOpen] = useState(false);
   const location = useLocation();
@@ -19,66 +18,6 @@ export default function Header({ onOpenSearch }) {
 
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 100, backgroundColor: 'var(--bg-parchment, #FAF3E2)' }}>
-      {/* Top Dark Forest Green Announcement Bar */}
-      {showAnnouncement && (
-        <div style={{
-          backgroundColor: '#1E351C',
-          color: '#FFFFFF',
-          padding: '0.4rem 1.25rem',
-          fontSize: '0.8rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          borderBottom: '1px solid rgba(255,255,255,0.08)'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center', paddingRight: '1.5rem' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#DDBB7B', fontWeight: 600 }}>
-              <span>Case Study:</span>
-            </span>
-            <span style={{ color: '#F0F4F2', fontSize: '0.78rem' }}>
-              Building a Montessori School from the Ground Up
-            </span>
-            
-            <SpecularButton
-              size="sm"
-              radius={6}
-              tint="#1E3E33"
-              tintOpacity={0.9}
-              textColor="#DDBB7B"
-              lineColor="#FFE8A3"
-              baseColor="#142E25"
-              intensity={1.5}
-              onClick={() => navigate('/research-studies/building-a-montessori-school-from-the-ground-up-case-study')}
-              style={{ padding: '3px 10px', fontSize: '0.74rem' }}
-            >
-              <span>Read</span>
-              <ArrowRight size={11} />
-            </SpecularButton>
-          </div>
-
-          <button
-            onClick={() => setShowAnnouncement(false)}
-            style={{
-              position: 'absolute',
-              right: '0.85rem',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              background: 'none',
-              border: 'none',
-              color: 'rgba(255,255,255,0.7)',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              padding: '0.25rem'
-            }}
-            aria-label="Dismiss announcement"
-          >
-            <X size={15} />
-          </button>
-        </div>
-      )}
-
       {/* Main Navigation Bar */}
       <div style={{
         backgroundColor: 'var(--bg-parchment, #FAF3E2)',
@@ -267,7 +206,7 @@ export default function Header({ onOpenSearch }) {
                 padding: '0.4rem 0.15rem'
               }}
             >
-              Insights
+              Parent Insights
             </Link>
 
             <Link 
@@ -461,19 +400,27 @@ export default function Header({ onOpenSearch }) {
             >
               About
             </Link>
-            <Link 
-              to="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{
-                textDecoration: 'none',
-                fontSize: '0.95rem',
-                fontWeight: isActive('/contact') ? 700 : 500,
-                color: isActive('/contact') ? '#234338' : '#554F47',
-                padding: '0.35rem 0'
-              }}
-            >
-              Contact & Inquiries
-            </Link>
+            <div style={{ paddingTop: '0.5rem', borderTop: '1px solid #ECE7DF', marginTop: '0.25rem' }}>
+              <SpecularButton
+                size="sm"
+                radius={9999}
+                tint="#234338"
+                tintOpacity={1}
+                textColor="#FFFFFF"
+                lineColor="#DDBB7B"
+                baseColor="#143229"
+                intensity={1.4}
+                shineSize={16}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  window.open('https://nidomontessori.in', '_blank');
+                }}
+                style={{ width: '100%', justifyContent: 'center' }}
+              >
+                <span>Visit Nido Montessori</span>
+                <ExternalLink size={12} />
+              </SpecularButton>
+            </div>
           </div>
         )}
       </div>

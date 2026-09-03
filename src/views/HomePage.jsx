@@ -23,10 +23,13 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection 
         onExploreClick={() => {
-          const el = document.getElementById('featured-studies');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          navigate('/research-studies/play-based-learning-executive-function');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        onAboutClick={() => navigate('/about')}
+        onAboutClick={() => {
+          navigate('/about');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       {/* Featured Studies Grid */}
@@ -56,13 +59,8 @@ export default function HomePage() {
         onOpenArchive={() => navigate('/publications')}
       />
 
-      {/* Explore Our Work - 4 Tinted Cards */}
-      <ExploreWorkSection 
-        onOpenSection={(sectionId) => {
-          navigate(`/research/${sectionId}`);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      />
+      {/* Explore Our Work - 4 Cards */}
+      <ExploreWorkSection />
 
       {/* Newsletter Container */}
       <NewsletterSection />

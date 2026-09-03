@@ -162,35 +162,35 @@ export default function StudyDetailPage() {
               </span>
             </div>
 
-            {/* Main Title */}
+            {/* Main Title - Heading in Green */}
             <h1 style={{
               fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
               fontSize: 'clamp(1.8rem, 3.4vw, 2.75rem)',
               fontWeight: 600,
-              color: '#1A1714',
+              color: '#234338',
               lineHeight: 1.22,
               marginBottom: '1.25rem'
             }}>
               {study.title}
             </h1>
 
-            {/* Author Byline */}
-            <div style={{ fontSize: '1.1rem', color: '#234338', fontWeight: 600, marginBottom: '0.35rem', fontFamily: "'Newsreader', serif" }}>
+            {/* Author Byline - Subheading in Black */}
+            <div style={{ fontSize: '1.1rem', color: '#1A1714', fontWeight: 600, marginBottom: '0.35rem', fontFamily: "'Newsreader', serif" }}>
               {study.leadAuthor}
             </div>
             <div style={{ fontSize: '0.88rem', color: '#6A635B', marginBottom: '1.25rem' }}>
               {study.authorAffiliation || 'Nido Montessori Preschool, Hyderabad, Telangana, India'}
             </div>
 
-            {/* Inquiry / Subtitle Quote Banner */}
+            {/* Inquiry / Subtitle Quote Banner - Italic in Orange */}
             <div style={{
               fontSize: '1.02rem',
               fontStyle: 'italic',
-              color: '#284B3D',
+              color: '#C88528',
               lineHeight: 1.55,
               padding: '0.9rem 1.25rem',
-              backgroundColor: '#F1F6F3',
-              borderLeft: '4px solid #234338',
+              backgroundColor: '#FDF8EE',
+              borderLeft: '4px solid #C88528',
               borderRadius: '4px',
               marginBottom: '1.25rem'
             }}>
@@ -284,7 +284,7 @@ export default function StudyDetailPage() {
               {/* Abstract & Keywords Card */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#5A9B80']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                     Abstract
                   </h2>
                   <p style={{ fontSize: '1rem', color: '#2B2621', lineHeight: 1.7, marginBottom: '1.25rem' }}>
@@ -292,7 +292,7 @@ export default function StudyDetailPage() {
                   </p>
                   {study.keywords && (
                     <div style={{ borderTop: '1px solid #F0EAE1', paddingTop: '0.85rem', fontSize: '0.88rem', color: '#554F47' }}>
-                      <strong style={{ color: '#1A1714', fontStyle: 'italic' }}>Keywords:</strong> {study.keywords.join(', ')}
+                      <strong style={{ color: '#C88528', fontStyle: 'italic' }}>Keywords:</strong> {study.keywords.join(', ')}
                     </div>
                   )}
                 </div>
@@ -302,7 +302,7 @@ export default function StudyDetailPage() {
               {study.background && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#386684']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '1rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '1rem' }}>
                       Background and Rationale
                     </h2>
                     <div style={{ fontSize: '1rem', color: '#2B2621', lineHeight: 1.75, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -317,14 +317,14 @@ export default function StudyDetailPage() {
               {/* Purpose and Scope & Research Questions */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#4D8A74']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                     Purpose and Scope of the Study
                   </h2>
                   <p style={{ fontSize: '1rem', color: '#2B2621', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                     {study.purposeAndScope}
                   </p>
 
-                  <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.25rem', fontWeight: 600, color: '#234338', marginBottom: '0.75rem' }}>
+                  <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.25rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.75rem' }}>
                     Research Questions
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -344,13 +344,13 @@ export default function StudyDetailPage() {
               {study.literatureReview && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#5E9480']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '1.25rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '1.25rem' }}>
                       Literature Review
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                       {study.literatureReview.map((section, sIdx) => (
                         <div key={sIdx}>
-                          <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#234338', marginBottom: '0.65rem' }}>
+                          <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.65rem' }}>
                             {section.heading}
                           </h3>
                           {section.paragraphs.map((p, pIdx) => (
@@ -368,7 +368,7 @@ export default function StudyDetailPage() {
               {/* Method & Figure 1 */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#386684']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '1.25rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '1.25rem' }}>
                     Method
                   </h2>
                   
@@ -381,7 +381,7 @@ export default function StudyDetailPage() {
                   {/* Timeline Text */}
                   {study.timelineText && (
                     <div style={{ marginBottom: '1.5rem' }}>
-                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#234338', marginBottom: '0.5rem' }}>
+                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.5rem' }}>
                         Timeline
                       </h3>
                       <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.7, margin: 0 }}>
@@ -407,7 +407,7 @@ export default function StudyDetailPage() {
                           <span>Enlarge</span>
                         </div>
                       </div>
-                      <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#554F47', fontStyle: 'italic', lineHeight: 1.45, whiteSpace: 'pre-line' }}>
+                      <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#C88528', fontStyle: 'italic', lineHeight: 1.45, whiteSpace: 'pre-line' }}>
                         {study.figure1.caption}
                       </div>
                     </div>
@@ -416,7 +416,7 @@ export default function StudyDetailPage() {
                   {/* Positionality and Reflexivity */}
                   {study.positionality && (
                     <div style={{ marginBottom: '1.5rem', borderTop: '1px solid #F0EAE1', paddingTop: '1.25rem' }}>
-                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#234338', marginBottom: '0.65rem' }}>
+                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.65rem' }}>
                         Positionality and Reflexivity
                       </h3>
                       <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.7, margin: 0 }}>
@@ -428,7 +428,7 @@ export default function StudyDetailPage() {
                   {/* Ethical Considerations */}
                   {study.ethicalConsiderations && (
                     <div style={{ borderTop: '1px solid #F0EAE1', paddingTop: '1.25rem' }}>
-                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#234338', marginBottom: '0.65rem' }}>
+                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.2rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.65rem' }}>
                         Ethical Considerations
                       </h3>
                       <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.7, margin: 0 }}>
@@ -442,7 +442,7 @@ export default function StudyDetailPage() {
               {/* Findings & The 5 Phases (with Figures 2, 3, 4) */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#5E9480']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.65rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.65rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                     Findings
                   </h2>
                   <p style={{ fontSize: '1rem', color: '#2B2621', lineHeight: 1.7, marginBottom: '2rem' }}>
@@ -452,7 +452,7 @@ export default function StudyDetailPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
                     {study.phases?.map((phase) => (
                       <div key={phase.phaseNumber} style={{ borderTop: '1px solid #ECE7DF', paddingTop: '1.75rem' }}>
-                        <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.35rem', fontWeight: 600, color: '#234338', marginBottom: '1rem' }}>
+                        <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.35rem', fontWeight: 600, color: '#1A1714', marginBottom: '1rem' }}>
                           {phase.title}
                         </h3>
 
@@ -462,10 +462,10 @@ export default function StudyDetailPage() {
                             return isQuote ? (
                               <div key={pIdx} style={{
                                 fontStyle: 'italic',
-                                color: '#1C3B30',
+                                color: '#C88528',
                                 padding: '0.85rem 1.25rem',
-                                backgroundColor: '#F3F7F4',
-                                borderLeft: '4px solid #234338',
+                                backgroundColor: '#FDF8EE',
+                                borderLeft: '4px solid #C88528',
                                 borderRadius: '4px',
                                 margin: '0.5rem 0'
                               }}>
@@ -494,7 +494,7 @@ export default function StudyDetailPage() {
                                 <span>Enlarge</span>
                               </div>
                             </div>
-                            <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#554F47', fontStyle: 'italic', lineHeight: 1.45, whiteSpace: 'pre-line' }}>
+                            <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#C88528', fontStyle: 'italic', lineHeight: 1.45, whiteSpace: 'pre-line' }}>
                               {phase.figure.caption}
                             </div>
                           </div>
@@ -508,10 +508,10 @@ export default function StudyDetailPage() {
                               return isQuote ? (
                                 <div key={afIdx} style={{
                                   fontStyle: 'italic',
-                                  color: '#1C3B30',
+                                  color: '#C88528',
                                   padding: '0.85rem 1.25rem',
-                                  backgroundColor: '#F3F7F4',
-                                  borderLeft: '4px solid #234338',
+                                  backgroundColor: '#FDF8EE',
+                                  borderLeft: '4px solid #C88528',
                                   borderRadius: '4px',
                                   margin: '0.5rem 0'
                                 }}>
@@ -542,12 +542,21 @@ export default function StudyDetailPage() {
               {study.table1 && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#4D8A74']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.35rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                       Cross-Cutting Challenges and Adaptive Strategies
                     </h2>
-                    <p style={{ fontSize: '0.95rem', color: '#554F47', marginBottom: '1.25rem' }}>
+                    <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                       Several challenges recurred across more than one phase rather than belonging neatly to a single stage of the founding process. Table 1 summarizes these, together with the adaptive strategies the founding team used in response.
                     </p>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1A1714' }}>
+                        Table 1
+                      </div>
+                      <div style={{ fontStyle: 'italic', fontSize: '0.95rem', color: '#C88528' }}>
+                        Cross-Cutting Challenges Across the Founding Process
+                      </div>
+                    </div>
 
                     <div style={{ overflowX: 'auto', marginBottom: '1rem', border: '1px solid #E5E0D6', borderRadius: '8px' }}>
                       <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
@@ -577,7 +586,7 @@ export default function StudyDetailPage() {
               {study.discussion && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#386684']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '1rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '1rem' }}>
                       Discussion
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.72 }}>
@@ -593,12 +602,21 @@ export default function StudyDetailPage() {
               {study.recommendations && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#5A9B80']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                       Recommendations for Practitioners
                     </h2>
                     <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                       {study.recommendations.intro}
                     </p>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1A1714' }}>
+                        Table 2
+                      </div>
+                      <div style={{ fontStyle: 'italic', fontSize: '0.95rem', color: '#C88528' }}>
+                        Practical Recommendations for Prospective Montessori Founders
+                      </div>
+                    </div>
 
                     {/* Table 2 */}
                     <div style={{ overflowX: 'auto', marginBottom: '1rem', border: '1px solid #E5E0D6', borderRadius: '8px' }}>
@@ -627,7 +645,7 @@ export default function StudyDetailPage() {
               {study.limitations && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#386684']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                       Limitations and Directions for Future Research
                     </h2>
                     <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.72, margin: 0 }}>
@@ -641,7 +659,7 @@ export default function StudyDetailPage() {
               {study.conclusion && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#4D8A74']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.85rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '0.85rem' }}>
                       Conclusion
                     </h2>
                     <p style={{ fontSize: '0.98rem', color: '#2B2621', lineHeight: 1.72, margin: 0 }}>
@@ -655,7 +673,7 @@ export default function StudyDetailPage() {
               {study.references && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#5E9480']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#1A1714', marginBottom: '1.25rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.5rem', fontWeight: 600, color: '#234338', marginBottom: '1.25rem' }}>
                       References
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -689,67 +707,92 @@ export default function StudyDetailPage() {
                       <Bookmark size={15} />
                       <span>Primary Institutional Archive</span>
                     </div>
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.65rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.5rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.65rem', fontWeight: 600, color: '#234338', marginBottom: '0.5rem' }}>
                       {study.appendixA.title}
                     </h2>
                     <p style={{ fontSize: '0.95rem', color: '#554F47', marginBottom: '1.75rem' }}>
                       {study.appendixA.description}
                     </p>
 
-                    {/* Table A1 Layout */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                      {study.appendixA.table?.phases.map((ph, phIdx) => (
-                        <div key={phIdx} style={{ backgroundColor: '#FAF3E2', border: '1px solid #E5E0D6', borderRadius: '10px', padding: '1.5rem' }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem', borderBottom: '1px solid #EAE4D8', paddingBottom: '0.65rem' }}>
-                            <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.25rem', fontWeight: 600, color: '#234338', margin: 0 }}>
-                              {ph.phase}
-                            </h3>
-                            <span style={{ fontSize: '0.82rem', color: '#6A635B', fontStyle: 'italic' }}>
-                              Suggested: {ph.suggestedMedia}
-                            </span>
-                          </div>
+                    <div style={{ marginBottom: '1.25rem' }}>
+                      <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1A1714' }}>
+                        Table A1
+                      </div>
+                      <div style={{ fontStyle: 'italic', fontSize: '0.95rem', color: '#C88528' }}>
+                        Suggested Media Documentation by Founding Phase
+                      </div>
+                    </div>
 
-                          {/* Supporting Media Gallery Grid */}
-                          <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                            gap: '1.25rem',
-                            marginTop: '1rem'
-                          }}>
-                            {ph.images.map((img, iIdx) => (
-                              <div 
-                                key={iIdx}
-                                style={{
-                                  backgroundColor: '#FFFFFF',
-                                  border: '1px solid #ECE7DF',
-                                  borderRadius: '8px',
-                                  overflow: 'hidden',
-                                  cursor: 'pointer',
-                                  transition: 'transform 0.2s, box-shadow 0.2s',
-                                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
-                                }}
-                                className="hover-lift"
-                                onClick={() => setSelectedImage(img)}
-                              >
-                                <div style={{ height: '180px', overflow: 'hidden', backgroundColor: '#F0EBE1', position: 'relative' }}>
-                                  <img 
-                                    src={img.src} 
-                                    alt={img.alt}
-                                    style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#FAF3E2' }}
-                                  />
-                                  <div style={{ position: 'absolute', right: '6px', bottom: '6px', backgroundColor: 'rgba(0,0,0,0.65)', color: '#FFFFFF', padding: '3px 6px', borderRadius: '4px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>
-                                    <Maximize2 size={11} />
-                                    <span>Zoom</span>
-                                  </div>
+                    {/* Table A1 Layout - Exact 3-Column Academic Table */}
+                    <div style={{ overflowX: 'auto', border: '1px solid #D5CEBE', borderRadius: '8px', marginBottom: '1rem' }}>
+                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
+                        <thead>
+                          <tr style={{ backgroundColor: '#1E351C', color: '#FFFFFF' }}>
+                            <th style={{ padding: '0.9rem 1.1rem', fontWeight: 600, width: '20%', verticalAlign: 'top', borderRight: '1px solid rgba(255,255,255,0.15)' }}>
+                              Phase
+                            </th>
+                            <th style={{ padding: '0.9rem 1.1rem', fontWeight: 600, width: '30%', verticalAlign: 'top', borderRight: '1px solid rgba(255,255,255,0.15)' }}>
+                              Suggested Media
+                            </th>
+                            <th style={{ padding: '0.9rem 1.1rem', fontWeight: 600, width: '50%', verticalAlign: 'top' }}>
+                              Supporting Media
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {study.appendixA.table?.phases.map((ph, phIdx) => (
+                            <tr key={phIdx} style={{ borderBottom: '1px solid #E5DFD2', backgroundColor: phIdx % 2 === 0 ? '#FAF3E2' : '#FFFFFF' }}>
+                              <td style={{ padding: '1.1rem', fontWeight: 700, color: '#1A1714', verticalAlign: 'top', borderRight: '1px solid #E5DFD2' }}>
+                                {ph.phase}
+                              </td>
+                              <td style={{ padding: '1.1rem', verticalAlign: 'top', borderRight: '1px solid #E5DFD2' }}>
+                                <div style={{ fontStyle: 'italic', color: '#C88528', lineHeight: 1.55 }}>
+                                  {ph.suggestedMedia}
                                 </div>
-                                <div style={{ padding: '0.75rem', fontSize: '0.78rem', color: '#443F39', lineHeight: 1.4, fontWeight: 500 }}>
-                                  {img.caption || img.alt}
+                              </td>
+                              <td style={{ padding: '1.1rem', verticalAlign: 'top' }}>
+                                <div style={{
+                                  display: 'grid',
+                                  gridTemplateColumns: ph.images.length === 1 ? '1fr' : 'repeat(auto-fit, minmax(180px, 1fr))',
+                                  gap: '1rem'
+                                }}>
+                                  {ph.images.map((img, iIdx) => (
+                                    <div 
+                                      key={iIdx}
+                                      style={{
+                                        backgroundColor: '#FFFFFF',
+                                        border: '1px solid #DFD8C9',
+                                        borderRadius: '8px',
+                                        overflow: 'hidden',
+                                        cursor: 'pointer',
+                                        transition: 'transform 0.2s, box-shadow 0.2s',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                                      }}
+                                      className="hover-lift"
+                                      onClick={() => setSelectedImage(img)}
+                                    >
+                                      <div style={{ height: '170px', overflow: 'hidden', backgroundColor: '#F3EFE6', position: 'relative' }}>
+                                        <img 
+                                          src={img.src} 
+                                          alt={img.alt}
+                                          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                                        />
+                                        <div style={{ position: 'absolute', right: '6px', bottom: '6px', backgroundColor: 'rgba(0,0,0,0.65)', color: '#FFFFFF', padding: '3px 6px', borderRadius: '4px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                                          <Maximize2 size={11} />
+                                          <span>Zoom</span>
+                                        </div>
+                                      </div>
+                                      <div style={{ padding: '0.65rem', fontSize: '0.76rem', color: '#443F39', lineHeight: 1.4, fontWeight: 500 }}>
+                                        {img.caption || img.alt}
+                                      </div>
+                                    </div>
+                                  ))}
                                 </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </BorderGlow>
@@ -783,7 +826,7 @@ export default function StudyDetailPage() {
               {/* 1. Executive Abstract */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#5A9B80']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.75rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#234338', marginBottom: '0.75rem' }}>
                     1. Executive Overview & Abstract
                   </h2>
                   <p style={{ fontSize: '0.98rem', color: '#3A3631', lineHeight: 1.65, marginBottom: '1rem' }}>
@@ -800,7 +843,7 @@ export default function StudyDetailPage() {
               {/* 2. Observational Methodology */}
               <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#386684']}>
                 <div className="card-pad-medium">
-                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.75rem' }}>
+                  <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#234338', marginBottom: '0.75rem' }}>
                     2. Methodology & Observational Setting
                   </h2>
                   <p style={{ fontSize: '0.96rem', color: '#443F39', lineHeight: 1.65, marginBottom: '1rem' }}>
@@ -823,7 +866,7 @@ export default function StudyDetailPage() {
               {study.keyFindings && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#DDBB7B', '#4D8A74']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#1A1714', marginBottom: '1rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#234338', marginBottom: '1rem' }}>
                       3. Key Findings & Empirical Observations
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
@@ -859,7 +902,7 @@ export default function StudyDetailPage() {
               {study.implications && (
                 <BorderGlow borderRadius={12} backgroundColor="#FFFFFF" colors={['#234338', '#C99428', '#386684']}>
                   <div className="card-pad-medium">
-                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#1A1714', marginBottom: '0.75rem' }}>
+                    <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.45rem', fontWeight: 600, color: '#234338', marginBottom: '0.75rem' }}>
                       4. Practical Implications for Parents & Guides
                     </h2>
                     <p style={{ fontSize: '0.96rem', color: '#3A3631', lineHeight: 1.65, margin: 0 }}>

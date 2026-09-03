@@ -2,14 +2,14 @@
 import React from 'react';
 
 export default function NidoLogo({ size = 'medium', className = '', style = {} }) {
-  const heights = {
+  const dimensions = {
     small: '42px',
-    medium: '52px',
-    large: '72px',
-    xlarge: '92px'
+    medium: '56px',
+    large: '84px',
+    xlarge: '108px'
   };
 
-  const height = typeof size === 'number' ? `${size}px` : (heights[size] || heights.medium);
+  const dim = typeof size === 'number' ? `${size}px` : (dimensions[size] || dimensions.medium);
 
   return (
     <div 
@@ -17,23 +17,26 @@ export default function NidoLogo({ size = 'medium', className = '', style = {} }
       style={{
         display: 'inline-flex',
         alignItems: 'center',
+        justifyContent: 'center',
+        width: dim,
+        height: dim,
+        borderRadius: '50%',
+        overflow: 'hidden',
         background: 'transparent',
         userSelect: 'none',
+        flexShrink: 0,
         ...style
       }}
     >
       <img 
-        src="/images/logo-transparent.png" 
-        alt="Nido Research Institute — Understanding Childhood. Nurturing Tomorrow."
+        src="/images/logo.png" 
+        alt="Nido — A Montessori Preschool"
         style={{
-          height: height,
-          width: 'auto',
-          maxWidth: '100%',
-          objectFit: 'contain',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
           display: 'block',
-          background: 'transparent',
-          border: 'none',
-          boxShadow: 'none',
+          borderRadius: '50%',
           mixBlendMode: 'multiply'
         }}
       />

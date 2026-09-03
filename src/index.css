@@ -88,12 +88,19 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
+/* Typography Defaults: Headings in Green, Subheadings in Black, Italics in Orange */
+h1, h2, .heading-green {
   font-family: var(--font-serif-heading);
-  color: var(--text-heading);
-  font-weight: 500;
-  line-height: 1.25;
+  color: var(--color-forest, #234338) !important;
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+h3, h4, h5, h6, .subheading-black {
+  font-family: var(--font-serif-heading);
+  color: #1A1714 !important;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 h1 {
@@ -114,10 +121,31 @@ h4 {
   font-size: clamp(1.1rem, 1.4vw, 1.3rem);
 }
 
-p {
+em, i, cite, q, blockquote, .italic-orange, .italic, [style*="font-style: italic"], [style*="font-style:italic"], [style*="fontStyle: 'italic'"], [style*="fontStyle: \"italic\""] {
+  color: var(--color-ochre, #C88528) !important;
+}
+
+p, article p, .article-content p, .reader-content-card p, .content-body p {
   color: var(--text-secondary);
   font-size: 0.98rem;
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Ensure headings, navigation, buttons, lists, and short controls are never stretched */
+h1, h2, h3, h4, h5, h6,
+header, nav, footer,
+button, .btn,
+ul, ol, li,
+.badge, .pill, .tag,
+.no-justify,
+.search-modal {
+  text-align: left;
+  text-align-last: auto;
 }
 
 a {
@@ -1027,7 +1055,7 @@ img {
 
 .featured-studies-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
   gap: 1.75rem !important;
 }
 

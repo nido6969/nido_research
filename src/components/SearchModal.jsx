@@ -193,7 +193,7 @@ export default function SearchModal({ isOpen, onClose }) {
                     key={t.id}
                     onClick={() => {
                       onClose();
-                      navigate('/parent-insights');
+                      navigate(`/parent-insights/${t.slug || t.id}`);
                     }}
                     style={{
                       padding: '0.75rem 1rem',
@@ -235,7 +235,7 @@ export default function SearchModal({ isOpen, onClose }) {
                     key={res.id}
                     onClick={() => {
                       onClose();
-                      navigate('/resources');
+                      navigate(`/resources/${res.slug || res.id}`);
                     }}
                     style={{
                       padding: '0.75rem 1rem',

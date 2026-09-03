@@ -63,12 +63,15 @@ export default function NewsletterSection() {
                   Stay Informed
                 </h2>
                 <p style={{
-                  fontSize: '0.92rem',
-                  color: '#C6D9CE',
-                  lineHeight: 1.5,
+                  fontSize: '0.9rem',
+                  color: '#D4E5DC',
+                  lineHeight: 1.55,
                   marginBottom: 0
                 }}>
-                  Subscribe for new studies, classroom observations, educator reflections and research updates from Nido Montessori.
+                  <strong style={{ color: '#FFFFFF', display: 'block', marginBottom: '0.35rem' }}>
+                    Research should be shared, not kept behind closed doors.
+                  </strong>
+                  Subscribe for new studies, classroom observations, educator reflections and research updates from Nido Montessori. If you are a research enthusiast, you don’t have to keep coming back to check what’s the new research we have come up with rather you subscribe and we notify you every time there’s a EUREKA moment with us!
                 </p>
               </div>
 
@@ -131,8 +134,9 @@ export default function NewsletterSection() {
                       </SpecularButton>
                     </div>
                     <div style={{
-                      fontSize: '0.74rem',
-                      color: '#A5C4B4',
+                      fontSize: '0.76rem',
+                      fontStyle: 'italic',
+                      color: '#E8A33E',
                       marginTop: '0.55rem'
                     }}>
                       We respect your privacy. Unsubscribe anytime.

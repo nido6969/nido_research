@@ -1,50 +1,54 @@
-'use client';
 import React from 'react';
 import { useNavigate } from '../lib/navigation';
-import { ArrowRight, Compass, Layers, Eye, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Lightbulb, Search } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
-export default function ExploreWorkSection({ onOpenSection }) {
+export default function ExploreWorkSection({ onOpenSearch }) {
   const navigate = useNavigate();
 
   const exploreCards = [
     {
-      id: "approach",
-      title: "Our Research Approach",
-      subtitle: "How we observe, formulate questions and evaluate evidence.",
-      linkText: "Learn about our approach",
-      path: "/research/approach",
-      icon: <Compass size={22} color="#234338" />
+      id: "publications",
+      title: "Publications",
+      eyebrow: "From our questions to the wider world.",
+      subtitle: "Explore our research papers, studies, reports and published work covering Montessori education, early childhood development and children's everyday learning.",
+      linkText: "Browse Publications",
+      path: "/publications",
+      icon: <BookOpen size={22} color="#234338" />
     },
     {
-      id: "areas",
-      title: "Research Areas",
-      subtitle: "Eight focus areas spanning cognitive, social, emotional and motor development.",
-      linkText: "Explore our areas of study",
-      path: "/research/areas",
-      icon: <Layers size={22} color="#234338" />
+      id: "projects",
+      title: "Ongoing Projects",
+      eyebrow: "Some questions take longer to answer.",
+      subtitle: "Discover the research projects we are currently observing, documenting and developing—with some studies growing directly from questions that arise in our classrooms.",
+      linkText: "View Projects",
+      path: "/projects",
+      icon: <Clock size={22} color="#234338" />
     },
     {
-      id: "methodology",
-      title: "Observation & Methodology",
-      subtitle: "The tools, frameworks and ethical guidelines shaping our classroom observations.",
-      linkText: "See our methodology",
-      path: "/research/methodology",
-      icon: <Eye size={22} color="#234338" />
+      id: "insights",
+      title: "Educator Insights",
+      eyebrow: "What happens when educators slow down and observe?",
+      subtitle: "Read reflections, conversations and practical insights from educators working closely with children every day.",
+      linkText: "Read Insights",
+      path: "/parent-insights",
+      icon: <Lightbulb size={22} color="#234338" />
     },
     {
-      id: "ethics",
-      title: "Research Ethics",
-      subtitle: "How we safeguard children's privacy, dignity and authentic learning experiences.",
-      linkText: "Read our ethics framework",
-      path: "/research/ethics",
-      icon: <ShieldCheck size={22} color="#234338" />
+      id: "search",
+      title: "Search the Archive",
+      eyebrow: "Curiosity leaves a trail.",
+      subtitle: "Explore our growing archive of studies, observations, questions, topics and classroom research.",
+      linkText: "Search Now",
+      path: "/publications",
+      isSearch: true,
+      icon: <Search size={22} color="#234338" />
     }
   ];
 
   const handleCardClick = (card) => {
-    if (onOpenSection) {
-      onOpenSection(card.id);
+    if (card.isSearch && onOpenSearch) {
+      onOpenSearch();
     } else {
       navigate(card.path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -119,10 +123,23 @@ export default function ExploreWorkSection({ onOpenSection }) {
                   fontWeight: 600,
                   color: '#1A1714',
                   lineHeight: 1.25,
-                  marginBottom: '0.75rem'
+                  marginBottom: '0.35rem'
                 }}>
                   {card.title}
                 </h3>
+
+                {/* Eyebrow */}
+                {card.eyebrow && (
+                  <div style={{
+                    fontSize: '0.85rem',
+                    fontStyle: 'italic',
+                    fontWeight: 500,
+                    color: '#C88528',
+                    marginBottom: '0.65rem'
+                  }}>
+                    {card.eyebrow}
+                  </div>
+                )}
 
                 {/* Subtitle / Excerpt */}
                 <p style={{

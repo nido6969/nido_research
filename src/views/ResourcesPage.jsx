@@ -1,336 +1,370 @@
 'use client';
 import React, { useState } from 'react';
 import { Link } from '../lib/navigation';
-import { ChevronRight, CheckCircle2, Send } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Send, BookOpen } from 'lucide-react';
 import { RESOURCES_DATA } from '../data/researchData';
 import SpecularButton from '../components/SpecularButton';
-import BorderGlow from '../components/BorderGlow';
-import GradientWaves from '../components/GradientWaves';
+import TrustBar from '../components/TrustBar';
 import SEO from '../components/SEO';
 
 export default function ResourcesPage() {
-  const [activeArticleIndex, setActiveArticleIndex] = useState(0);
   const [suggestionTopic, setSuggestionTopic] = useState('');
   const [isSuggested, setIsSuggested] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const currentArticle = RESOURCES_DATA.articles[activeArticleIndex] || RESOURCES_DATA.articles[0];
-
-  const handleSuggestionSubmit = (e) => {
+  const handleSuggestionSubmit = async (e) => {
     e.preventDefault();
     if (suggestionTopic.trim()) {
-      setIsSuggested(true);
-      setTimeout(() => {
-        setIsSuggested(false);
-        setSuggestionTopic('');
-      }, 5000);
+      setSubmitting(true);
+      try {
+        await fetch('/api/suggest-topic', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic: suggestionTopic })
+        });
+      } catch (err) {
+        console.error('Error sending suggestion:', err);
+      } finally {
+        setSubmitting(false);
+        setIsSuggested(true);
+        setTimeout(() => {
+          setIsSuggested(false);
+          setSuggestionTopic('');
+        }, 6000);
+      }
     }
   };
 
   return (
-    <div style={{ backgroundColor: '#FAF3E2', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
+    <div style={{ backgroundColor: '#FAF8F5', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
       <SEO 
-        title={`${currentArticle.title || 'Montessori Resources'} | Pedagogical Articles & Guides`}
-        description={currentArticle.preview || 'Comprehensive pedagogical articles, guides, and practical resources for Montessori parents and educators.'}
-        keywords="Montessori Resources, Montessori Articles, Early Childhood Guides Hyderabad, Maria Montessori Method, Prepared Environment Guides"
+        title="Montessori Resources & Pedagogical Guides | NIDO Research"
+        description="Explore 10 in-depth pedagogical guides for parents and educators on independence, Montessori toys, concentration, movement, and emotional regulation."
+        keywords="Montessori Resources, Montessori Articles, Early Childhood Guides, Maria Montessori Method, Prepared Environment Guides"
       />
       <div className="container-standard">
         
         {/* Breadcrumbs */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: '#7E766D', marginBottom: '1rem' }}>
-          <Link to="/" style={{ color: '#554F47', textDecoration: 'none' }}>Home</Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: '#7E766D', marginBottom: '1.25rem' }}>
+          <Link href="/" style={{ color: '#554F47', textDecoration: 'none' }}>Home</Link>
           <span>/</span>
           <span style={{ color: '#234338', fontWeight: 600 }}>Resources</span>
         </div>
 
-        {/* Hero Section with Interactive <GradientWaves /> */}
-        <div className="page-hero-banner" style={{ backgroundColor: '#1E351C' }}>
-          {/* GradientWaves Background Canvas */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'auto' }}>
-            <GradientWaves
-              horizonColor="#5A713C"
-              waveColor="#C88528"
-              crestColor="#F5DDA9"
-              speed={0.4}
-              amplitude={2.5}
-              waveScale={0.6}
-              waveRatio={0.9}
-              swell={35}
-              turbulence={20}
-              tilt={1.11}
-              zoom={1.0}
-              height={5.5}
-              fogDepth={15}
-              detail="medium"
-              brightness={1.05}
-              opacity={0.9}
-              mouseInteraction={true}
-              parallaxStrength={0.5}
-              grain={true}
-              grainIntensity={0.04}
-            />
+        {/* Hero Section (No background, clean open typography) */}
+        <div style={{
+          backgroundColor: 'transparent',
+          border: 'none',
+          boxShadow: 'none',
+          padding: '0.5rem 0 1.5rem 0',
+          marginBottom: '1.5rem'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.45rem',
+            fontSize: '0.72rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#234338',
+            backgroundColor: '#EEF4F0',
+            padding: '0.3rem 0.75rem',
+            borderRadius: '9999px',
+            border: '1px solid #D6E4DB',
+            marginBottom: '0.75rem'
+          }}>
+            <span>{RESOURCES_DATA.hero.eyebrow}</span>
           </div>
-
-          {/* Foreground Hero Content */}
-          <div className="page-hero-content">
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.45rem',
-              fontSize: '0.72rem',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: '#FFFFFF',
-              backgroundColor: 'rgba(18, 45, 36, 0.75)',
-              backdropFilter: 'blur(8px)',
-              padding: '0.25rem 0.75rem',
-              borderRadius: '9999px',
-              border: '1px solid rgba(221, 187, 123, 0.35)',
-              marginBottom: '0.75rem'
-            }}>
-              <span style={{ color: '#DDBB7B' }}>{RESOURCES_DATA.hero.eyebrow}</span>
-            </div>
-            
-            <h1 style={{
-              fontFamily: "'Newsreader', Georgia, serif",
-              fontSize: 'clamp(2rem, 3.8vw, 3.2rem)',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              lineHeight: 1.15,
-              marginBottom: '0.75rem',
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)'
-            }}>
-              {RESOURCES_DATA.hero.heading}
-            </h1>
-            
-            <p style={{
-              fontSize: '1rem',
-              color: '#F0F7F3',
-              maxWidth: '820px',
-              lineHeight: 1.55,
-              margin: 0,
-              textShadow: '0 1px 6px rgba(0, 0, 0, 0.4)'
-            }}>
-              {RESOURCES_DATA.hero.intro}
+          
+          <h1 style={{
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
+            fontWeight: 700,
+            color: '#234338',
+            lineHeight: 1.2,
+            margin: '0 0 1rem 0'
+          }}>
+            {RESOURCES_DATA.hero.heading}
+          </h1>
+          
+          <div style={{
+            fontSize: '0.96rem',
+            color: '#1A1714',
+            maxWidth: '860px',
+            lineHeight: 1.65,
+            margin: 0
+          }}>
+            <p style={{ marginBottom: '0.65rem' }}>{RESOURCES_DATA.hero.intro}</p>
+            <p style={{ marginBottom: '0.45rem', fontWeight: 600, color: '#234338' }}>{RESOURCES_DATA.hero.subIntro}</p>
+            <ul style={{ listStyle: 'none', paddingLeft: 0, display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '0.85rem' }}>
+              {RESOURCES_DATA.hero.bullets?.map((b, bIdx) => (
+                <li key={bIdx} style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                  <span style={{ color: '#234338', fontWeight: 700 }}>•</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ margin: 0, fontStyle: 'italic', color: '#C88528', fontWeight: 500 }}>
+              {RESOURCES_DATA.hero.closing}
             </p>
           </div>
         </div>
 
-        {/* Mobile Horizontal Selector (Saves Mobile Scrolling) */}
-        <div className="mobile-horizontal-selector">
-          {RESOURCES_DATA.articles.map((art, idx) => {
-            const isActive = activeArticleIndex === idx;
+        {/* Section Header for the 10 Guides */}
+        <div style={{ marginBottom: '1.5rem' }}>
+          <div style={{
+            fontSize: '0.74rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#234338',
+            marginBottom: '0.3rem'
+          }}>
+            PEDAGOGICAL ESSAYS & OBSERVATIONS
+          </div>
+          <h2 style={{
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
+            fontWeight: 700,
+            color: '#234338',
+            margin: '0 0 0.35rem 0'
+          }}>
+            10 In-Depth Question Guides
+          </h2>
+          <p style={{ fontSize: '0.92rem', color: '#1A1714', margin: 0 }}>
+            Select any guide to open the full reflection and practical recommendations.
+          </p>
+        </div>
+
+        {/* 10 Separate Containers (Cards) */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+          gap: '1.5rem',
+          marginBottom: '3.5rem'
+        }}>
+          {RESOURCES_DATA.articles.map((art) => {
+            const previewText = art.sections?.[0]?.content 
+              ? art.sections[0].content.split('\n\n')[0].replace(/\n/g, ' ')
+              : art.subtitle;
+
             return (
-              <button
+              <Link
                 key={art.id}
-                onClick={() => setActiveArticleIndex(idx)}
+                href={`/resources/${art.slug}`}
                 style={{
-                  padding: '0.55rem 0.95rem',
-                  borderRadius: '20px',
-                  backgroundColor: isActive ? '#234338' : '#FFFFFF',
-                  color: isActive ? '#FFFFFF' : '#3A3631',
-                  border: isActive ? '1px solid #234338' : '1px solid #D6D0C4',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  whiteSpace: 'nowrap',
-                  cursor: 'pointer',
-                  flexShrink: 0
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid #E5DFD2',
+                  padding: '1.85rem 2rem',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.25s ease',
+                  boxShadow: '0 4px 16px rgba(24, 21, 18, 0.04)',
+                  position: 'relative'
+                }}
+                className="hover-card-elevate"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.borderColor = '#234338';
+                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(35, 67, 56, 0.12)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = '#E5DFD2';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(24, 21, 18, 0.04)';
                 }}
               >
-                Guide {art.number}: {art.title.split('?')[0].trim()}?
-              </button>
+                <div>
+                  {/* Card Top Metadata Badge */}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginBottom: '1rem'
+                  }}>
+                    <span style={{
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: '#234338',
+                      backgroundColor: '#EEF4F0',
+                      padding: '0.25rem 0.65rem',
+                      borderRadius: '6px',
+                      border: '1px solid #D6E4DB'
+                    }}>
+                      GUIDE {art.number < 10 ? `0${art.number}` : art.number}
+                    </span>
+
+                    <span style={{
+                      fontSize: '0.75rem',
+                      color: '#8A8275',
+                      fontWeight: 500
+                    }}>
+                      Parent Resource
+                    </span>
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 style={{
+                    fontFamily: "'Newsreader', Georgia, serif",
+                    fontSize: '1.25rem',
+                    fontWeight: 700,
+                    color: '#234338',
+                    lineHeight: 1.3,
+                    margin: '0 0 0.5rem 0'
+                  }}>
+                    {art.title}
+                  </h3>
+
+                  {/* Subtitle */}
+                  <div style={{
+                    fontSize: '0.9rem',
+                    fontStyle: 'italic',
+                    color: '#C88528',
+                    fontWeight: 600,
+                    lineHeight: 1.4,
+                    marginBottom: '0.85rem'
+                  }}>
+                    {art.subtitle}
+                  </div>
+
+                  {/* Excerpt Paragraph */}
+                  <p style={{
+                    fontSize: '0.88rem',
+                    color: '#1A1714',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}>
+                    {previewText}
+                  </p>
+                </div>
+
+                {/* Card Action Link */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  fontSize: '0.88rem',
+                  fontWeight: 700,
+                  color: '#234338',
+                  marginTop: '1.5rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid #F0EAE1'
+                }}>
+                  <span>Read Full Guide</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
             );
           })}
         </div>
 
-        {/* Master-Detail Interactive Layout for 9 Full Guides */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1.75rem', alignItems: 'start', marginBottom: '2.5rem' }} className="resources-interactive-layout">
-          
-          {/* Desktop Left Column (Hidden on Mobile) */}
-          <div className="desktop-vertical-selector" style={{ flexDirection: 'column', gap: '0.65rem' }}>
-            <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#888075', marginBottom: '0.15rem' }}>
-              Select a Question Guide (9 Guides)
-            </div>
-            {RESOURCES_DATA.articles.map((art, idx) => {
-              const isActive = activeArticleIndex === idx;
-              return (
-                <BorderGlow
-                  key={art.id}
-                  borderRadius={8}
-                  backgroundColor={isActive ? '#FFFFFF' : '#FAF3E2'}
-                  colors={isActive ? ['#234338', '#C99428', '#4D8A74'] : ['#D6D0C4', '#A89E90', '#ECE7DF']}
-                  onClick={() => setActiveArticleIndex(idx)}
-                  className="hover-lift"
-                >
-                  <div
-                    style={{
-                      padding: '0.85rem 1.1rem',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between'
-                    }}
-                  >
-                    <div>
-                      <div style={{ fontSize: '0.68rem', fontWeight: 700, color: isActive ? '#C99428' : '#968E82', textTransform: 'uppercase' }}>
-                        GUIDE #{art.number}
-                      </div>
-                      <div style={{ fontFamily: "'Newsreader', serif", fontSize: '0.98rem', fontWeight: 600, color: isActive ? '#234338' : '#1A1714', lineHeight: 1.25 }}>
-                        {art.title}
-                      </div>
-                    </div>
-                    <ChevronRight size={16} color={isActive ? '#234338' : '#B8B0A2'} />
-                  </div>
-                </BorderGlow>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Full In-Depth Guide Reader with BorderGlow */}
-          <BorderGlow
-            borderRadius={12}
-            backgroundColor="#FFFFFF"
-            glowRadius={32}
-            colors={['#234338', '#DDBB7B', '#5A9B80']}
-          >
-            <div className="reader-content-card">
-              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
-                RESOURCE GUIDE #{currentArticle.number}
-              </div>
-
-              <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 600, color: '#1A1714', lineHeight: 1.25, marginBottom: '0.45rem' }}>
-                {currentArticle.title}
-              </h2>
-
-              <div style={{ fontSize: '1rem', fontStyle: 'italic', color: '#554F47', marginBottom: '1.5rem', paddingBottom: '0.85rem', borderBottom: '1px solid #ECE7DF' }}>
-                {currentArticle.subtitle}
-              </div>
-
-              {/* Sections of the Guide */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {currentArticle.sections.map((sec, sIdx) => (
-                  <div key={sIdx}>
-                    <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.25rem', fontWeight: 600, color: '#234338', marginBottom: '0.5rem' }}>
-                      {sec.heading}
-                    </h3>
-                    <p style={{ fontSize: '0.96rem', color: '#3A3631', lineHeight: 1.65, margin: 0 }}>
-                      {sec.content}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Navigation Buttons */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1.25rem', borderTop: '1px solid #ECE7DF', flexWrap: 'wrap', gap: '0.75rem' }}>
-                <SpecularButton
-                  disabled={activeArticleIndex === 0}
-                  size="sm"
-                  radius={6}
-                  tint="#FAF3E2"
-                  tintOpacity={1}
-                  textColor="#24201C"
-                  lineColor="#234338"
-                  baseColor="#D6D0C4"
-                  intensity={1.2}
-                  shineSize={14}
-                  onClick={() => setActiveArticleIndex(prev => Math.max(0, prev - 1))}
-                >
-                  ← Previous Guide
-                </SpecularButton>
-
-                <span style={{ fontSize: '0.8rem', color: '#7E766D' }}>
-                  Guide {activeArticleIndex + 1} of {RESOURCES_DATA.articles.length}
-                </span>
-
-                <SpecularButton
-                  disabled={activeArticleIndex === RESOURCES_DATA.articles.length - 1}
-                  size="sm"
-                  radius={6}
-                  tint="#234338"
-                  tintOpacity={1}
-                  textColor="#FFFFFF"
-                  lineColor="#DDBB7B"
-                  baseColor="#143229"
-                  intensity={1.4}
-                  shineSize={14}
-                  onClick={() => setActiveArticleIndex(prev => Math.min(RESOURCES_DATA.articles.length - 1, prev + 1))}
-                >
-                  Next Guide →
-                </SpecularButton>
-              </div>
-
-            </div>
-          </BorderGlow>
-
-        </div>
-
-        {/* Suggest a Topic / Search the Library Box with BorderGlow */}
-        <BorderGlow
-          borderRadius={12}
-          backgroundColor="#234338"
-          glowColor="42 80 80"
-          glowRadius={32}
-          colors={['#DDBB7B', '#2E6351', '#FFE39B']}
-          fillOpacity={0.3}
-        >
-          <div className="card-pad-standard" style={{ color: '#FFFFFF' }}>
-            <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#DDBB7B', marginBottom: '0.35rem' }}>
+        {/* Section 6: Research Library & Topic Suggestion */}
+        <div style={{
+          backgroundColor: '#FFFFFF',
+          borderRadius: '16px',
+          border: '1px solid #E5DFD2',
+          padding: '2.5rem',
+          boxShadow: '0 4px 20px rgba(24, 21, 18, 0.04)'
+        }}>
+          <div style={{ maxWidth: '640px' }}>
+            <div style={{
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: '#234338',
+              marginBottom: '0.35rem'
+            }}>
               {RESOURCES_DATA.librarySearch.eyebrow}
             </div>
-            <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.75rem)', fontWeight: 600, color: '#FFFFFF', marginBottom: '0.5rem' }}>
+            <h2 style={{
+              fontFamily: "'Newsreader', Georgia, serif",
+              fontSize: '1.75rem',
+              fontWeight: 700,
+              color: '#234338',
+              margin: '0 0 0.5rem 0'
+            }}>
               {RESOURCES_DATA.librarySearch.heading}
             </h2>
-            <p style={{ fontSize: '0.92rem', color: '#C6D9CE', maxWidth: '700px', lineHeight: 1.55, marginBottom: '1.25rem' }}>
+            <div style={{
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              color: '#C88528',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              marginBottom: '0.75rem'
+            }}>
+              {RESOURCES_DATA.librarySearch.tagline}
+            </div>
+            <p style={{
+              fontSize: '0.92rem',
+              color: '#1A1714',
+              lineHeight: 1.6,
+              marginBottom: '1.5rem'
+            }}>
               {RESOURCES_DATA.librarySearch.intro}
             </p>
 
-            {isSuggested ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', backgroundColor: 'rgba(255, 255, 255, 0.15)', padding: '0.85rem 1.25rem', borderRadius: '6px' }}>
-                <CheckCircle2 size={18} color="#DDBB7B" />
-                <span style={{ fontSize: '0.9rem' }}>
-                  Thank you! We have logged your request. If we publish a guide on this topic, our research team will notify you.
+            <form onSubmit={handleSuggestionSubmit} style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <input
+                type="text"
+                placeholder={RESOURCES_DATA.librarySearch.inputPlaceholder}
+                value={suggestionTopic}
+                onChange={(e) => setSuggestionTopic(e.target.value)}
+                style={{
+                  flex: '1 1 280px',
+                  padding: '0.75rem 1rem',
+                  borderRadius: '8px',
+                  border: '1px solid #D6D0C4',
+                  backgroundColor: '#FAF8F5',
+                  color: '#1A1714',
+                  fontSize: '0.92rem',
+                  outline: 'none'
+                }}
+              />
+              <SpecularButton type="submit" disabled={submitting}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                  <Send size={15} />
+                  <span>{submitting ? 'Submitting...' : RESOURCES_DATA.librarySearch.buttonText}</span>
                 </span>
+              </SpecularButton>
+            </form>
+
+            {isSuggested && (
+              <div style={{
+                marginTop: '1rem',
+                padding: '0.75rem 1rem',
+                backgroundColor: '#EEF4F0',
+                border: '1px solid #52D19B',
+                borderRadius: '8px',
+                color: '#234338',
+                fontSize: '0.85rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                <CheckCircle2 size={16} color="#234338" />
+                <span>Thank you! Your topic suggestion has been received for our research team.</span>
               </div>
-            ) : (
-              <form onSubmit={handleSuggestionSubmit} style={{ display: 'flex', gap: '0.65rem', maxWidth: '640px', flexWrap: 'wrap', alignItems: 'center' }}>
-                <input
-                  type="text"
-                  required
-                  value={suggestionTopic}
-                  onChange={(e) => setSuggestionTopic(e.target.value)}
-                  placeholder="Suggest a topic (e.g. 'Outdoor Nature Play')..."
-                  style={{
-                    flex: 1,
-                    minWidth: '240px',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '6px',
-                    border: 'none',
-                    outline: 'none',
-                    fontSize: '16px',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif"
-                  }}
-                />
-                
-                <SpecularButton
-                  type="submit"
-                  size="sm"
-                  radius={6}
-                  tint="#C99428"
-                  tintOpacity={1}
-                  textColor="#FFFFFF"
-                  lineColor="#FFE8A3"
-                  baseColor="#A57723"
-                  intensity={1.5}
-                  shineSize={16}
-                >
-                  <span>Suggest Topic</span>
-                  <Send size={14} />
-                </SpecularButton>
-              </form>
             )}
           </div>
-        </BorderGlow>
+        </div>
 
+      </div>
+
+      <div style={{ marginTop: '3.5rem' }}>
+        <TrustBar />
       </div>
     </div>
   );

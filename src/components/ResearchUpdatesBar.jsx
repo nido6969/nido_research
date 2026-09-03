@@ -130,10 +130,21 @@ export default function ResearchUpdatesBar({ onSelectUpdate, onOpenArchive }) {
                       fontWeight: 600,
                       color: '#1A1714',
                       lineHeight: 1.35,
-                      marginBottom: '0.45rem'
+                      marginBottom: '0.35rem'
                     }}>
                       {item.title}
                     </div>
+                    {item.excerpt && (
+                      <p style={{
+                        fontSize: '0.78rem',
+                        color: '#4A453E',
+                        lineHeight: 1.45,
+                        marginBottom: '0.45rem',
+                        margin: '0 0 0.45rem 0'
+                      }}>
+                        {item.excerpt}
+                      </p>
+                    )}
                     <div style={{
                       display: 'inline-flex',
                       alignItems: 'center',

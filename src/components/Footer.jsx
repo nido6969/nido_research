@@ -68,7 +68,7 @@ export default function Footer() {
               marginBottom: '1.5rem',
               maxWidth: '280px'
             }}>
-              A research initiative by Nido Montessori School, Bachupally.
+              A research initiative emerging from the classrooms of Nido Montessori, Bachupally.
             </p>
 
             {/* Social Links in Small Circles */}
@@ -214,7 +214,7 @@ export default function Footer() {
               <li><Link to="/research" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Research</Link></li>
               <li><Link to="/publications" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Publications</Link></li>
               <li><Link to="/projects" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Projects</Link></li>
-              <li><Link to="/parent-insights" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Insights</Link></li>
+              <li><Link to="/parent-insights" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Parent Insights</Link></li>
               <li><Link to="/resources" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>Resources</Link></li>
               <li><Link to="/about" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>About</Link></li>
             </ul>
@@ -245,11 +245,6 @@ export default function Footer() {
                 <a href="https://nidomontessori.in/programs" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#554F47' }}>
                   Programs
                 </a>
-              </li>
-              <li>
-                <Link to="/resources" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>
-                  Parent Resources
-                </Link>
               </li>
               <li>
                 <Link to="/contact" style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}>
