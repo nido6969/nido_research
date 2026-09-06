@@ -2,8 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: '404 - Page Not Found',
-  description: 'The requested page could not be found.',
+  title: 'Page Not Found | NIDO Research Institute',
+  description: 'The requested page or publication could not be found in our research repository.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function NotFound() {

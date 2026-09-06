@@ -8,36 +8,22 @@ import schemaGraphData from '../data/schemaGraph.json';
 export const metadata = {
   metadataBase: new URL('https://research.nidomontessori.in'),
   title: {
-    default: 'NIDO Research Institute | Best Montessori Preschool & Research in Hyderabad',
+    default: 'Nido Montessori Research Institute | Montessori Education Research',
     template: '%s | NIDO Research Institute'
   },
-  description: 'NIDO Research Institute is the premier early childhood development research institute affiliated with Nido Montessori Preschool (Bachupally) and Blue Blocks Complete Montessori School (Gachibowli, Tellapur, Hyderabad). Explore peer-reviewed longitudinal research, authentic AMI Montessori case studies, and naturalistic child observation data.',
+  description: 'NIDO Research Institute conducts naturalistic classroom observations, longitudinal developmental cohorts, and empirical Montessori pedagogical research associated with Nido Montessori Preschool in Bachupally, Hyderabad, India.',
   keywords: [
-    'Best Montessori school in Hyderabad',
-    'Best preschool in Bachupally',
-    'Nido Montessori Preschool Bachupally',
-    'Nido Montessori School Hyderabad',
-    'Blue Blocks School Hyderabad',
-    'Blue Blocks Montessori School',
-    'Best preschool in Miyapur',
-    'Best preschool in Nizampet',
-    'Best preschool in Kukatpally',
-    'Top preschools in Bachupally Hyderabad',
-    'Montessori admissions Hyderabad 2026',
-    'Preschool admissions Bachupally',
-    'AMI Montessori Hyderabad',
-    'IMF Flagship school Hyderabad',
-    'Montessori research institute',
-    'Early childhood education research',
-    'Child development research Hyderabad',
-    'Montessori case study Shobha Goyal',
-    'Executive function in early childhood',
-    'Play based learning Montessori',
-    'Mixed age classroom social development',
-    'Authentic Montessori apparatus',
+    'Nido Montessori Research Institute',
+    'Montessori education research',
+    'Montessori pedagogy',
+    'child development research Hyderabad',
+    'naturalistic classroom observation',
+    'prepared environment',
+    'early childhood development',
+    'Nido Montessori School Bachupally',
     'Shobha Goyal'
   ],
-  authors: [{ name: 'NIDO Research Institute & Nido Montessori Preschool', url: 'https://research.nidomontessori.in' }],
+  authors: [{ name: 'NIDO Research Institute', url: 'https://research.nidomontessori.in' }],
   creator: 'NIDO Research Institute',
   publisher: 'NIDO Research Institute',
   robots: {
@@ -62,8 +48,8 @@ export const metadata = {
     locale: 'en_IN',
     url: 'https://research.nidomontessori.in/',
     siteName: 'NIDO Research Institute',
-    title: 'NIDO Research Institute | Best Montessori Preschool & Research in Hyderabad',
-    description: 'Longitudinal Montessori research, developmental case studies, and naturalistic observation from Nido Montessori Preschool (Bachupally) & Blue Blocks School (Hyderabad).',
+    title: 'Nido Montessori Research Institute | Montessori Education Research',
+    description: 'Empirical early childhood research, authentic Montessori case studies, and naturalistic observation datasets from Nido Montessori Preschool, Bachupally, Hyderabad.',
     images: [
       {
         url: 'https://research.nidomontessori.in/images/logo.png',
@@ -75,9 +61,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@NidoMontessori',
-    title: 'NIDO Research Institute | Nido Montessori Preschool & Blue Blocks School',
-    description: 'Evidence-based early childhood research and authentic AMI Montessori case studies from Hyderabad\'s premier Montessori institutions.',
+    title: 'Nido Montessori Research Institute | Montessori Education Research',
+    description: 'Evidence-based early childhood research and naturalistic Montessori classroom observation from Hyderabad, India.',
     images: ['https://research.nidomontessori.in/images/logo.png'],
   },
   other: {
@@ -102,18 +87,8 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="NIDO Research Institute RSS Feed" href="/feed.xml" />
-        
-        {/* Google Scholar Metadata for Academic Indexing */}
-        <meta name="citation_title" content="Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally" />
-        <meta name="citation_author" content="Shobha Goyal" />
-        <meta name="citation_publication_date" content="2026/08/29" />
-        <meta name="citation_journal_title" content="Nido Research Papers" />
-        <meta name="citation_volume" content="1" />
-        <meta name="citation_issue" content="0" />
-        <meta name="citation_doi" content="10.5281/zenodo.nido.2026.00" />
-        <meta name="citation_pdf_url" content="https://research.nidomontessori.in/Nido_Montessori_Founding_Case_Study.pdf" />
 
-        {/* 810+ Schema.org JSON-LD Knowledge Graph */}
+        {/* Verified Schema.org JSON-LD Knowledge Graph */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraphData) }}

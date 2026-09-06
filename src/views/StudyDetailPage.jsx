@@ -400,6 +400,9 @@ export default function StudyDetailPage() {
                         <img 
                           src={study.figure1.image} 
                           alt={study.figure1.alt}
+                          loading="lazy"
+                          width={780}
+                          height={450}
                           style={{ width: '100%', maxWidth: '780px', height: 'auto', display: 'block' }}
                         />
                         <div style={{ position: 'absolute', right: '8px', bottom: '8px', backgroundColor: 'rgba(0,0,0,0.65)', color: '#FFFFFF', padding: '4px 8px', borderRadius: '4px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -487,6 +490,9 @@ export default function StudyDetailPage() {
                               <img 
                                 src={phase.figure.image} 
                                 alt={phase.figure.alt}
+                                loading="lazy"
+                                width={780}
+                                height={450}
                                 style={{ width: '100%', maxWidth: '780px', height: 'auto', display: 'block' }}
                               />
                               <div style={{ position: 'absolute', right: '8px', bottom: '8px', backgroundColor: 'rgba(0,0,0,0.65)', color: '#FFFFFF', padding: '4px 8px', borderRadius: '4px', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -775,6 +781,9 @@ export default function StudyDetailPage() {
                                         <img 
                                           src={img.src} 
                                           alt={img.alt}
+                                          loading="lazy"
+                                          width={240}
+                                          height={170}
                                           style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
                                         />
                                         <div style={{ position: 'absolute', right: '6px', bottom: '6px', backgroundColor: 'rgba(0,0,0,0.65)', color: '#FFFFFF', padding: '3px 6px', borderRadius: '4px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>

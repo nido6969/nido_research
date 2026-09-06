@@ -90,6 +90,8 @@ export default function TrustBar() {
               <img 
                 src="/images/ami-logo.svg" 
                 alt="Association Montessori Internationale (AMI) Logo" 
+                width={46}
+                height={46}
                 style={{
                   height: '46px',
                   width: 'auto',
@@ -133,6 +135,8 @@ export default function TrustBar() {
               <img 
                 src="/images/imf-logo.png" 
                 alt="Indian Montessori Foundation (IMF) Logo" 
+                width={46}
+                height={46}
                 style={{
                   height: '46px',
                   width: 'auto',

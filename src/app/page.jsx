@@ -1,9 +1,11 @@
 import HomePage from '../views/HomePage';
+import { constructMetadata } from '../lib/seoConfig';
 
-export const metadata = {
-  title: 'Best Montessori Preschool & Research Institute in Hyderabad',
-  description: 'Nido Montessori Preschool Bachupally and Blue Blocks School Hyderabad publish empirical childhood developmental research, authentic AMI Montessori case studies, and naturalistic observation datasets.',
-};
+export const metadata = constructMetadata({
+  title: 'Nido Montessori Research Institute | Montessori Education Research',
+  description: 'NIDO Research Institute conducts naturalistic classroom observations, longitudinal developmental cohorts, and empirical Montessori pedagogical research in Bachupally, Hyderabad.',
+  path: '',
+});
 
 export default function Page() {
   return <HomePage />;

@@ -1,39 +1,41 @@
 # Robots.txt for NIDO Research Institute & Nido Montessori Preschool
-# https://research.nidomontessori.in/
+# Production URL: https://research.nidomontessori.in/
 
 User-agent: *
 Allow: /
+Allow: /images/
 Disallow: /api/
+Disallow: /_next/
 
 User-agent: Googlebot
 Allow: /
+Allow: /images/
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Googlebot-Image
 Allow: /
 Allow: /images/
 
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: Googlebot-News
-Allow: /
-
 User-agent: Bingbot
 Allow: /
+Allow: /images/
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Applebot
 Allow: /
+Allow: /images/
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: DuckDuckBot
 Allow: /
+Allow: /images/
+Disallow: /api/
+Disallow: /_next/
 
-User-agent: YandexBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# AI Crawlers & LLM Agents
+# AI Crawlers & Research Agents
 User-agent: GPTBot
 Allow: /
 

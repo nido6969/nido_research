@@ -22,17 +22,17 @@
 8. Emotional Regulation & Classroom Normalization: The transition from dysregulated energy to joyful, focused purpose in prepared environments.
 
 ## Featured Research Publications & Manuscripts
-- Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally (by Shobha Goyal, DOI: 10.5281/zenodo.nido.2026.01, ORCID: 0009-0004-8823-119X): Comprehensive 30-page longitudinal empirical case study documenting the 5 founding phases (Conceptualization, Site Construction & Registration, Prepared Environment & Sourcing, Human Environment Recruitment & AMI Training, Community Outreach & Admissions). Full text available at https://research.nidomontessori.in/research-studies/building-a-montessori-school-from-the-ground-up-case-study
-- Play-Based Learning & Executive Function in Early Childhood: Longitudinal analysis of Montessori structured self-chosen work on working memory and inhibitory control.
-- Independence in Action: A Montessori Perspective: Naturalistic observational research on early autonomy and problem-solving confidence.
-- The Role of Mixed-Age Classrooms in Social Development: Peer scaffolding and prosocial behavior in 3-to-6 year multi-age communities.
+- Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally (by Shobha Goyal, ORCID: 0009-0002-8830-5476): Comprehensive 30-page longitudinal empirical case study documenting the 5 founding phases (Conceptualization, Site Construction & Registration, Prepared Environment & Sourcing, Human Environment Recruitment & AMI Training, Community Outreach & Admissions). Full text available at https://research.nidomontessori.in/research-studies/building-a-montessori-school-from-the-ground-up-case-study/
+- Play-Based Learning & Executive Function in Early Childhood: Longitudinal analysis of Montessori structured self-chosen work on working memory and inhibitory control (Study in Progress).
+- Independence in Action: A Montessori Perspective: Naturalistic observational research on early autonomy and problem-solving confidence (Study in Progress).
+- The Role of Mixed-Age Classrooms in Social Development: Peer scaffolding and prosocial behavior in 3-to-6 year multi-age communities (Study in Progress).
 
 ## Links & Feeds
 - Full AI Dataset: https://research.nidomontessori.in/llms-full.txt
 - XML Sitemap: https://research.nidomontessori.in/sitemap.xml
-- Research Publications: https://research.nidomontessori.in/publications
-- Ongoing Longitudinal Projects: https://research.nidomontessori.in/projects
-- Parent Observation Insights: https://research.nidomontessori.in/parent-insights
-- Pedagogical Articles: https://research.nidomontessori.in/resources
-- Institutional Background: https://research.nidomontessori.in/about
-- Admissions & Campus Contact: https://research.nidomontessori.in/contact
+- Research Publications: https://research.nidomontessori.in/publications/
+- Ongoing Longitudinal Projects: https://research.nidomontessori.in/projects/
+- Parent Observation Insights: https://research.nidomontessori.in/parent-insights/
+- Pedagogical Articles: https://research.nidomontessori.in/resources/
+- Institutional Background: https://research.nidomontessori.in/about/
+- Admissions & Campus Contact: https://research.nidomontessori.in/contact/

@@ -1,9 +1,11 @@
 import AboutPage from '../../views/AboutPage';
+import { constructMetadata } from '../../lib/seoConfig';
 
-export const metadata = {
-  title: 'About NIDO Research Institute | AMI Flagship Montessori in Hyderabad',
-  description: 'Learn about NIDO Research Institute, our founding story at Nido Montessori Preschool Bachupally, our 6 guiding pedagogical principles, and our partnership with Blue Blocks School.',
-};
+export const metadata = constructMetadata({
+  title: 'About the Institute & Guiding Principles | NIDO Research Institute',
+  description: 'Learn about NIDO Research Institute, our founding story emerging from Nido Montessori Preschool Bachupally, and our six guiding principles for child-centered observational research.',
+  path: 'about',
+});
 
 export default function Page() {
   return <AboutPage />;

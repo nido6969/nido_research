@@ -94,6 +94,8 @@ export default function FeaturedStudySection({ onSelectPaper, onViewAll }) {
                     <img 
                       src={card.image} 
                       alt={card.title} 
+                      width={380}
+                      height={215}
                       loading="lazy"
                       style={{
                         width: '100%',

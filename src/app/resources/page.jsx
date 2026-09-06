@@ -1,9 +1,11 @@
 import ResourcesPage from '../../views/ResourcesPage';
+import { constructMetadata } from '../../lib/seoConfig';
 
-export const metadata = {
-  title: 'Montessori Resources & Pedagogical Guides | NIDO Research',
-  description: 'Comprehensive pedagogical articles, guides, and practical resources for Montessori parents and educators.',
-};
+export const metadata = constructMetadata({
+  title: 'Educational Articles & Prepared Environment Guides | NIDO Research Institute',
+  description: 'Curated pedagogical essays, practical parenting reflections, and observation guides on the prepared environment and child development.',
+  path: 'resources',
+});
 
 export default function Page() {
   return <ResourcesPage />;

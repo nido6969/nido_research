@@ -11,6 +11,15 @@ export default function NidoLogo({ size = 'medium', className = '', style = {} }
 
   const dim = typeof size === 'number' ? `${size}px` : (dimensions[size] || dimensions.medium);
 
+  const numericDims = {
+    small: 42,
+    medium: 56,
+    large: 84,
+    xlarge: 108
+  };
+
+  const dimNum = typeof size === 'number' ? size : (numericDims[size] || 56);
+
   return (
     <div 
       className={`nido-brand-logo ${className}`.trim()}
@@ -30,7 +39,9 @@ export default function NidoLogo({ size = 'medium', className = '', style = {} }
     >
       <img 
         src="/images/logo.png" 
-        alt="Nido — A Montessori Preschool"
+        alt="Nido Montessori Logo"
+        width={dimNum}
+        height={dimNum}
         style={{
           width: '100%',
           height: '100%',
