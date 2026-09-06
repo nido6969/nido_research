@@ -8,27 +8,33 @@ import schemaGraphData from '../data/schemaGraph.json';
 export const metadata = {
   metadataBase: new URL('https://research.nidomontessori.in'),
   title: {
-    default: 'NIDO Research Institute | Nido Montessori Preschool & Blue Blocks School Hyderabad',
+    default: 'NIDO Research Institute | Best Montessori Preschool & Research in Hyderabad',
     template: '%s | NIDO Research Institute'
   },
   description: 'NIDO Research Institute is the premier early childhood development research institute affiliated with Nido Montessori Preschool (Bachupally) and Blue Blocks Complete Montessori School (Gachibowli, Tellapur, Hyderabad). Explore peer-reviewed longitudinal research, authentic AMI Montessori case studies, and naturalistic child observation data.',
   keywords: [
-    'Nido Montessori',
-    'Nido Montessori Preschool',
-    'Nido Montessori School Bachupally',
-    'Blue Blocks School',
-    'Blue Blocks Montessori School',
-    'Blue Blocks Hyderabad',
     'Best Montessori school in Hyderabad',
     'Best preschool in Bachupally',
-    'Best preschool in Hyderabad',
-    'Montessori schools in Hyderabad',
+    'Nido Montessori Preschool Bachupally',
+    'Nido Montessori School Hyderabad',
+    'Blue Blocks School Hyderabad',
+    'Blue Blocks Montessori School',
+    'Best preschool in Miyapur',
+    'Best preschool in Nizampet',
+    'Best preschool in Kukatpally',
+    'Top preschools in Bachupally Hyderabad',
+    'Montessori admissions Hyderabad 2026',
+    'Preschool admissions Bachupally',
     'AMI Montessori Hyderabad',
     'IMF Flagship school Hyderabad',
-    'child development research Hyderabad',
     'Montessori research institute',
-    'early childhood education research',
-    'Montessori case study',
+    'Early childhood education research',
+    'Child development research Hyderabad',
+    'Montessori case study Shobha Goyal',
+    'Executive function in early childhood',
+    'Play based learning Montessori',
+    'Mixed age classroom social development',
+    'Authentic Montessori apparatus',
     'Shobha Goyal'
   ],
   authors: [{ name: 'NIDO Research Institute & Nido Montessori Preschool', url: 'https://research.nidomontessori.in' }],
@@ -56,7 +62,7 @@ export const metadata = {
     locale: 'en_IN',
     url: 'https://research.nidomontessori.in/',
     siteName: 'NIDO Research Institute',
-    title: 'NIDO Research Institute | Nido Montessori Preschool & Blue Blocks School Hyderabad',
+    title: 'NIDO Research Institute | Best Montessori Preschool & Research in Hyderabad',
     description: 'Longitudinal Montessori research, developmental case studies, and naturalistic observation from Nido Montessori Preschool (Bachupally) & Blue Blocks School (Hyderabad).',
     images: [
       {
@@ -77,8 +83,8 @@ export const metadata = {
   other: {
     'geo.region': 'IN-TG',
     'geo.placename': 'Bachupally, Hyderabad, Telangana, India',
-    'geo.position': '17.5367;78.3846',
-    'ICBM': '17.5367, 78.3846',
+    'geo.position': '17.553145;78.3838549',
+    'ICBM': '17.553145, 78.3838549',
   },
 };
 
@@ -96,6 +102,18 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="NIDO Research Institute RSS Feed" href="/feed.xml" />
+        
+        {/* Google Scholar Metadata for Academic Indexing */}
+        <meta name="citation_title" content="Building a Montessori School from the Ground Up: An Observational Case Study of the Founding Phases of Nido Montessori Preschool, Bachupally" />
+        <meta name="citation_author" content="Shobha Goyal" />
+        <meta name="citation_publication_date" content="2026/08/29" />
+        <meta name="citation_journal_title" content="Nido Research Papers" />
+        <meta name="citation_volume" content="1" />
+        <meta name="citation_issue" content="0" />
+        <meta name="citation_doi" content="10.5281/zenodo.nido.2026.00" />
+        <meta name="citation_pdf_url" content="https://research.nidomontessori.in/Nido_Montessori_Founding_Case_Study.pdf" />
+
+        {/* 810+ Schema.org JSON-LD Knowledge Graph */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraphData) }}

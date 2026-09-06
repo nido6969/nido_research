@@ -1,9 +1,65 @@
+# Robots.txt for NIDO Research Institute & Nido Montessori Preschool
+# https://research.nidomontessori.in/
+
 User-agent: *
 Allow: /
+Disallow: /api/
 
-# Canonical Sitemap
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI Crawlers & LLM Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Canonical Sitemaps & Feeds
 Sitemap: https://research.nidomontessori.in/sitemap.xml
+Sitemap: https://research.nidomontessori.in/feed.xml
 
-# LLMs & AI Crawler Knowledge Documents
+# LLM Documentation
 # https://llmstxt.org/
-# Discover full AI dataset at /llms.txt and /llms-full.txt
+# AI Knowledge Graph: https://research.nidomontessori.in/llms.txt
+# Comprehensive AI Knowledge: https://research.nidomontessori.in/llms-full.txt

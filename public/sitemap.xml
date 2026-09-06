@@ -4,76 +4,76 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Home Page -->
+  <!-- Core Institution & Home -->
   <url>
     <loc>https://research.nidomontessori.in/</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
   </url>
 
   <!-- Major Founding Research Paper: Case Study -->
   <url>
     <loc>https://research.nidomontessori.in/research-studies/building-a-montessori-school-from-the-ground-up-case-study</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
   </url>
 
-  <!-- Research Main & Subtabs -->
+  <!-- Research Main Hub & Subtabs -->
   <url>
     <loc>https://research.nidomontessori.in/research</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://research.nidomontessori.in/research/approach</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://research.nidomontessori.in/research/areas</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://research.nidomontessori.in/research/methodology</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://research.nidomontessori.in/research/ethics</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- Publications Catalog & Studies -->
+  <!-- Publications Catalog & Longitudinal Studies -->
   <url>
     <loc>https://research.nidomontessori.in/publications</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://research.nidomontessori.in/research-studies/play-based-learning-and-executive-function-in-early-childhood</loc>
-    <lastmod>2026-08-29</lastmod>
+    <loc>https://research.nidomontessori.in/research-studies/play-based-learning-executive-function</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://research.nidomontessori.in/research-studies/independence-in-action-a-montessori-perspective</loc>
-    <lastmod>2026-08-29</lastmod>
+    <loc>https://research.nidomontessori.in/research-studies/independence-in-action-montessori</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://research.nidomontessori.in/research-studies/the-role-of-mixed-age-classrooms-in-social-development</loc>
-    <lastmod>2026-08-29</lastmod>
+    <loc>https://research.nidomontessori.in/research-studies/mixed-age-classrooms-social-development</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -81,39 +81,153 @@
   <!-- Projects & Observations -->
   <url>
     <loc>https://research.nidomontessori.in/projects</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Parent Insights Hub & All 10 Topics -->
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/independence</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/order-and-concentration</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/movement</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/toilet-learning</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/food-and-self-feeding</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/screen-time</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/language-development</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/big-feelings</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/sleep-and-routines</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/parent-insights/play</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Parent Insights & Practical Guides -->
-  <url>
-    <loc>https://research.nidomontessori.in/parent-insights</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Resources & Articles -->
+  <!-- Resources Hub & In-Depth Articles -->
   <url>
     <loc>https://research.nidomontessori.in/resources</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/why-does-my-child-want-to-do-everything-by-themselves</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/how-do-we-talk-so-our-child-listens</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/what-does-normalization-mean</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/how-to-prepare-a-home-environment</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/understanding-the-three-hour-work-cycle</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/discipline-without-punishment-or-rewards</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/the-absorbent-mind-explained</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/why-montessori-does-not-use-grades</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://research.nidomontessori.in/resources/transitioning-from-toddler-to-primary</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
-  <!-- About Institution & Contact -->
+  <!-- About & Contact Pages -->
   <url>
     <loc>https://research.nidomontessori.in/about</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://research.nidomontessori.in/contact</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
 </urlset>

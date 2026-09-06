@@ -23,7 +23,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection 
         onExploreClick={() => {
-          navigate('/research-studies/founding-phases-nido-bachupally');
+          navigate('/research-studies/building-a-montessori-school-from-the-ground-up-case-study');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onAboutClick={() => {
