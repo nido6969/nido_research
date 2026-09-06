@@ -23,7 +23,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection 
         onExploreClick={() => {
-          navigate('/research-studies/play-based-learning-executive-function');
+          navigate('/research-studies/founding-phases-nido-bachupally');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onAboutClick={() => {

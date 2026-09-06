@@ -24,7 +24,7 @@ export const INSTITUTION_INFO = {
     phone: "9618853888",
     formattedPhone: "+91 96188 53888",
     address: "Nido Montessori School, Bachupally, Hyderabad, Telangana",
-    mapsUrl: "https://maps.app.goo.gl/RWANXVExPMoDvgXv9",
+    mapsUrl: "https://maps.app.goo.gl/naRP5GC3BFH92j5v6",
     tagline: "A research initiative emerging from the classrooms of Nido Montessori, Bachupally."
   }
 };
@@ -430,7 +430,7 @@ export const FEATURED_STUDIES = [
     title: "Play-Based Learning & Executive Function in Early Childhood",
     question: "What happens when children are given meaningful opportunities to play, choose, move and solve problems?",
     summary: "This study explores the relationship between play-based experiences and developing executive-function skills such as attention, working memory, cognitive flexibility and self-regulation in early childhood.",
-    image: "/images/study-play.jpg",
+    image: "/images/ChatGPT Image Sep 6, 2026, 09_09_08 AM.png",
     areaName: "Executive Function & Play",
     doi: "10.5281/zenodo.nido.2026.01",
     status: "Published",
@@ -458,7 +458,7 @@ export const FEATURED_STUDIES = [
     title: "Independence in Action: A Montessori Perspective",
     question: "Independence does not appear suddenly. It grows through hundreds of small opportunities to try, repeat, make decisions and do things for oneself.",
     summary: "This observational study explores how Montessori environments support children's developing independence and confidence in everyday classroom life.",
-    image: "/images/study-independence.jpg",
+    image: "/images/ChatGPT Image Sep 6, 2026, 09_10_44 AM.png",
     areaName: "Independence & Autonomy",
     doi: "10.5281/zenodo.nido.2026.02",
     status: "Observational Study",
@@ -486,7 +486,7 @@ export const FEATURED_STUDIES = [
     title: "The Role of Mixed-Age Classrooms in Social Development",
     question: "What happens when younger and older children learn alongside one another?",
     summary: "This study explores how mixed-age Montessori communities create opportunities for cooperation, leadership, empathy, observation and learning through social relationships.",
-    image: "/images/study-mixed-age.jpg",
+    image: "/images/ChatGPT Image Sep 6, 2026, 09_11_34 AM.png",
     areaName: "Social Development & Mixed-Age",
     doi: "10.5281/zenodo.nido.2026.03",
     status: "Research Study",
@@ -1303,7 +1303,7 @@ export const ABOUT_DATA = {
     email: "info@nidomontessori.in",
     phone: "9618853888",
     visit: "Nido Montessori School, Bachupally, Hyderabad, Telangana",
-    mapsUrl: "https://maps.app.goo.gl/RWANXVExPMoDvgXv9",
+    mapsUrl: "https://maps.app.goo.gl/naRP5GC3BFH92j5v6",
     tagline: "A research initiative emerging from the classrooms of Nido Montessori, Bachupally."
   }
 };

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from '../lib/navigation';
 import { MapPin, Mail, Phone, X, Shield, FileText } from 'lucide-react';
 import NidoLogo from './NidoLogo';
+import GoogleMiniMap from './GoogleMiniMap';
 
 // Crisp SVG icons for social platforms
 const LinkedinIcon = () => (
@@ -269,7 +270,7 @@ export default function Footer() {
               <MapPin size={17} color="#C99428" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
               <div>
                 <a 
-                  href="https://maps.app.goo.gl/RWANXVExPMoDvgXv9" 
+                  href="https://maps.app.goo.gl/naRP5GC3BFH92j5v6" 
                   target="_blank" 
                   rel="noreferrer"
                   style={{ color: 'inherit', textDecoration: 'none' }}
@@ -292,6 +293,11 @@ export default function Footer() {
               <a href="tel:9618853888" style={{ color: 'inherit' }}>
                 +91 96188 53888
               </a>
+            </div>
+
+            {/* Google Mini Map */}
+            <div style={{ marginTop: '1.1rem' }}>
+              <GoogleMiniMap height={125} borderRadius={8} />
             </div>
           </div>
 

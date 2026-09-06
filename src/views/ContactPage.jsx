@@ -5,6 +5,7 @@ import { MapPin, Mail, Phone, Send, CheckCircle2, ExternalLink } from 'lucide-re
 import { INSTITUTION_INFO } from '../data/researchData';
 import SpecularButton from '../components/SpecularButton';
 import BorderGlow from '../components/BorderGlow';
+import GoogleMiniMap from '../components/GoogleMiniMap';
 import SEO from '../components/SEO';
 
 export default function ContactPage() {
@@ -279,6 +280,11 @@ export default function ContactPage() {
                         {INSTITUTION_INFO.contact.formattedPhone}
                       </a>
                     </div>
+                  </div>
+
+                  {/* Google Mini Map */}
+                  <div style={{ marginTop: '0.5rem' }}>
+                    <GoogleMiniMap height={190} borderRadius={8} />
                   </div>
                 </div>
               </div>

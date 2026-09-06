@@ -192,7 +192,6 @@ export default function ResearchAreasExplorer() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {RESEARCH_AREAS_DATA.map((area) => {
               const isActive = area.id === selectedId;
-              const ItemIcon = area.icon;
 
               return (
                 <button
@@ -202,8 +201,7 @@ export default function ResearchAreasExplorer() {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.85rem',
-                    padding: '0.75rem 1rem',
+                    padding: '0.75rem 1.15rem',
                     borderRadius: '10px',
                     border: 'none',
                     cursor: 'pointer',
@@ -229,16 +227,11 @@ export default function ResearchAreasExplorer() {
                     }
                   }}
                 >
-                  <ItemIcon 
-                    size={17} 
-                    color={isActive ? '#FFFFFF' : 'rgba(240, 244, 242, 0.6)'} 
-                    style={{ flexShrink: 0 }} 
-                  />
                   <span style={{
-                    fontSize: '0.9rem',
+                    fontSize: '0.92rem',
                     fontWeight: isActive ? 700 : 500,
                     letterSpacing: '0.01em',
-                    lineHeight: 1.2
+                    lineHeight: 1.25
                   }}>
                     {area.title}
                   </span>

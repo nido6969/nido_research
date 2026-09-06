@@ -165,8 +165,8 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
               }}
             >
               <img 
-                src="/images/hero-arch.jpg" 
-                alt="Child engaged in Montessori counting beads materials" 
+                src="/images/WhatsApp Image 2026-09-02 at 11.50.47 AM.jpeg" 
+                alt="Nido Montessori classroom environment" 
                 style={{
                   width: '100%',
                   height: '100%',

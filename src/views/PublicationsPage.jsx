@@ -83,69 +83,79 @@ export default function PublicationsPage() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-            {FEATURED_STUDIES.map((study) => (
-              <BorderGlow
-                key={study.id}
-                borderRadius={12}
-                backgroundColor="#FFFFFF"
-                edgeSensitivity={30}
-                glowRadius={30}
-                colors={['#234338', '#DDBB7B', '#4D8A74']}
-                className="study-card hover-lift"
-                onClick={() => navigate(`/research-studies/${study.slug}`)}
-              >
-                <div 
-                  style={{
-                    cursor: 'pointer',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%'
-                  }}
+            {FEATURED_STUDIES.map((study, index) => {
+              const isOriginal = index === 0;
+              return (
+                <BorderGlow
+                  key={study.id}
+                  borderRadius={12}
+                  backgroundColor="#FFFFFF"
+                  edgeSensitivity={28}
+                  glowRadius={30}
+                  colors={['#234338', '#DDBB7B', '#4D8A74']}
+                  className={`study-card ${isOriginal ? 'hover-lift' : ''}`}
+                  onClick={isOriginal ? () => navigate(`/research-studies/${study.slug}`) : undefined}
+                  style={{ cursor: isOriginal ? 'pointer' : 'default' }}
                 >
-                  {/* Photo */}
-                  <div style={{ height: '165px', position: 'relative', overflow: 'hidden', backgroundColor: '#EDE8DE', borderRadius: '12px 12px 0 0' }}>
-                    <img 
-                      src={study.image} 
-                      alt={study.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <span style={{
-                      position: 'absolute',
-                      top: '0.75rem',
-                      left: '0.75rem',
-                      backgroundColor: '#FFFFFF',
-                      color: '#1A1714',
-                      fontSize: '0.62rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      padding: '0.2rem 0.5rem',
-                      borderRadius: '4px',
-                      boxShadow: '0 2px 5px rgba(0,0,0,0.12)'
-                    }}>
-                      {study.badge}
-                    </span>
-                  </div>
+                  <div 
+                    style={{
+                      cursor: isOriginal ? 'pointer' : 'default',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: '100%'
+                    }}
+                  >
+                    {/* Photo */}
+                    <div style={{ height: '165px', position: 'relative', overflow: 'hidden', backgroundColor: '#EDE8DE', borderRadius: '12px 12px 0 0' }}>
+                      <img 
+                        src={study.image} 
+                        alt={study.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        top: '0.75rem',
+                        left: '0.75rem',
+                        backgroundColor: '#FFFFFF',
+                        color: '#1A1714',
+                        fontSize: '0.62rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: '4px',
+                        boxShadow: '0 2px 5px rgba(0,0,0,0.12)'
+                      }}>
+                        {isOriginal ? study.badge : 'IN PROGRESS'}
+                      </span>
+                    </div>
 
-                  {/* Content */}
-                  <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                    <div style={{ fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
-                      {study.status || 'Research Study'} | {study.date}
-                    </div>
-                    <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.15rem', fontWeight: 600, color: '#1A1714', lineHeight: 1.3, marginBottom: '0.5rem' }}>
-                      {study.title}
-                    </h3>
-                    <p style={{ fontSize: '0.84rem', color: '#5C564E', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
-                      {study.summary}
-                    </p>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.84rem', fontWeight: 600, color: '#234338' }}>
-                      <span>Read Publication</span>
-                      <ArrowRight size={13} />
+                    {/* Content */}
+                    <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                      <div style={{ fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
+                        {isOriginal ? (study.status || 'Research Study') : 'Upcoming Study'} | {study.date}
+                      </div>
+                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.15rem', fontWeight: 600, color: '#1A1714', lineHeight: 1.3, marginBottom: '0.5rem' }}>
+                        {study.title}
+                      </h3>
+                      <p style={{ fontSize: '0.84rem', color: '#5C564E', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
+                        {study.summary}
+                      </p>
+                      {isOriginal ? (
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.84rem', fontWeight: 600, color: '#234338' }}>
+                          <span>Read Publication</span>
+                          <ArrowRight size={13} />
+                        </div>
+                      ) : (
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.82rem', fontWeight: 600, color: '#8C857B', userSelect: 'none' }}>
+                          <span>Study in Progress</span>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
-              </BorderGlow>
-            ))}
+                </BorderGlow>
+              );
+            })}
           </div>
         </div>
 
