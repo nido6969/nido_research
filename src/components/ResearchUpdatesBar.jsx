@@ -5,7 +5,7 @@ import { RESEARCH_UPDATES } from '../data/researchData';
 import SpecularButton from './SpecularButton';
 import BorderGlow from './BorderGlow';
 
-export default function ResearchUpdatesBar({ onSelectUpdate, onOpenArchive }) {
+export default function ResearchUpdatesBar({ onOpenArchive }) {
   const getIcon = (idx) => {
     switch (idx % 4) {
       case 0: return <FileText size={16} color="#234338" />;
@@ -70,14 +70,13 @@ export default function ResearchUpdatesBar({ onSelectUpdate, onOpenArchive }) {
               {RESEARCH_UPDATES.map((item, idx) => (
                 <div 
                   key={item.id} 
-                  onClick={() => onSelectUpdate(item)}
                   style={{
                     display: 'flex',
                     gap: '0.9rem',
                     alignItems: 'flex-start',
                     paddingRight: idx < 3 ? '1rem' : '0',
                     borderRight: idx < 3 ? '1px solid #E0DDD2' : 'none',
-                    cursor: 'pointer',
+                    cursor: 'default',
                     padding: '0.5rem',
                     borderRadius: '8px',
                     transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
@@ -85,17 +84,11 @@ export default function ResearchUpdatesBar({ onSelectUpdate, onOpenArchive }) {
                   className="update-item-col"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#FFFFFF';
-                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.06)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    const arrow = e.currentTarget.querySelector('.update-arrow');
-                    if (arrow) arrow.style.transform = 'translateX(3px)';
+                    e.currentTarget.style.boxShadow = '0 4px 14px rgba(0,0,0,0.05)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = 'transparent';
                     e.currentTarget.style.boxShadow = 'none';
-                    e.currentTarget.style.transform = 'none';
-                    const arrow = e.currentTarget.querySelector('.update-arrow');
-                    if (arrow) arrow.style.transform = 'none';
                   }}
                 >
                   {/* Icon in Circle */}
@@ -148,15 +141,20 @@ export default function ResearchUpdatesBar({ onSelectUpdate, onOpenArchive }) {
                     <div style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '0.25rem',
+                      gap: '0.35rem',
                       fontSize: '0.78rem',
                       fontWeight: 600,
-                      color: '#234338'
+                      color: '#8C857B',
+                      userSelect: 'none'
                     }}>
-                      <span>{item.linkText.replace(' →', '')}</span>
-                      <span className="update-arrow" style={{ display: 'inline-flex', transition: 'transform 0.2s ease' }}>
-                        <ArrowRight size={12} />
-                      </span>
+                      <span style={{
+                        width: '6px',
+                        height: '6px',
+                        borderRadius: '50%',
+                        backgroundColor: '#C99428',
+                        display: 'inline-block'
+                      }} />
+                      <span>In Progress</span>
                     </div>
                   </div>
                 </div>

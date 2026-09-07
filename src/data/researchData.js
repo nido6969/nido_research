@@ -513,7 +513,7 @@ export const RESEARCH_UPDATES = [
     date: "20 JUL 2026",
     title: "New Study Published on Play & Executive Function",
     excerpt: "Our latest study explores how children's everyday experiences of play, choice and purposeful activity may support developing executive-function skills.",
-    linkText: "Read More →",
+    linkText: "In Progress",
     targetStudyId: "study-01"
   },
   {
@@ -521,7 +521,7 @@ export const RESEARCH_UPDATES = [
     date: "05 JUL 2026",
     title: "Observation Data From Our Toddler Community",
     excerpt: "A look at what careful observation can reveal about concentration, movement, independence and engagement during the toddler years.",
-    linkText: "Read More →",
+    linkText: "In Progress",
     targetStudyId: "study-02"
   },
   {
@@ -529,7 +529,7 @@ export const RESEARCH_UPDATES = [
     date: "28 JUN 2026",
     title: "Montessori at Home: Parent Perspective Study",
     excerpt: "What does Montessori look like after the child leaves the classroom? This project explores how families understand and carry Montessori principles into everyday home life.",
-    linkText: "Read More →",
+    linkText: "In Progress",
     targetStudyId: "study-03"
   },
   {
@@ -537,7 +537,7 @@ export const RESEARCH_UPDATES = [
     date: "15 JUN 2026",
     title: "Sensorial Exploration & Cognitive Growth",
     excerpt: "An exploration of how children use their senses to understand, classify and make meaning of the world around them.",
-    linkText: "Read More →",
+    linkText: "In Progress",
     targetStudyId: "study-01"
   }
 ];

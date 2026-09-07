@@ -46,16 +46,6 @@ export default function HomePage() {
 
       {/* Research Updates Strip */}
       <ResearchUpdatesBar 
-        onSelectUpdate={(item) => {
-          if (item.targetStudyId) {
-            const study = FEATURED_STUDIES.find(s => s.id === item.targetStudyId);
-            if (study && study.slug) {
-              navigate(`/research-studies/${study.slug}`);
-              return;
-            }
-          }
-          navigate('/publications');
-        }}
         onOpenArchive={() => navigate('/publications')}
       />
 
