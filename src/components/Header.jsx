@@ -236,6 +236,20 @@ export default function Header({ onOpenSearch }) {
             >
               About
             </Link>
+
+            <Link 
+              to="/contact"
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive('/contact') ? 600 : 500,
+                color: isActive('/contact') ? '#234338' : '#554F47',
+                borderBottom: isActive('/contact') ? '2px solid #234338' : '2px solid transparent',
+                padding: '0.4rem 0.15rem'
+              }}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Right Action Items */}
@@ -399,6 +413,20 @@ export default function Header({ onOpenSearch }) {
               }}
             >
               About
+            </Link>
+
+            <Link 
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                fontWeight: isActive('/contact') ? 700 : 500,
+                color: isActive('/contact') ? '#234338' : '#554F47',
+                padding: '0.35rem 0'
+              }}
+            >
+              Contact
             </Link>
             <div style={{ paddingTop: '0.5rem', borderTop: '1px solid #ECE7DF', marginTop: '0.25rem' }}>
               <SpecularButton

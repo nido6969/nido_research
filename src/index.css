@@ -1039,8 +1039,18 @@ img {
 /* Header Navigation Responsiveness */
 .header-desktop-nav {
   display: flex !important;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 1.25vw, 1.35rem);
   align-items: center;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .header-desktop-nav {
+    gap: 0.8rem !important;
+  }
+  .header-desktop-nav a,
+  .header-desktop-nav button {
+    font-size: 0.84rem !important;
+  }
 }
 
 .header-mobile-toggle {
