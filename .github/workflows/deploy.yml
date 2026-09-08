@@ -67,7 +67,8 @@ jobs:
 
           SERVICE_ARN=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceArn" --output text | tr -d '\r')
 
-          python3 -c "import json; json.dump({'AuthenticationConfiguration':{'AccessRoleArn':'$ROLE_ARN'},'AutoDeploymentsEnabled':False,'ImageRepository':{'ImageIdentifier':'$IMAGE:latest','ImageRepositoryType':'ECR','ImageConfiguration':{'Port':'3000','RuntimeEnvironmentVariables':{'HOSTNAME':'0.0.0.0','PORT':'3000'}}}}, open('/tmp/apprunner-source.json','w'))"
+          EXPECTED_IMAGE="$IMAGE:$TAG"
+          python3 -c "import json; json.dump({'AuthenticationConfiguration':{'AccessRoleArn':'$ROLE_ARN'},'AutoDeploymentsEnabled':False,'ImageRepository':{'ImageIdentifier':'$EXPECTED_IMAGE','ImageRepositoryType':'ECR','ImageConfiguration':{'Port':'3000','RuntimeEnvironmentVariables':{'HOSTNAME':'0.0.0.0','PORT':'3000'}}}}, open('/tmp/apprunner-source.json','w'))"
 
           if [ -z "$SERVICE_ARN" ] || [ "$SERVICE_ARN" = "None" ]; then
             echo "Creating App Runner service"
@@ -76,21 +77,23 @@ jobs:
               --source-configuration file:///tmp/apprunner-source.json \
               --instance-configuration Cpu=1024,Memory=2048 \
               --health-check-configuration Protocol=HTTP,Path=/,Interval=10,Timeout=5,HealthyThreshold=1,UnhealthyThreshold=5
+            SERVICE_ARN=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceArn" --output text | tr -d '\r')
           else
-            echo "Updating App Runner service $SERVICE_ARN"
+            echo "Updating App Runner service $SERVICE_ARN to $EXPECTED_IMAGE"
             aws apprunner update-service --service-arn "$SERVICE_ARN" --source-configuration file:///tmp/apprunner-source.json
           fi
 
-          echo "Waiting for App Runner to become RUNNING"
-          for i in $(seq 1 60); do
-            STATUS=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].Status" --output text)
-            URL=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceUrl" --output text)
-            echo "App Runner status=$STATUS url=$URL"
-            if [ "$STATUS" = "RUNNING" ]; then
+          echo "Waiting for App Runner to run $EXPECTED_IMAGE"
+          for i in $(seq 1 70); do
+            STATUS=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].Status" --output text | tr -d '\r')
+            URL=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceUrl" --output text | tr -d '\r')
+            CURRENT=$(aws apprunner describe-service --service-arn "$SERVICE_ARN" --query "Service.SourceConfiguration.ImageRepository.ImageIdentifier" --output text | tr -d '\r')
+            echo "App Runner status=$STATUS image=$CURRENT url=$URL"
+            if [ "$STATUS" = "RUNNING" ] && [ "$CURRENT" = "$EXPECTED_IMAGE" ]; then
               echo "Site URL: https://$URL"
               exit 0
             fi
-            if [ "$STATUS" = "CREATE_FAILED" ] || [ "$STATUS" = "DELETE_FAILED" ]; then
+            if [ "$STATUS" = "CREATE_FAILED" ] || [ "$STATUS" = "DELETE_FAILED" ] || [ "$STATUS" = "UPDATE_FAILED" ]; then
               echo "App Runner failed: $STATUS"
               exit 1
             fi
