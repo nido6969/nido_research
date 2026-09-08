@@ -1,0 +1,100 @@
+name: Research site CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: research-site-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Lint, build, and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      AWS_REGION: ap-south-1
+      ECR_REPOSITORY: nido-research
+      APP_RUNNER_SERVICE: nido-research
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-fund --no-audit
+      - run: npm run lint
+      - run: npm run build
+
+      - name: Configure AWS credentials
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Login to Amazon ECR
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build image, push to ECR, and deploy App Runner
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        env:
+          ACCOUNT_ID: "228998979054"
+        run: |
+          set -euo pipefail
+          IMAGE="${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}"
+          TAG="${GITHUB_SHA::12}"
+          aws ecr describe-repositories --repository-names "$ECR_REPOSITORY" >/dev/null 2>&1 || \
+            aws ecr create-repository --repository-name "$ECR_REPOSITORY" --image-scanning-configuration scanOnPush=true
+          docker build \
+            -t "$IMAGE:$TAG" \
+            -t "$IMAGE:latest" \
+            .
+          docker push "$IMAGE:$TAG"
+          docker push "$IMAGE:latest"
+
+          ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/AppRunnerECRAccessRole"
+          if ! aws iam get-role --role-name AppRunnerECRAccessRole >/dev/null 2>&1; then
+            aws iam create-role --role-name AppRunnerECRAccessRole --assume-role-policy-document file://scripts/apprunner-ecr-trust.json
+            aws iam attach-role-policy --role-name AppRunnerECRAccessRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSAppRunnerServicePolicyForECRAccess
+            sleep 12
+          fi
+
+          SERVICE_ARN=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceArn" --output text | tr -d '\r')
+
+          python3 -c "import json; json.dump({'AuthenticationConfiguration':{'AccessRoleArn':'$ROLE_ARN'},'AutoDeploymentsEnabled':False,'ImageRepository':{'ImageIdentifier':'$IMAGE:latest','ImageRepositoryType':'ECR','ImageConfiguration':{'Port':'3000','RuntimeEnvironmentVariables':{'HOSTNAME':'0.0.0.0','PORT':'3000'}}}}, open('/tmp/apprunner-source.json','w'))"
+
+          if [ -z "$SERVICE_ARN" ] || [ "$SERVICE_ARN" = "None" ]; then
+            echo "Creating App Runner service"
+            aws apprunner create-service \
+              --service-name "$APP_RUNNER_SERVICE" \
+              --source-configuration file:///tmp/apprunner-source.json \
+              --instance-configuration Cpu=1024,Memory=2048 \
+              --health-check-configuration Protocol=HTTP,Path=/,Interval=10,Timeout=5,HealthyThreshold=1,UnhealthyThreshold=5
+          else
+            echo "Updating App Runner service $SERVICE_ARN"
+            aws apprunner update-service --service-arn "$SERVICE_ARN" --source-configuration file:///tmp/apprunner-source.json
+          fi
+
+          echo "Waiting for App Runner to become RUNNING"
+          for i in $(seq 1 60); do
+            STATUS=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].Status" --output text)
+            URL=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${APP_RUNNER_SERVICE}'].ServiceUrl" --output text)
+            echo "App Runner status=$STATUS url=$URL"
+            if [ "$STATUS" = "RUNNING" ]; then
+              echo "Site URL: https://$URL"
+              exit 0
+            fi
+            if [ "$STATUS" = "CREATE_FAILED" ] || [ "$STATUS" = "DELETE_FAILED" ]; then
+              echo "App Runner failed: $STATUS"
+              exit 1
+            fi
+            sleep 15
+          done
+          echo "Timed out waiting for App Runner"
+          exit 1

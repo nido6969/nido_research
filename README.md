@@ -27,7 +27,7 @@ The official web platform for **NIDO Research Institute**, the dedicated academi
    ```bash
    npm run dev
    ```
-   Open `http://localhost:5173` in your browser.
+   Open `http://localhost:3000` in your browser.
 
 4. **Build for production**:
    ```bash
@@ -41,37 +41,19 @@ The official web platform for **NIDO Research Institute**, the dedicated academi
 
 ---
 
-## ⚡ Deployment to Vercel
+## Deployment (AWS App Runner)
 
-This repository is fully optimized for continuous deployment on **Vercel**.
+Push to `main` on [nido6969/nido_research](https://github.com/nido6969/nido_research.git). GitHub Actions lints, builds a Docker image, pushes it to Amazon ECR, and updates App Runner.
 
-### Option 1: Automatic Deployment via Git (Recommended)
+See [docs/deploy-aws.md](docs/deploy-aws.md). Watch runs at [Actions](https://github.com/nido6969/nido_research/actions).
 
-1. Push your repository to **GitHub**, **GitLab**, or **Bitbucket**.
-2. Go to [Vercel Dashboard](https://vercel.com/new) and click **"Add New Project"**.
-3. Import your git repository.
-4. Vercel will automatically detect the settings from `vercel.json` and `package.json`:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. Click **Deploy**.
+Local production server after `npm run build`:
 
-### Option 2: Deploy via Vercel CLI
+```bash
+npm run start
+```
 
-1. Install Vercel CLI globally:
-   ```bash
-   npm install -g vercel
-   ```
-
-2. Deploy directly from your workspace:
-   ```bash
-   vercel
-   ```
-
-3. For production deployment:
-   ```bash
-   vercel --prod
-   ```
+Open `http://localhost:3000`.
 
 ---
 

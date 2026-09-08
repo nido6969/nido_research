@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+dist
+.git
+.github
+.cursor
+*.md
+.env
+.env.*
+!.env.example
+.vercel
