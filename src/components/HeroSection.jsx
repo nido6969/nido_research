@@ -165,7 +165,7 @@ export default function HeroSection({ onExploreClick, onAboutClick }) {
               }}
             >
               <img 
-                src="/images/WhatsApp Image 2026-09-02 at 11.50.47 AM.jpeg" 
+                src="/images/hero-classroom.jpeg" 
                 alt="Nido Montessori prepared classroom environment in Bachupally, Hyderabad" 
                 width={800}
                 height={600}
