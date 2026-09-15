@@ -20,4 +20,15 @@ Use the same IAM user as the school site (`website`). Region: `ap-south-1`.
 
 ECR repository: `nido-research`. App Runner service: `nido-research`.
 
+## WordPress (EasyWP)
+
+Research publications come from the **same EasyWP** as the school blogs. Do **not** point `research.nidomontessori.in` at WordPress.
+
+1. In WordPress: **Posts → Categories → Add** name `Research`, slug `research`.
+2. Write in the visual editor only. Assign the **Research** category.
+3. The post appears on [https://research.nidomontessori.in/publications](https://research.nidomontessori.in/publications).
+4. Editors can open [https://research.nidomontessori.in/publications/wp-admin](https://research.nidomontessori.in/publications/wp-admin) — it redirects to EasyWP admin.
+
+School `/blogs` hides posts in the `research` category so the two sites stay separate.
+
 Pull requests only lint and build; they do not go live until merged to `main`.

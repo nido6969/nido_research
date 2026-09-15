@@ -19,7 +19,7 @@ import BorderGlow from '../components/BorderGlow';
 import NidoLogo from '../components/NidoLogo';
 import SEO from '../components/SEO';
 
-export default function StudyDetailPage() {
+export default function StudyDetailPage({ study: studyProp }) {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [citationFormat, setCitationFormat] = useState('APA');
@@ -28,8 +28,70 @@ export default function StudyDetailPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Find matching study by slug or id
-  const study = FEATURED_STUDIES.find(s => s.slug === slug || s.id === slug) || FEATURED_STUDIES[0];
+  const study = studyProp || FEATURED_STUDIES.find(s => s.slug === slug || s.id === slug) || FEATURED_STUDIES[0];
   const isCaseStudy = Boolean(study.phases || study.literatureReview || study.id === 'study-founding-case-study');
+
+  if (study.fromCms) {
+    return (
+      <div style={{ backgroundColor: '#FAF3E2', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '5rem' }}>
+        <SEO
+          title={study.title}
+          description={study.summary}
+          keywords={`${study.title}, Montessori Research, Nido Montessori Research Institute`}
+          article={true}
+          author="NIDO Research Institute"
+        />
+        <div className="container-standard">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: '#7E766D', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#554F47', textDecoration: 'none' }}>Home</Link>
+            <span>/</span>
+            <Link to="/publications" style={{ color: '#554F47', textDecoration: 'none' }}>Publications</Link>
+            <span>/</span>
+            <span style={{ color: '#234338', fontWeight: 600 }}>{study.date}</span>
+          </div>
+          <button
+            onClick={() => navigate('/publications')}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              background: 'none',
+              border: 'none',
+              fontSize: '0.86rem',
+              fontWeight: 600,
+              color: '#234338',
+              cursor: 'pointer',
+              marginBottom: '1.25rem',
+              padding: 0
+            }}
+          >
+            <ArrowLeft size={16} />
+            <span>Back to All Publications</span>
+          </button>
+          <BorderGlow
+            borderRadius={14}
+            backgroundColor="#FFFFFF"
+            glowRadius={36}
+            colors={['#234338', '#C99428', '#5E9480']}
+          >
+            <article style={{ padding: 'clamp(1.25rem, 3vw, 2.25rem)' }}>
+              <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C99428', marginBottom: '0.75rem' }}>
+                {study.tag || 'Research'} · {study.date}
+              </div>
+              <h1 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 700, color: '#234338', lineHeight: 1.2, margin: '0 0 1.25rem 0' }}>
+                {study.title}
+              </h1>
+              <div
+                className="wp-research-content"
+                style={{ fontSize: '1.02rem', color: '#1A1714', lineHeight: 1.75 }}
+                dangerouslySetInnerHTML={{ __html: study.html || '' }}
+              />
+            </article>
+          </BorderGlow>
+        </div>
+      </div>
+    );
+  }
 
   const citations = {
     APA: study.apaCitation || `${study.author || 'Shobha Goyal'}. (2026). ${study.title}. Nido Montessori Research Updates. DOI: ${study.doi || '10.5281/zenodo.nido.2026.01'}`,

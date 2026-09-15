@@ -10,6 +10,10 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN mkdir -p public
 ENV NEXT_TELEMETRY_DISABLED=1
+ARG WORDPRESS_URL=https://blognidomontessoriin-14b003d.ingress-earth.ewp.live
+ARG WORDPRESS_CATEGORY=research
+ENV WORDPRESS_URL=$WORDPRESS_URL
+ENV WORDPRESS_CATEGORY=$WORDPRESS_CATEGORY
 RUN npm run build
 
 FROM node:22-alpine AS runner
@@ -18,6 +22,10 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
+ARG WORDPRESS_URL=https://blognidomontessoriin-14b003d.ingress-earth.ewp.live
+ARG WORDPRESS_CATEGORY=research
+ENV WORDPRESS_URL=$WORDPRESS_URL
+ENV WORDPRESS_CATEGORY=$WORDPRESS_CATEGORY
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 COPY --from=build /app/public ./public
 COPY --from=build --chown=nextjs:nodejs /app/.next/standalone ./

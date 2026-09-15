@@ -7,8 +7,9 @@ import BorderGlow from '../components/BorderGlow';
 import TrustBar from '../components/TrustBar';
 import SEO from '../components/SEO';
 
-export default function PublicationsPage() {
+export default function PublicationsPage({ cmsStudies = [] }) {
   const navigate = useNavigate();
+  const wordpressStudies = Array.isArray(cmsStudies) ? cmsStudies : [];
 
   return (
     <div style={{ backgroundColor: '#FAF8F5', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
@@ -70,6 +71,79 @@ export default function PublicationsPage() {
             {PUBLICATIONS_DATA.hero.closing}
           </div>
         </div>
+
+        {/* WordPress research posts */}
+        {wordpressStudies.length > 0 && (
+          <div style={{ marginBottom: '2.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <h2 style={{ fontFamily: "'Newsreader', serif", fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)', fontWeight: 600, color: '#234338' }}>
+                Latest from the Institute
+              </h2>
+              <span style={{ fontSize: '0.82rem', color: '#7E766D' }}>
+                Showing {wordpressStudies.length} Publication{wordpressStudies.length === 1 ? '' : 's'}
+              </span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+              {wordpressStudies.map((study) => (
+                <BorderGlow
+                  key={study.id}
+                  borderRadius={12}
+                  backgroundColor="#FFFFFF"
+                  edgeSensitivity={28}
+                  glowRadius={30}
+                  colors={['#234338', '#DDBB7B', '#4D8A74']}
+                  className="study-card hover-lift"
+                  onClick={() => navigate(`/research-studies/${study.slug}`)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <div style={{ height: '165px', position: 'relative', overflow: 'hidden', backgroundColor: '#EDE8DE', borderRadius: '12px 12px 0 0' }}>
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        width={360}
+                        height={165}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        top: '0.75rem',
+                        left: '0.75rem',
+                        backgroundColor: '#FFFFFF',
+                        color: '#1A1714',
+                        fontSize: '0.62rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: '4px',
+                        boxShadow: '0 2px 5px rgba(0,0,0,0.12)'
+                      }}>
+                        {study.badge || 'PUBLISHED'}
+                      </span>
+                    </div>
+                    <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                      <div style={{ fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
+                        {study.tag || 'Research'} | {study.date}
+                      </div>
+                      <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.15rem', fontWeight: 600, color: '#1A1714', lineHeight: 1.3, marginBottom: '0.5rem' }}>
+                        {study.title}
+                      </h3>
+                      <p style={{ fontSize: '0.84rem', color: '#5C564E', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
+                        {study.summary}
+                      </p>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.84rem', fontWeight: 600, color: '#234338' }}>
+                        <span>Read Publication</span>
+                        <ArrowRight size={13} />
+                      </div>
+                    </div>
+                  </div>
+                </BorderGlow>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Featured Research Studies Catalog */}
         <div style={{ marginBottom: '2.5rem' }}>

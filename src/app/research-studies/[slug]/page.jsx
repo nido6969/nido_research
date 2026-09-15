@@ -1,6 +1,18 @@
+import { notFound } from 'next/navigation';
 import StudyDetailPage from '../../../views/StudyDetailPage';
 import { FEATURED_STUDIES } from '../../../data/researchData';
 import { constructMetadata } from '../../../lib/seoConfig';
+import { getResearchArticles } from '../../../lib/wordpress';
+
+export const revalidate = 15;
+export const dynamicParams = true;
+
+async function findStudy(slug) {
+  const cmsStudies = await getResearchArticles();
+  const fromCms = cmsStudies.find((study) => study.slug === slug || study.id === slug);
+  if (fromCms) return fromCms;
+  return FEATURED_STUDIES.find((study) => study.slug === slug || study.id === slug) || null;
+}
 
 export function generateStaticParams() {
   return FEATURED_STUDIES.map((study) => ({
@@ -11,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  const study = FEATURED_STUDIES.find((s) => s.slug === slug || s.id === slug) || FEATURED_STUDIES[0];
+  const study = (await findStudy(slug)) || FEATURED_STUDIES[0];
 
   const title = study.shortTitle ? `${study.shortTitle} — Research Study` : study.title;
   const description = study.summary || (study.fullOverview ? study.fullOverview.slice(0, 160) : '');
@@ -38,6 +50,9 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default function Page() {
-  return <StudyDetailPage />;
+export default async function Page({ params }) {
+  const resolvedParams = await params;
+  const study = await findStudy(resolvedParams?.slug);
+  if (!study) notFound();
+  return <StudyDetailPage study={study} />;
 }
