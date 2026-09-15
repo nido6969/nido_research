@@ -8,10 +8,10 @@ export const revalidate = 15;
 export const dynamicParams = true;
 
 async function findStudy(slug) {
+  const fromFeatured = FEATURED_STUDIES.find((study) => study.slug === slug || study.id === slug);
+  if (fromFeatured) return fromFeatured;
   const cmsStudies = await getResearchArticles();
-  const fromCms = cmsStudies.find((study) => study.slug === slug || study.id === slug);
-  if (fromCms) return fromCms;
-  return FEATURED_STUDIES.find((study) => study.slug === slug || study.id === slug) || null;
+  return cmsStudies.find((study) => study.slug === slug || study.id === slug) || null;
 }
 
 export function generateStaticParams() {

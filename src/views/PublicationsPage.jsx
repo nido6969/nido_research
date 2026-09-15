@@ -9,7 +9,10 @@ import SEO from '../components/SEO';
 
 export default function PublicationsPage({ cmsStudies = [] }) {
   const navigate = useNavigate();
-  const wordpressStudies = Array.isArray(cmsStudies) ? cmsStudies : [];
+  const featuredSlugs = new Set(FEATURED_STUDIES.map((study) => study.slug).filter(Boolean));
+  const wordpressStudies = (Array.isArray(cmsStudies) ? cmsStudies : []).filter(
+    (study) => !featuredSlugs.has(study.slug),
+  );
 
   return (
     <div style={{ backgroundColor: '#FAF8F5', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
@@ -157,8 +160,7 @@ export default function PublicationsPage({ cmsStudies = [] }) {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-            {FEATURED_STUDIES.map((study, index) => {
-              const isOriginal = index === 0;
+            {FEATURED_STUDIES.map((study) => {
               return (
                 <BorderGlow
                   key={study.id}
@@ -167,13 +169,13 @@ export default function PublicationsPage({ cmsStudies = [] }) {
                   edgeSensitivity={28}
                   glowRadius={30}
                   colors={['#234338', '#DDBB7B', '#4D8A74']}
-                  className={`study-card ${isOriginal ? 'hover-lift' : ''}`}
-                  onClick={isOriginal ? () => navigate(`/research-studies/${study.slug}`) : undefined}
-                  style={{ cursor: isOriginal ? 'pointer' : 'default' }}
+                  className="study-card hover-lift"
+                  onClick={() => navigate(`/research-studies/${study.slug}`)}
+                  style={{ cursor: 'pointer' }}
                 >
                   <div 
                     style={{
-                      cursor: isOriginal ? 'pointer' : 'default',
+                      cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
                       height: '100%'
@@ -203,14 +205,14 @@ export default function PublicationsPage({ cmsStudies = [] }) {
                         borderRadius: '4px',
                         boxShadow: '0 2px 5px rgba(0,0,0,0.12)'
                       }}>
-                        {isOriginal ? study.badge : 'IN PROGRESS'}
+                        {study.badge || 'PUBLISHED'}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                       <div style={{ fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', color: '#C99428', marginBottom: '0.35rem' }}>
-                        {isOriginal ? (study.status || 'Research Study') : 'Upcoming Study'} | {study.date}
+                        {study.status || 'Research Study'} | {study.date}
                       </div>
                       <h3 style={{ fontFamily: "'Newsreader', serif", fontSize: '1.15rem', fontWeight: 600, color: '#1A1714', lineHeight: 1.3, marginBottom: '0.5rem' }}>
                         {study.title}
@@ -218,16 +220,10 @@ export default function PublicationsPage({ cmsStudies = [] }) {
                       <p style={{ fontSize: '0.84rem', color: '#5C564E', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
                         {study.summary}
                       </p>
-                      {isOriginal ? (
-                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.84rem', fontWeight: 600, color: '#234338' }}>
-                          <span>Read Publication</span>
-                          <ArrowRight size={13} />
-                        </div>
-                      ) : (
-                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.82rem', fontWeight: 600, color: '#8C857B', userSelect: 'none' }}>
-                          <span>Study in Progress</span>
-                        </div>
-                      )}
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.84rem', fontWeight: 600, color: '#234338' }}>
+                        <span>Read Publication</span>
+                        <ArrowRight size={13} />
+                      </div>
                     </div>
                   </div>
                 </BorderGlow>
