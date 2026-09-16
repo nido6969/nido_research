@@ -1,15 +1,42 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from '../lib/navigation';
-import { Search, ChevronDown, ExternalLink, Menu, X, ArrowRight } from 'lucide-react';
+import { Search, ChevronDown, ExternalLink, Menu, X } from 'lucide-react';
 import NidoLogo from './NidoLogo';
 import SpecularButton from './SpecularButton';
+import SearchModal from './SearchModal';
 
 export default function Header({ onOpenSearch }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [researchDropdownOpen, setResearchDropdownOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Listen for global keyboard shortcuts (Ctrl+K, Cmd+K, /) and custom event 'open-nido-search'
+  useEffect(() => {
+    const handleOpenSearch = () => setSearchModalOpen(true);
+    window.addEventListener('open-nido-search', handleOpenSearch);
+
+    const handleKeyDown = (e) => {
+      // Ctrl+K or Cmd+K
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchModalOpen(true);
+      }
+      // Slash key when not typing in an input or textarea
+      if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+        e.preventDefault();
+        setSearchModalOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('open-nido-search', handleOpenSearch);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const isActive = (path) => {
     if (path === '/') return location.pathname === '/';
@@ -256,7 +283,10 @@ export default function Header({ onOpenSearch }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
             {/* Search Icon Button */}
             <button 
-              onClick={onOpenSearch}
+              onClick={() => {
+                setSearchModalOpen(true);
+                if (onOpenSearch) onOpenSearch();
+              }}
               style={{
                 background: 'none',
                 border: 'none',
@@ -277,7 +307,8 @@ export default function Header({ onOpenSearch }) {
                 e.currentTarget.style.color = '#4A463F';
                 e.currentTarget.style.backgroundColor = 'transparent';
               }}
-              aria-label="Search research archive"
+              title="Search research archive (Ctrl+K or /)"
+              aria-label="Search research archive (Ctrl+K or /)"
             >
               <Search size={18} />
             </button>
@@ -294,7 +325,9 @@ export default function Header({ onOpenSearch }) {
                 baseColor="#143229"
                 intensity={1.4}
                 shineSize={16}
-                onClick={() => window.open('https://nidomontessori.in', '_blank')}
+                href="https://www.nidomontessori.in/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span>Visit Nido</span>
                 <ExternalLink size={12} />
@@ -323,6 +356,44 @@ export default function Header({ onOpenSearch }) {
             flexDirection: 'column',
             gap: '0.65rem'
           }}>
+            {/* Quick Search trigger in mobile drawer */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setSearchModalOpen(true);
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                backgroundColor: '#FAF3E2',
+                border: '1px solid #E5DAC0',
+                borderRadius: '8px',
+                padding: '0.65rem 0.9rem',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                color: '#234338',
+                cursor: 'pointer',
+                width: '100%',
+                textAlign: 'left',
+                marginBottom: '0.35rem'
+              }}
+            >
+              <Search size={16} color="#234338" />
+              <span>Search Research & Archive...</span>
+              <kbd style={{
+                marginLeft: 'auto',
+                fontSize: '0.68rem',
+                fontFamily: 'monospace',
+                backgroundColor: '#EDE5D5',
+                color: '#5C5549',
+                padding: '0.15rem 0.4rem',
+                borderRadius: '4px',
+                border: '1px solid #D6CCB9'
+              }}>
+                Ctrl+K
+              </kbd>
+            </button>
             <Link 
               to="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -439,10 +510,10 @@ export default function Header({ onOpenSearch }) {
                 baseColor="#143229"
                 intensity={1.4}
                 shineSize={16}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  window.open('https://nidomontessori.in', '_blank');
-                }}
+                href="https://www.nidomontessori.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 style={{ width: '100%', justifyContent: 'center' }}
               >
                 <span>Visit Nido Montessori</span>
@@ -452,6 +523,12 @@ export default function Header({ onOpenSearch }) {
           </div>
         )}
       </div>
+
+      {/* Interactive Global Search Modal */}
+      <SearchModal 
+        isOpen={searchModalOpen} 
+        onClose={() => setSearchModalOpen(false)} 
+      />
     </header>
   );
 }

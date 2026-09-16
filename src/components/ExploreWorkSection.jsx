@@ -47,8 +47,12 @@ export default function ExploreWorkSection({ onOpenSearch }) {
   ];
 
   const handleCardClick = (card) => {
-    if (card.isSearch && onOpenSearch) {
-      onOpenSearch();
+    if (card.isSearch) {
+      if (onOpenSearch) {
+        onOpenSearch();
+      } else if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('open-nido-search'));
+      }
     } else {
       navigate(card.path);
       window.scrollTo({ top: 0, behavior: 'smooth' });

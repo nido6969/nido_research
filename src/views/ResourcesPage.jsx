@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Link } from '../lib/navigation';
-import { ArrowRight, CheckCircle2, Send, BookOpen } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Send } from 'lucide-react';
 import { RESOURCES_DATA } from '../data/researchData';
 import SpecularButton from '../components/SpecularButton';
 import TrustBar from '../components/TrustBar';
@@ -39,7 +39,7 @@ export default function ResourcesPage() {
     <div style={{ backgroundColor: '#FAF8F5', minHeight: '100vh', paddingTop: '1.5rem', paddingBottom: '4rem' }}>
       <SEO 
         title="Montessori Resources & Pedagogical Guides | NIDO Research"
-        description="Explore 10 in-depth pedagogical guides for parents and educators on independence, Montessori toys, concentration, movement, and emotional regulation."
+        description="Explore 9 in-depth pedagogical guides for parents and educators on independence, Montessori toys, concentration, movement, and emotional regulation."
         keywords="Montessori Resources, Montessori Articles, Early Childhood Guides, Maria Montessori Method, Prepared Environment Guides"
       />
       <div className="container-standard">
@@ -95,23 +95,11 @@ export default function ResourcesPage() {
             lineHeight: 1.65,
             margin: 0
           }}>
-            <p style={{ marginBottom: '0.65rem' }}>{RESOURCES_DATA.hero.intro}</p>
-            <p style={{ marginBottom: '0.45rem', fontWeight: 600, color: '#234338' }}>{RESOURCES_DATA.hero.subIntro}</p>
-            <ul style={{ listStyle: 'none', paddingLeft: 0, display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '0.85rem' }}>
-              {RESOURCES_DATA.hero.bullets?.map((b, bIdx) => (
-                <li key={bIdx} style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
-                  <span style={{ color: '#234338', fontWeight: 700 }}>•</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <p style={{ margin: 0, fontStyle: 'italic', color: '#C88528', fontWeight: 500 }}>
-              {RESOURCES_DATA.hero.closing}
-            </p>
+            <p style={{ margin: 0 }}>{RESOURCES_DATA.hero.intro}</p>
           </div>
         </div>
 
-        {/* Section Header for the 10 Guides */}
+        {/* Section Header for the 9 Guides */}
         <div style={{ marginBottom: '1.5rem' }}>
           <div style={{
             fontSize: '0.74rem',
@@ -130,14 +118,14 @@ export default function ResourcesPage() {
             color: '#234338',
             margin: '0 0 0.35rem 0'
           }}>
-            10 In-Depth Question Guides
+            9 In-Depth Question Guides
           </h2>
           <p style={{ fontSize: '0.92rem', color: '#1A1714', margin: 0 }}>
             Select any guide to open the full reflection and practical recommendations.
           </p>
         </div>
 
-        {/* 10 Separate Containers (Cards) */}
+        {/* 9 Separate Containers (Cards) */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
@@ -145,9 +133,8 @@ export default function ResourcesPage() {
           marginBottom: '3.5rem'
         }}>
           {RESOURCES_DATA.articles.map((art) => {
-            const previewText = art.sections?.[0]?.content 
-              ? art.sections[0].content.split('\n\n')[0].replace(/\n/g, ' ')
-              : art.subtitle;
+            const previewText = art.contentBlocks?.[0]?.text
+              || (art.sections?.[0]?.content ? art.sections[0].content.split('\n\n')[0].replace(/\n/g, ' ') : art.subtitle);
 
             return (
               <Link
@@ -225,9 +212,8 @@ export default function ResourcesPage() {
                   {/* Subtitle */}
                   <div style={{
                     fontSize: '0.9rem',
-                    fontStyle: 'italic',
-                    color: '#C88528',
-                    fontWeight: 600,
+                    color: '#554F47',
+                    fontWeight: 500,
                     lineHeight: 1.4,
                     marginBottom: '0.85rem'
                   }}>
@@ -247,6 +233,21 @@ export default function ResourcesPage() {
                   }}>
                     {previewText}
                   </p>
+
+                  {/* Concluding Orange Italic Line at bottom of each topic card */}
+                  {art.orangeItalicLine && (
+                    <div style={{
+                      fontSize: '0.84rem',
+                      fontStyle: 'italic',
+                      color: '#C88528',
+                      lineHeight: 1.45,
+                      marginTop: '1rem',
+                      paddingTop: '0.75rem',
+                      borderTop: '1px dashed #EAE3D5'
+                    }}>
+                      {art.orangeItalicLine}
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Action Link */}
@@ -268,6 +269,8 @@ export default function ResourcesPage() {
             );
           })}
         </div>
+
+
 
         {/* Section 6: Research Library & Topic Suggestion */}
         <div style={{

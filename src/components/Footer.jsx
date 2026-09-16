@@ -233,18 +233,33 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               <li>
-                <a href="https://nidomontessori.in" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#554F47' }}>
+                <a 
+                  href="https://www.nidomontessori.in/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}
+                >
                   Visit Nido Montessori
                 </a>
               </li>
               <li>
-                <a href="https://nidomontessori.in/admissions" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#554F47' }}>
+                <a 
+                  href="https://www.nidomontessori.in/admissions" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}
+                >
                   Admissions
                 </a>
               </li>
               <li>
-                <a href="https://nidomontessori.in/programs" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#554F47' }}>
-                  Programs
+                <a 
+                  href="https://www.nidomontessori.in/programs-environments" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  style={{ fontSize: '0.85rem', color: '#554F47', textDecoration: 'none' }}
+                >
+                  Programs & Environments
                 </a>
               </li>
               <li>

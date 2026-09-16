@@ -223,7 +223,7 @@ export default function AboutPage() {
                   <ExternalLink size={15} />
                   <span>Website</span>
                 </div>
-                <a href="https://nidomontessori.in" target="_blank" rel="noreferrer" style={{ fontSize: '0.9rem', color: '#FFFFFF', textDecoration: 'none' }}>
+                <a href="https://www.nidomontessori.in/" target="_blank" rel="noreferrer" style={{ fontSize: '0.9rem', color: '#FFFFFF', textDecoration: 'none' }}>
                   nidomontessori.in ↗
                 </a>
               </div>

@@ -1007,20 +1007,12 @@ export const PARENT_INSIGHTS_DATA = {
   ]
 };
 
-// SECTION 6: RESOURCES (All 9 In-Depth Articles from pages 18–33)
+// SECTION 6: RESOURCES (All 9 In-Depth Articles from attached Word Document)
 export const RESOURCES_DATA = {
   hero: {
     eyebrow: "RESOURCES",
     heading: "Useful Things, Thoughtfully Chosen.",
-    intro: "The internet has no shortage of parenting advice, activity ideas and early childhood content. What is often missing is context: Why does this material work? Why does this routine matter? What does the child actually need right now?",
-    subIntro: "Our resources section is designed to cut through that noise. Here, we share:",
-    bullets: [
-      "recommended reading on Montessori education and early childhood",
-      "downloadable observation guides and reflection sheets for parents",
-      "articles and essays exploring everyday questions in greater depth",
-      "a curated list of materials and resources we trust and recommend"
-    ],
-    closing: "Everything here has been chosen or created with one standard in mind: Is it genuinely useful to families and educators trying to understand and support the children in their care?"
+    intro: "The internet is full of information about children. Not all of it deserves your time or trust. We are building a collection of resources that help parents and educators navigate Montessori and early childhood development with greater clarity."
   },
   articles: [
     {
@@ -1030,26 +1022,64 @@ export const RESOURCES_DATA = {
       title: "“Why Does My Child Want to Do Everything by Themselves?”",
       subtitle: "Simple ways to understand Montessori principles without trying to recreate a classroom in your living room.",
       quote: "“I can do it!”",
+      orangeItalicLine: "At Nido, we see the child's desire for independence as something to understand and protect and not simply something to manage.",
+      contentBlocks: [
+        { type: "h2", text: "Why Does My Child Want to Do Everything by Themselves?" },
+        { type: "paragraph", text: "“I can do it!”" },
+        { type: "paragraph", text: "If you have a toddler, you have probably heard this sentence. You may have also heard:\n\n“No, I'll do it.”\n“Don't help me.”\n“Mine!”" },
+        { type: "paragraph", text: "Sometimes it arrives when you are already late. Your child wants to put on their own shoes. Pour their own water. Carry their own bag. Open their own lunchbox. And when you step in to help? They may become even more upset. It can feel like defiance. But there is another way to look at it." },
+        { type: "paragraph", text: "What if your child is not trying to make life difficult?\n\nWhat if your child is trying to become capable?" },
+        { type: "paragraph", text: "Young children have a powerful drive towards independence. They don't only want the comfort of having something done for them. They want the satisfaction of discovering:\n\n“I can do this myself.”\n\nThis is one of the reasons Montessori environments give children opportunities to participate in everyday activities." },
+        {
+          type: "bullets",
+          items: [
+            "Pouring.",
+            "Dressing.",
+            "Washing.",
+            "Carrying.",
+            "Cleaning.",
+            "Serving.",
+            "Choosing."
+          ]
+        },
+        { type: "paragraph", text: "These may look like ordinary tasks to an adult. But to a child, they can be important developmental work." },
+        { type: "h2", text: "Why does this happen so intensely?" },
+        { type: "paragraph", text: "Montessori spoke about sensitive periods—times during childhood when a child may show a particularly strong interest in developing certain abilities. You may notice your child suddenly becoming fascinated by language or movement or order or doing things independently. The intensity can be surprising as your child may want to repeat something dozens of times. They may insist that something be done in a particular way and may refuse your help even when you know you could finish the task in seconds.\n\nInstead of asking only:\n“Why are they being so difficult?”\nwe can sometimes ask:\n“What are they ready to develop?”" },
+        { type: "h2", text: "But should we let children do everything themselves?" },
+        { type: "paragraph", text: "No.\n\nMontessori freedom is not the absence of boundaries. A child may be free to choose between appropriate options, to repeat an activity, to move purposefully but they are not free to hurt themselves or others to destroy someone else's work and certainly they are not free from responsibility.\n\nThis is where freedom and discipline come together. The child gradually learns: “I am free to act, and my actions matter.”" },
+        { type: "h2", text: "Perhaps the environment needs to change—not the child" },
+        { type: "paragraph", text: "Imagine a child who cannot reach their clothes. They will naturally ask an adult to dress them. Put the clothes where they can reach them, and suddenly the same child has an opportunity to participate. A low hook, A small jug, A reachable shelf, A basket for shoes, A cloth for spills, A child-sized tool. These small changes are part of what Montessori calls the prepared environment.\n\nThe environment quietly says:\n“You are capable of participating here.”" },
+        { type: "h2", text: "What if it takes much longer?" },
+        { type: "paragraph", text: "It probably will. A child dressing themselves may take much longer than an adult dressing them. A child pouring water may spill it. A child cleaning a table may leave part of it dirty. That doesn't mean the opportunity wasn't worthwhile. The goal is not the perfect result. The goal is the developing person. The child is practising movement, coordination, sequencing, concentration, persistence and responsibility. And perhaps something even more important: the experience of being capable." },
+        { type: "h2", text: "Try this at home" },
+        { type: "paragraph", text: "For one week, notice three things your child repeatedly asks to do independently. Write them down and then ask:\n\nCan I make this possible rather than simply saying yes or no?\n\nMaybe the answer is changing where something is kept or maybe it is giving your child more time or maybe it is demonstrating once and then stepping back and maybe it is accepting that the result will not look perfect." },
+        { type: "h2", text: "A question worth carrying" },
+        { type: "paragraph", text: "The next time your child says: “I do it!” pause before responding. Ask yourself: “Is my child asking for too much—or asking for an opportunity?” Sometimes independence begins with a very small change in the environment." }
+      ],
       sections: [
         {
-          heading: "The Drive for Autonomy",
-          content: `If you have a toddler, you have probably heard this sentence. You may have also heard: “No, I'll do it.” “Don't help me.” “Mine!” Sometimes it arrives when you are already late. Your child wants to put on their own shoes. Pour their own water. Carry their own bag. Open their own lunchbox. And when you step in to help? They may become even more upset. It can feel like defiance. But there is another way to look at it.\n\nWhat if your child is not trying to make life difficult?\nWhat if your child is trying to become capable?\n\nYoung children have a powerful drive towards independence. They don't only want the comfort of having something done for them. They want the satisfaction of discovering: “I can do this myself.” This is one of the reasons Montessori environments give children opportunities to participate in everyday activities (Pouring, Dressing, Washing, Carrying, Cleaning, Serving, Choosing). These may look like ordinary tasks to an adult. But to a child, they can be important developmental work.`
+          heading: "The Drive for Independence",
+          content: "“I can do it!”\n\nIf you have a toddler, you have probably heard this sentence. You may have also heard:\n“No, I'll do it.”\n“Don't help me.”\n“Mine!”\n\nSometimes it arrives when you are already late. Your child wants to put on their own shoes. Pour their own water. Carry their own bag. Open their own lunchbox. And when you step in to help? They may become even more upset. It can feel like defiance. But there is another way to look at it.\n\nWhat if your child is not trying to make life difficult?\nWhat if your child is trying to become capable?\n\nYoung children have a powerful drive towards independence. They don't only want the comfort of having something done for them. They want the satisfaction of discovering:\n“I can do this myself.”\n\nThis is one of the reasons Montessori environments give children opportunities to participate in everyday activities (Pouring, Dressing, Washing, Carrying, Cleaning, Serving, Choosing). These may look like ordinary tasks to an adult. But to a child, they can be important developmental work."
         },
         {
           heading: "Why does this happen so intensely?",
-          content: `Montessori spoke about sensitive periods—times during childhood when a child may show a particularly strong interest in developing certain abilities. You may notice your child suddenly becoming fascinated by language or movement or order or doing things independently. The intensity can be surprising as your child may want to repeat something dozens of times. Instead of asking only: “Why are they being so difficult?” we can sometimes ask: “What are they ready to develop?”`
+          content: "Montessori spoke about sensitive periods—times during childhood when a child may show a particularly strong interest in developing certain abilities. You may notice your child suddenly becoming fascinated by language or movement or order or doing things independently. The intensity can be surprising as your child may want to repeat something dozens of times. They may insist that something be done in a particular way and may refuse your help even when you know you could finish the task in seconds.\n\nInstead of asking only: “Why are they being so difficult?” we can sometimes ask: “What are they ready to develop?”"
         },
         {
-          heading: "Should we let children do everything themselves?",
-          content: `No. Montessori freedom is not the absence of boundaries. A child may be free to choose between appropriate options, to repeat an activity, to move purposefully but they are not free to hurt themselves or others to destroy someone else's work and certainly they are not free from responsibility. This is where freedom and discipline come together: “I am free to act, and my actions matter.”`
+          heading: "But should we let children do everything themselves?",
+          content: "No.\n\nMontessori freedom is not the absence of boundaries. A child may be free to choose between appropriate options, to repeat an activity, to move purposefully but they are not free to hurt themselves or others to destroy someone else's work and certainly they are not free from responsibility.\n\nThis is where freedom and discipline come together. The child gradually learns: “I am free to act, and my actions matter.”"
         },
         {
           heading: "Perhaps the environment needs to change—not the child",
-          content: `Imagine a child who cannot reach their clothes. They will naturally ask an adult to dress them. Put the clothes where they can reach them, and suddenly the same child has an opportunity to participate. A low hook, a small jug, a reachable shelf, a basket for shoes, a cloth for spills, a child-sized tool. The environment quietly says: “You are capable of participating here.”`
+          content: "Imagine a child who cannot reach their clothes. They will naturally ask an adult to dress them. Put the clothes where they can reach them, and suddenly the same child has an opportunity to participate. A low hook, A small jug, A reachable shelf, A basket for shoes, A cloth for spills, A child-sized tool. These small changes are part of what Montessori calls the prepared environment.\n\nThe environment quietly says: “You are capable of participating here.”"
         },
         {
           heading: "What if it takes much longer?",
-          content: `It probably will. The goal is not the perfect result. The goal is the developing person. The child is practising movement, coordination, sequencing, concentration, persistence and responsibility. And perhaps something even more important: the experience of being capable.\n\nAt Nido, we see the child's desire for independence as something to understand and protect and not simply something to manage.`
+          content: "It probably will. A child dressing themselves may take much longer than an adult dressing them. A child pouring water may spill it. A child cleaning a table may leave part of it dirty. That doesn't mean the opportunity wasn't worthwhile. The goal is not the perfect result. The goal is the developing person. The child is practising movement, coordination, sequencing, concentration, persistence and responsibility. And perhaps something even more important: the experience of being capable."
+        },
+        {
+          heading: "Try this at home & A question worth carrying",
+          content: "For one week, notice three things your child repeatedly asks to do independently. Write them down and then ask: Can I make this possible rather than simply saying yes or no? Maybe the answer is changing where something is kept or maybe it is giving your child more time or maybe it is demonstrating once and then stepping back and maybe it is accepting that the result will not look perfect.\n\nThe next time your child says: “I do it!” pause before responding. Ask yourself: “Is my child asking for too much—or asking for an opportunity?” Sometimes independence begins with a very small change in the environment."
         }
       ]
     },
@@ -1059,23 +1089,104 @@ export const RESOURCES_DATA = {
       slug: "do-i-really-need-to-buy-montessori-toys",
       title: "“Do I Really Need to Buy Montessori Toys?”",
       subtitle: "What your child may need from home has surprisingly little to do with what you buy.",
-      quote: "Montessori was never meant to be a shopping list.",
+      quote: "“Montessori was never meant to be a shopping list.”",
+      orangeItalicLine: "Montessori is less about what we buy for children and more about what we make possible for them.",
+      contentBlocks: [
+        { type: "paragraph", text: "The internet has made “Montessori toys” a category of its own." },
+        {
+          type: "bullets",
+          items: [
+            "Wooden toys.",
+            "Busy boards.",
+            "Learning towers.",
+            "Sorting games.",
+            "Special shelves.",
+            "Beautiful materials.",
+            "Some are wonderful."
+          ]
+        },
+        { type: "paragraph", text: "But Montessori was never meant to be a shopping list. So what does a child actually need? A child needs opportunities to:" },
+        {
+          type: "bullets",
+          items: [
+            "move",
+            "choose",
+            "repeat",
+            "concentrate",
+            "participate",
+            "care",
+            "explore",
+            "become independent"
+          ]
+        },
+        { type: "paragraph", text: "And many of these opportunities already exist in your home. Look at your kitchen, a child can wash a vegetable, peel a banana, pour water, carry a plate, mix ingredients, wipe a table, Put something in the refrigerator. These aren't “educational toys” but real experiences. And because they are real, they often have a particular appeal to young children." },
+        { type: "h2", text: "Why does Montessori use real-life activity?" },
+        { type: "paragraph", text: "Young children have a strong desire to participate in the world around them. They don't necessarily want a toy version of everything. They often want to do what they see adults doing. This is connected to Montessori's idea of the Absorbent Mind. The young child is taking in the world through lived experience. They learn not only from explanations, but through watching, participating and repeating." },
+        { type: "h2", text: "The prepared environment" },
+        { type: "paragraph", text: "Instead of asking: “Which Montessori toy should I buy?” try asking yourself “What can my child do independently in this environment he is living in?”" },
+        {
+          type: "bullets",
+          items: [
+            "Can they reach their books?",
+            "Can they choose a toy?",
+            "Can they put it away?",
+            "Can they access their shoes?",
+            "Can they get water?",
+            "Can they participate in a household task?"
+          ]
+        },
+        { type: "paragraph", text: "The prepared environment is less about how the room’s aesthetic looks and more about what the room makes possible for a young curious child." },
+        { type: "h2", text: "What about toys?" },
+        { type: "paragraph", text: "Toys certainly have a place but more is not always better. Having too many choices can make it difficult for a child to settle into meaningful activity. Hence, a smaller number of thoughtfully chosen materials can give the child space to repeat, explore and concentrate. And sometimes the most engaging activity is not a toy at all." },
+        {
+          type: "bullets",
+          items: [
+            "It is pouring water.",
+            "Washing something.",
+            "Building with what is already available.",
+            "Helping prepare dinner.",
+            "Looking at a book with someone.",
+            "Going outside."
+          ]
+        },
+        { type: "h2", text: "A useful test before adding a toy for your child" },
+        { type: "paragraph", text: "Before buying something, ask: What will my child actually do with this?\n\nWill they:" },
+        {
+          type: "bullets",
+          items: [
+            "manipulate it?",
+            "repeat it?",
+            "solve something?",
+            "create something?",
+            "practise a real skill?",
+            "use it independently?",
+            "concentrate on it?"
+          ]
+        },
+        { type: "paragraph", text: "If the answer is yes, then may be its useful. If the only attraction is that it says “Montessori” on the packaging, perhaps pause, rethink and choose wisely." },
+        { type: "h2", text: "The Montessori treasure" },
+        { type: "paragraph", text: "Montessori at home is not about recreating a classroom. It is about changing the way we see ordinary life. The kitchen can become a place of participation. The bedroom can become a place of independence. The garden can become a place of discovery. The home can become an environment in which the child is not simply cared for—but increasingly able to contribute. You may not need more things for your child. You may need to notice more possibilities in the things you already have." }
+      ],
       sections: [
         {
-          heading: "Beyond the Commercial Label",
-          content: `The internet has made “Montessori toys” a category of its own: wooden toys, busy boards, learning towers, sorting games, special shelves. Some are wonderful. But Montessori was never meant to be a shopping list. What does a child actually need? A child needs opportunities to: move, choose, repeat, concentrate, participate, care, explore, and become independent.`
+          heading: "The Montessori Toy Phenomenon",
+          content: "The internet has made “Montessori toys” a category of its own: wooden toys, busy boards, learning towers, sorting games, special shelves, beautiful materials. Some are wonderful. But Montessori was never meant to be a shopping list.\n\nSo what does a child actually need? A child needs opportunities to: move, choose, repeat, concentrate, participate, care, explore, become independent. And many of these opportunities already exist in your home."
         },
         {
-          heading: "Real-Life Kitchen and Home Opportunities",
-          content: `Many of these opportunities already exist in your home. Look at your kitchen: a child can wash a vegetable, peel a banana, pour water, carry a plate, mix ingredients, wipe a table, put something in the refrigerator. These aren't “educational toys” but real experiences. And because they are real, they often have a particular appeal to young children.`
+          heading: "Why does Montessori use real-life activity?",
+          content: "Young children have a strong desire to participate in the world around them. They don't necessarily want a toy version of everything. They often want to do what they see adults doing. This is connected to Montessori's idea of the Absorbent Mind. The young child is taking in the world through lived experience. They learn not only from explanations, but through watching, participating and repeating."
         },
         {
-          heading: "The Prepared Environment at Home",
-          content: `Instead of asking: “Which Montessori toy should I buy?” try asking yourself: “What can my child do independently in this environment he is living in?” Can they reach their books? Can they choose a toy and put it away? Can they access their shoes? Can they get water? The prepared environment is less about aesthetic looks and more about what the room makes possible.`
+          heading: "The prepared environment",
+          content: "Instead of asking: “Which Montessori toy should I buy?” try asking yourself “What can my child do independently in this environment he is living in?” Can they reach their books? Can they choose a toy? Can they put it away? Can they access their shoes? Can they get water? Can they participate in a household task? The prepared environment is less about how the room’s aesthetic looks and more about what the room makes possible for a young curious child."
         },
         {
-          heading: "A Useful Test Before Buying",
-          content: `Before buying something, ask: What will my child actually do with this? Will they manipulate it, repeat it, solve something, create something, practise a real skill, or use it independently? If the only attraction is that it says “Montessori” on the packaging, perhaps pause, rethink and choose wisely.\n\nMontessori is less about what we buy for children and more about what we make possible for them.`
+          heading: "What about toys?",
+          content: "Toys certainly have a place but more is not always better. Having too many choices can make it difficult for a child to settle into meaningful activity. Hence, a smaller number of thoughtfully chosen materials can give the child space to repeat, explore and concentrate. And sometimes the most engaging activity is not a toy at all: pouring water, washing something, building with what is already available, helping prepare dinner, looking at a book with someone, going outside."
+        },
+        {
+          heading: "The Montessori treasure",
+          content: "Montessori at home is not about recreating a classroom. It is about changing the way we see ordinary life. The kitchen can become a place of participation. The bedroom can become a place of independence. The garden can become a place of discovery. The home can become an environment in which the child is not simply cared for—but increasingly able to contribute. You may not need more things for your child. You may need to notice more possibilities in the things you already have."
         }
       ]
     },
@@ -1085,15 +1196,75 @@ export const RESOURCES_DATA = {
       slug: "why-does-my-child-keep-doing-the-same-thing-again-and-again",
       title: "“Why Does My Child Keep Doing the Same Thing Again and Again?”",
       subtitle: "When “again!” may actually be a sign of something important happening.",
-      quote: "What looks repetitive to an adult may be refinement to a child.",
+      quote: "“What looks repetitive to an adult may be refinement to a child”",
+      orangeItalicLine: "In Montessori, repetition is not simply tolerated. When purposeful, it can be an important part of how children develop mastery and concentration.",
+      contentBlocks: [
+        {
+          type: "bullets",
+          items: [
+            "Pour.",
+            "Empty.",
+            "Pour again.",
+            "Open.",
+            "Close.",
+            "Open again.",
+            "Climb.",
+            "Come down.",
+            "Climb again.",
+            "“Again!”"
+          ]
+        },
+        { type: "paragraph", text: "For an adult, repetition can feel unnecessary but for a young child, repetition may be the actual work." },
+        { type: "h2", text: "Watch what changes" },
+        { type: "paragraph", text: "The first attempt may be a little awkward. The second may be slightly better. The child adjusts their hand. Changes the speed. Notices the result. Tries again. Gradually, movement becomes more controlled. Something that once required enormous effort becomes easier. The child is refining themselves." },
+        { type: "h2", text: "Sensitive periods" },
+        { type: "paragraph", text: "Montessori observed that children sometimes show unusually strong interest in particular kinds of development. She described these as sensitive periods. During these periods, a child may be especially drawn towards:" },
+        {
+          type: "bullets",
+          items: [
+            "movement",
+            "language",
+            "order",
+            "sensory experiences",
+            "social relationships",
+            "independence"
+          ]
+        },
+        { type: "paragraph", text: "This is one reason a child's interests can sometimes seem intense. They may want the same story every night. They may insist that an object belongs in a particular place. They may repeat one movement dozens of times. Rather than immediately asking how to stop the repetition, we can ask:\n\n“What is my child practising?”" },
+        { type: "h2", text: "Repetition builds concentration" },
+        { type: "paragraph", text: "A child who is deeply engaged in repeating something may be developing concentration which is worth protecting and not questioning. Adults sometimes interrupt because they think: “They've already done that.” But the child may not be finished. They may be working towards mastery.\n\nMontessori environments therefore allow children to repeat activities without requiring the adult to constantly introduce something new." },
+        { type: "h2", text: "But surely children need variety?" },
+        { type: "paragraph", text: "Of course they do. Children also need new experiences, relationships, movement, rest and boundaries. The point is not to encourage endless repetition. It is to recognise that repetition has developmental value. When an activity is safe, purposeful and engaging, there may be no reason to rush the child away from it simply because we are bored watching it." },
+        { type: "h2", text: "The next time your child says “Again!”" },
+        { type: "paragraph", text: "Try this: Don't immediately redirect rather watch and ask yourself:" },
+        {
+          type: "bullets",
+          items: [
+            "Are they becoming more precise?",
+            "Are they becoming more independent?",
+            "Are they concentrating?",
+            "Are they solving something?",
+            "Does the repetition seem to satisfy a genuine developmental need?"
+          ]
+        },
+        { type: "paragraph", text: "You may begin to see something that wasn't visible before.\n\nOne thought to carry forward is “What looks repetitive to an adult may be refinement to a child”" }
+      ],
       sections: [
         {
-          heading: "The Purpose of Repetition",
-          content: `Pour. Empty. Pour again. Open. Close. Open again. Climb. Come down. Climb again. “Again!” For an adult, repetition can feel unnecessary but for a young child, repetition may be the actual work.\n\nWatch what changes: The first attempt may be a little awkward. The second may be slightly better. The child adjusts their hand. Changes the speed. Notices the result. Tries again. Gradually, movement becomes more controlled. Something that once required enormous effort becomes easier. The child is refining themselves.`
+          heading: "The Power of Repetition",
+          content: "Pour. Empty. Pour again. Open. Close. Open again. Climb. Come down. Climb again. “Again!”\n\nFor an adult, repetition can feel unnecessary but for a young child, repetition may be the actual work.\n\nWatch what changes: The first attempt may be a little awkward. The second may be slightly better. The child adjusts their hand. Changes the speed. Notices the result. Tries again. Gradually, movement becomes more controlled. Something that once required enormous effort becomes easier. The child is refining themselves."
         },
         {
-          heading: "Repetition Builds Concentration",
-          content: `A child who is deeply engaged in repeating something may be developing concentration which is worth protecting and not questioning. Adults sometimes interrupt because they think: “They've already done that.” But the child may not be finished. They may be working towards mastery.\n\nThe next time your child says “Again!”, don't immediately redirect. Ask yourself: Are they becoming more precise? Are they concentrating? Are they solving something?\n\nIn Montessori, repetition is not simply tolerated. When purposeful, it is an important part of how children develop mastery and concentration.`
+          heading: "Sensitive periods",
+          content: "Montessori observed that children sometimes show unusually strong interest in particular kinds of development. She described these as sensitive periods. During these periods, a child may be especially drawn towards: movement, language, order, sensory experiences, social relationships, independence. This is one reason a child's interests can sometimes seem intense. They may want the same story every night. They may insist that an object belongs in a particular place. Rather than immediately asking how to stop the repetition, we can ask: “What is my child practising?”"
+        },
+        {
+          heading: "Repetition builds concentration",
+          content: "A child who is deeply engaged in repeating something may be developing concentration which is worth protecting and not questioning. Adults sometimes interrupt because they think: “They've already done that.” But the child may not be finished. They may be working towards mastery. Montessori environments therefore allow children to repeat activities without requiring the adult to constantly introduce something new."
+        },
+        {
+          heading: "Refinement to a child",
+          content: "Children also need new experiences, relationships, movement, rest and boundaries. The point is not to encourage endless repetition. It is to recognise that repetition has developmental value. When an activity is safe, purposeful and engaging, there may be no reason to rush the child away from it simply because we are bored watching it. Next time, ask: Are they becoming more precise? Are they becoming more independent? Are they concentrating? One thought to carry forward is “What looks repetitive to an adult may be refinement to a child”."
         }
       ]
     },
@@ -1103,15 +1274,78 @@ export const RESOURCES_DATA = {
       slug: "why-wont-my-child-sit-still",
       title: "“Why Won't My Child Sit Still?”",
       subtitle: "What if your child's need to move is telling you something?",
-      quote: "Movement is not separate from development.",
+      quote: "“Why does the child need to move?”",
+      orangeItalicLine: "Montessori does not romanticise constant movement. It recognises that purposeful movement is part of the young child's development and seeks to give that movement direction, meaning and boundaries.",
+      contentBlocks: [
+        {
+          type: "bullets",
+          items: [
+            "“Sit properly.”",
+            "“Stop moving.”",
+            "“Come and sit here.”",
+            "“Why can't you stay still?”"
+          ]
+        },
+        { type: "paragraph", text: "Adults spend a surprising amount of time asking young children to stop moving. But perhaps we should first ask: Why does the child need to move?" },
+        { type: "h2", text: "Movement is not separate from development" },
+        { type: "paragraph", text: "For a young child, movement is one of the ways they experience the world." },
+        {
+          type: "bullets",
+          items: [
+            "They carry.",
+            "Push.",
+            "Pull.",
+            "Climb.",
+            "Walk.",
+            "Balance.",
+            "Reach.",
+            "Transfer.",
+            "Run.",
+            "Repeat."
+          ]
+        },
+        { type: "paragraph", text: "Through movement, the child is learning about their body and their relationship with the environment. Movement also supports the development of coordination and purposeful action." },
+        { type: "h2", text: "The Absorbent Mind is moving too" },
+        { type: "paragraph", text: "Montessori's idea of the Absorbent Mind helps us understand why the early years are so different. The child is taking in the world through their senses and through their own activity. They don't simply sit and receive information. They interact with the world. The body is part of the learning process." },
+        { type: "h2", text: "What happens in a prepared environment?" },
+        { type: "paragraph", text: "A Montessori environment provides opportunities for purposeful movement." },
+        {
+          type: "bullets",
+          items: [
+            "A child may carry a material to a work area.",
+            "Roll a mat.",
+            "Pour water.",
+            "Move a chair.",
+            "Carry something carefully.",
+            "Walk to another part of the room.",
+            "Return something to its place.",
+            "The movement has a reason."
+          ]
+        },
+        { type: "paragraph", text: "This is different from asking a child to sit still simply because adults prefer stillness." },
+        { type: "h2", text: "Is it that children never need to sit?" },
+        { type: "paragraph", text: "Yes, they do. Children need to learn how to listen, participate in conversations, eat at a table and remain with an activity. But the goal is not to make stillness the measure of learning." },
+        { type: "h2", text: "Look at the environment" },
+        { type: "paragraph", text: "If a child is constantly climbing furniture, perhaps they need more appropriate opportunities for climbing. If they are always carrying objects, perhaps they need meaningful carrying work. If they are touching everything, perhaps they are exploring through their senses. The answer isn't always to provide more activity. But sometimes the behaviour is giving us information about what the environment is not currently providing." },
+        { type: "h2", text: "Try changing the question" },
+        { type: "paragraph", text: "Instead of: “How do I make my child sit still?” try: “Where can my child move meaningfully?” The answer may change the entire interaction." }
+      ],
       sections: [
         {
-          heading: "The Moving Absorbent Mind",
-          content: `Adults spend a surprising amount of time asking young children to stop moving (“Sit properly”, “Stop moving”, “Why can't you stay still?”). But perhaps we should first ask: Why does the child need to move?\n\nFor a young child, movement is one of the ways they experience the world: They carry, push, pull, climb, walk, balance, reach, transfer, run and repeat. Through movement, the child is learning about their body and their relationship with the environment.`
+          heading: "Why Does the Child Need to Move?",
+          content: "“Sit properly.” “Stop moving.” “Come and sit here.” “Why can't you stay still?”\n\nAdults spend a surprising amount of time asking young children to stop moving. But perhaps we should first ask: Why does the child need to move?\n\nFor a young child, movement is one of the ways they experience the world. They carry, push, pull, climb, walk, balance, reach, transfer, run, repeat. Through movement, the child is learning about their body and their relationship with the environment."
+        },
+        {
+          heading: "The Absorbent Mind is moving too",
+          content: "Montessori's idea of the Absorbent Mind helps us understand why the early years are so different. The child is taking in the world through their senses and through their own activity. They don't simply sit and receive information. They interact with the world. The body is part of the learning process."
         },
         {
           heading: "Purposeful Movement in the Prepared Environment",
-          content: `A Montessori environment provides opportunities for purposeful movement: carrying a material to a work area, rolling a mat, pouring water, moving a chair carefully. The movement has a reason. This is different from asking a child to sit still simply because adults prefer stillness.\n\nIf a child is constantly climbing furniture, perhaps they need more appropriate climbing opportunities. If they are always carrying objects, give them heavy carrying work. Instead of “How do I make my child sit still?”, ask “Where can my child move meaningfully?”`
+          content: "A Montessori environment provides opportunities for purposeful movement: carrying a material, rolling a mat, pouring water, moving a chair, carrying something carefully, walking across the room, returning something to its place. The movement has a reason. This is different from asking a child to sit still simply because adults prefer stillness."
+        },
+        {
+          heading: "Where can my child move meaningfully?",
+          content: "Children need to learn how to listen, eat at a table and remain with an activity. But the goal is not to make stillness the measure of learning. If a child is climbing furniture, perhaps they need opportunities for climbing. If they are touching everything, they are exploring. Instead of asking: “How do I make my child sit still?” try: “Where can my child move meaningfully?”"
         }
       ]
     },
@@ -1121,15 +1355,106 @@ export const RESOURCES_DATA = {
       slug: "my-child-makes-a-mess-all-day-what-am-i-supposed-to-do",
       title: "“My Child Makes a Mess All Day. What Am I Supposed to Do?”",
       subtitle: "Before stopping the mess, look at what your child is trying to do.",
-      quote: "Is this mess a problem—or is it part of the learning?",
+      quote: "“Before stopping the mess, look at what your child is trying to do.”",
+      orangeItalicLine: "At Nido, we try to look beyond the visible result and notice the developing capability underneath the activity.",
+      contentBlocks: [
+        {
+          type: "bullets",
+          items: [
+            "Water on the floor.",
+            "Rice on the table.",
+            "Clothes everywhere.",
+            "A banana cut into pieces that look nothing like a banana.",
+            "It is understandable to see the mess first.",
+            "But Montessori asks us to look underneath it."
+          ]
+        },
+        { type: "h2", text: "What is the child actually doing?" },
+        { type: "h3", text: "When Pouring water" },
+        {
+          type: "numbered",
+          items: [
+            "The child pours.",
+            "They spill.",
+            "They stop.",
+            "They adjust their hand.",
+            "They try again.",
+            "The adult sees a wet floor."
+          ]
+        },
+        { type: "paragraph", text: "The child may be developing coordination, control, concentration and independence." },
+        { type: "h3", text: "While Washing a table" },
+        {
+          type: "numbered",
+          items: [
+            "The child wipes.",
+            "Then wipes again.",
+            "They may be learning how movement produces an effect.",
+            "They may be developing coordination.",
+            "They may be discovering:\n“When something becomes dirty, I can help take care of it.”"
+          ]
+        },
+        { type: "h3", text: "When Preparing food" },
+        {
+          type: "numbered",
+          items: [
+            "A child washes a vegetable.",
+            "Carries it.",
+            "Cuts it using an appropriate tool.",
+            "Places it on a plate.",
+            "Takes it to the table.",
+            "A simple activity contains a sequence of actions.",
+            "The child is participating in real life."
+          ]
+        },
+        { type: "h2", text: "Why Montessori values practical life" },
+        { type: "paragraph", text: "Montessori environments include many ordinary activities:" },
+        {
+          type: "bullets",
+          items: [
+            "Pouring.",
+            "Sweeping.",
+            "Washing.",
+            "Folding.",
+            "Serving.",
+            "Opening.",
+            "Closing.",
+            "Sorting."
+          ]
+        },
+        { type: "paragraph", text: "These are often called practical life activities. They give children opportunities to practise movement and coordination while participating meaningfully in their environment. The child isn't simply pretending to be useful. They are actually contributing. The confidence that they can contribute makes them feel the independence that they have been craving at the core." },
+        { type: "h2", text: "The prepared environment makes this possible" },
+        { type: "paragraph", text: "If we want children to participate, we need to prepare for participation." },
+        {
+          type: "bullets",
+          items: [
+            "A cloth needs to be available when spills happen.",
+            "A broom needs to be small enough to use.",
+            "A shelf needs to be reachable.",
+            "A plate needs to be manageable.",
+            "A place needs to exist for things to be returned."
+          ]
+        },
+        { type: "paragraph", text: "The prepared environment allows the child to move from: “An adult takes care of everything.” towards: “I can take care of some things too.”" },
+        { type: "h2", text: "What if the result isn't perfect?" },
+        { type: "paragraph", text: "It won't be. The child's sweeping will probably be less efficient than yours. Their folding may not look neat. Their cleaning may leave something behind. That is not failure. They are practising. We can finish the job later.\n\nBefore saying “I'll do it” Ask: “Is this mess a problem—or is it part of the learning?” Sometimes the answer will genuinely be “a problem.” Sometimes the answer will be: “This is work in progress.” Learning to tell the difference is part of parenting." }
+      ],
       sections: [
         {
           heading: "Looking Underneath the Mess",
-          content: `Water on the floor. Rice on the table. Clothes everywhere. It is understandable to see the mess first. But Montessori asks us to look underneath it.\n\nWhen pouring water: The child pours. They spill. They stop. They adjust their hand. They try again. The adult sees a wet floor; the child is developing coordination, control, concentration and independence.\nWhen preparing food: Washing, carrying, cutting with a child tool, placing on a plate. The child is participating in real life.`
+          content: "Water on the floor. Rice on the table. Clothes everywhere. A banana cut into pieces that look nothing like a banana. It is understandable to see the mess first. But Montessori asks us to look underneath it.\n\nWhat is the child actually doing? When pouring water: the child pours, spills, stops, adjusts their hand, tries again. The adult sees a wet floor; the child is developing coordination, control, concentration and independence."
         },
         {
-          heading: "Preparing for Participation",
-          content: `If we want children to participate, we need to prepare for participation: a small cloth for spills, a broom small enough to use, a reachable shelf. The prepared environment allows the child to move from “An adult takes care of everything” to “I can take care of some things too.”\n\nAt Nido, we try to look beyond the visible result and notice the developing capability underneath the activity.`
+          heading: "Why Montessori values practical life",
+          content: "Montessori environments include many ordinary activities: pouring, sweeping, washing, folding, serving, opening, closing, sorting. These are practical life activities. They give children opportunities to practise movement and coordination while participating meaningfully. The child isn't simply pretending to be useful. They are actually contributing."
+        },
+        {
+          heading: "The prepared environment makes this possible",
+          content: "If we want children to participate, we need to prepare for participation: a cloth available when spills happen, a small broom, a reachable shelf, a manageable plate, a place for things to be returned. The prepared environment allows the child to move from: “An adult takes care of everything.” towards: “I can take care of some things too.”"
+        },
+        {
+          heading: "What if the result isn't perfect?",
+          content: "It won't be. The child's sweeping will probably be less efficient than yours. Their folding may not look neat. Their cleaning may leave something behind. That is not failure. They are practising. We can finish the job later. Ask: “Is this mess a problem—or is it part of the learning?” Sometimes the answer will be: “This is work in progress.”"
         }
       ]
     },
@@ -1139,15 +1464,97 @@ export const RESOURCES_DATA = {
       slug: "my-child-cries-every-morning-at-school-should-i-be-worried",
       title: "“My Child Cries Every Morning at School. Should I Be Worried?”",
       subtitle: "What crying at separation can and cannot tell us.",
-      quote: "Crying tells us that something is difficult. But it does not tell the whole story.",
+      quote: "“What crying at separation can and cannot tell us.”",
+      orangeItalicLine: "At Nido, settling-in is something we observe over time. We look not only at separation, but at the child's growing relationship with the environment, the guides and their own ability to participate.",
+      contentBlocks: [
+        { type: "paragraph", text: "You have said goodbye but your child is crying. You walk away carrying a heavy feeling. Then comes the question: “Are they okay without me?” It is one of the hardest moments for any parent. And the answer is not as simple as “Don't worry.”\n\nCrying is communication Crying tells us that something is difficult. But it does not, by itself, tell us exactly what the child is experiencing. A child may cry because:" },
+        {
+          type: "bullets",
+          items: [
+            "separation feels difficult",
+            "the environment is unfamiliar",
+            "they are tired",
+            "they need more time to build trust",
+            "the transition is overwhelming",
+            "they want their parent to stay",
+            "they are communicating a strong preference"
+          ]
+        },
+        { type: "paragraph", text: "The important question is not only: “Did my child cry?” It is also: “What happened around the crying?” What happens after the parent leaves?\n\nThis is something a thoughtful educator watches carefully." },
+        {
+          type: "bullets",
+          items: [
+            "Does the child gradually settle?",
+            "Do they become interested in an activity?",
+            "Do they seek a particular guide?",
+            "Do they observe other children?",
+            "Do they participate?",
+            "Do they remain distressed?",
+            "Do they begin to develop a predictable routine?"
+          ]
+        },
+        { type: "paragraph", text: "These observations provide much more information than the presence or absence of tears at the doorway." },
+        { type: "h2", text: "The prepared environment matters here too" },
+        { type: "paragraph", text: "A child entering a new environment is not simply entering a room. They are entering a new social world with new people, new routines, new expectations, new sounds, new spaces. A prepared environment therefore has to be more than physically beautiful. It must also gradually become emotionally understandable. The child needs to know:" },
+        {
+          type: "bullets",
+          items: [
+            "Who will help me?",
+            "Where do I go?",
+            "What happens next?",
+            "Will my parent come back?",
+            "Can I find something meaningful to do?"
+          ]
+        },
+        { type: "h2", text: "What can parents do?" },
+        {
+          type: "bullets",
+          items: [
+            "Keep goodbyes clear and predictable.",
+            "Avoid disappearing without saying goodbye.",
+            "Avoid repeatedly returning once you have said goodbye unless there is a genuine reason."
+          ]
+        },
+        { type: "paragraph", text: "Give the child a simple message: “You are safe. I am going now. I will come back after school.” And then allow the adults around the child to support the transition." },
+        { type: "h2", text: "When should we look more closely?" },
+        {
+          type: "bullets",
+          items: [
+            "Every child settles differently.",
+            "Some adjust quickly.",
+            "Others need more time.",
+            "Persistent or intense distress deserves careful attention rather than automatic reassurance."
+          ]
+        },
+        { type: "paragraph", text: "Parents and educators can look together at the pattern:" },
+        {
+          type: "bullets",
+          items: [
+            "When does the distress occur?",
+            "How long does it last?",
+            "Is it changing over time?",
+            "Does the child engage at other points in the day?",
+            "What seems to help?"
+          ]
+        },
+        { type: "paragraph", text: "The goal is not to force the child to “get over it.” The goal is to understand the child's experience and support them through it.\n\nOne thought for the difficult morning: The question isn't simply whether your child cried when you left. The more important question is what your child was able to experience after you left." }
+      ],
       sections: [
         {
-          heading: "Understanding Separation",
-          content: `You have said goodbye but your child is crying. You walk away carrying a heavy feeling: “Are they okay without me?” Crying is communication. A child may cry because separation feels difficult, the environment is unfamiliar, they are tired, or they need time to build trust.`
+          heading: "Crying as Communication",
+          content: "You have said goodbye but your child is crying. You walk away carrying a heavy feeling. Then comes the question: “Are they okay without me?” It is one of the hardest moments for any parent. And the answer is not as simple as “Don't worry.”\n\nCrying is communication. It tells us that something is difficult. A child may cry because: separation feels difficult, the environment is unfamiliar, they are tired, they need more time to build trust, the transition is overwhelming, they want their parent to stay, or they are communicating a strong preference."
         },
         {
-          heading: "What Happens After the Parent Leaves?",
-          content: `The important question is not only: “Did my child cry?” It is also: “What happened around the crying?” Does the child gradually settle? Do they become interested in an activity? Do they seek a guide? These observations provide much more information than tears at the doorway.\n\nWhat parents can do: Keep goodbyes clear and predictable. Avoid sneaking out without saying goodbye. Give a simple message: “You are safe. I am going now. I will come back after school.”\n\nAt Nido, settling-in is something we observe over time.`
+          heading: "What Happens After Goodbye?",
+          content: "The important question is not only: “Did my child cry?” It is also: “What happened around the crying?” What happens after the parent leaves? Does the child gradually settle? Do they become interested in an activity? Do they seek a guide or observe other children? These observations provide far more information than the presence or absence of tears at the doorway."
+        },
+        {
+          heading: "The Prepared Environment for Emotional Safety",
+          content: "A child entering a new environment is entering a new social world. The environment must become emotionally understandable. The child needs to know: Who will help me? Where do I go? What happens next? Will my parent come back? Can I find something meaningful to do?"
+        },
+        {
+          heading: "Supporting the Morning Transition",
+          content: "What can parents do? Keep goodbyes clear and predictable. Avoid disappearing without saying goodbye. Avoid repeatedly returning once you have said goodbye. Give a clear message: “You are safe. I am going now. I will come back after school.” Look at the broader pattern over time rather than judging the entire day by the doorway."
         }
       ]
     },
@@ -1157,15 +1564,57 @@ export const RESOURCES_DATA = {
       slug: "my-child-can-do-it-at-school-but-not-at-home-why",
       title: "“My Child Can Do It at School—but Not at Home. Why?”",
       subtitle: "Why independence sometimes disappears the moment children walk through the front door.",
-      quote: "Capability needs opportunity.",
+      quote: "“Sometimes the child has not forgotten the skill. The environment has simply stopped inviting it.”",
+      orangeItalicLine: "Montessori asks us to prepare environments in which children can succeed—not to keep asking children to adapt themselves to environments built entirely around adults.",
+      contentBlocks: [
+        {
+          type: "bullets",
+          items: [
+            "“My child pours their own water at school.”",
+            "“At home, they ask me to do it.”",
+            "“They put their shoes away at school.”",
+            "“At home, they throw them anywhere.”",
+            "“They eat independently at school.”",
+            "“At home, they want to be fed.”",
+            "Parents often wonder:"
+          ]
+        },
+        { type: "paragraph", text: "“Why is my child so different at school?”\n\nThere may be several reasons. The environment changes behaviour. Children respond to their surroundings instantly. At school, a child may have:" },
+        {
+          type: "bullets",
+          items: [
+            "accessible materials",
+            "predictable routines",
+            "clear expectations",
+            "peers modelling independence",
+            "enough time",
+            "opportunities designed for their abilities"
+          ]
+        },
+        { type: "paragraph", text: "At home, the circumstances may be very different. Everyone may be rushing. An adult may automatically help. The child's belongings may be out of reach. The routine may be less predictable.\n\nNone of this means the child is “better behaved” at school. The environment is simply asking something different of them." },
+        { type: "h2", text: "The prepared environment" },
+        { type: "paragraph", text: "This is one of the reasons Montessori places so much emphasis on the prepared environment. The question is not: “Can the child do this?” but also: “Does the environment allow the child to do this?” A child may know how to pour water. But if the jug is kept on a high shelf, they cannot practise it. A child may know how to dress. But if there are three minutes before everyone has to leave, the adult will naturally take over. Capability needs opportunity." },
+        { type: "h2", text: "Children also have different emotional needs at home" },
+        { type: "paragraph", text: "Home is often where children let go. They may hold themselves together during a busy day and become more demanding with the adults they trust most. This does not necessarily mean something is wrong. It may mean home is where they feel safe enough to be tired, frustrated or dependent.\n\nSo the answer is not simply: “You need to make your child more independent.” Sometimes the answer is: “Which opportunities can we make available when everyone has enough time and emotional space?”" },
+        { type: "h2", text: "Don't compare. Look for patterns." },
+        { type: "paragraph", text: "Instead of saying: “Why can't you do this? You do it at school.” Try: “I know you can do this. Would you like to try, or would you like me to help you begin?” You are communicating confidence without turning independence into a test.\n\nSometimes the child has not forgotten the skill. The environment has simply stopped inviting it." }
+      ],
       sections: [
         {
-          heading: "The Environment Changes Behaviour",
-          content: `“My child pours their own water at school; at home, they ask me to do it. They put shoes away at school; at home, they throw them anywhere.” Why is a child so different at school?\n\nAt school, a child has accessible materials, predictable routines, clear expectations, peers modelling independence, and enough time. At home, everyone may be rushing, belongings may be high up, and adults automatically take over. Capability needs opportunity.`
+          heading: "Why Independence Changes Across Environments",
+          content: "“My child pours their own water at school. At home, they ask me to do it.” “They put their shoes away at school. At home, they throw them anywhere.” “They eat independently at school. At home, they want to be fed.” Parents often wonder: “Why is my child so different at school?”\n\nThere may be several reasons. The environment changes behaviour. Children respond to their surroundings instantly. At school, a child may have accessible materials, predictable routines, clear expectations, peers modelling independence, and enough time."
+        },
+        {
+          heading: "Capability Needs Opportunity",
+          content: "The question is not only: “Can the child do this?” but also: “Does the environment allow the child to do this?” A child may know how to pour water. But if the jug is kept on a high shelf, they cannot practise it. A child may know how to dress. But if there are three minutes before leaving, the adult will naturally take over."
         },
         {
           heading: "Emotional Safety at Home",
-          content: `Home is also where children let go. They may hold themselves together during a busy day and become more dependent with the adults they trust most. Instead of “Why can't you do this? You do it at school”, try: “I know you can do this. Would you like to try, or would you like me to help you begin?”`
+          content: "Home is where children let go. They may hold themselves together during a busy day and become more demanding with the adults they trust most. This does not necessarily mean something is wrong. It may mean home is where they feel safe enough to be tired, frustrated or dependent."
+        },
+        {
+          heading: "Inviting Independence",
+          content: "Instead of saying: “Why can't you do this? You do it at school.” Try: “I know you can do this. Would you like to try, or would you like me to help you begin?” Sometimes the child has not forgotten the skill. The environment has simply stopped inviting it."
         }
       ]
     },
@@ -1175,15 +1624,126 @@ export const RESOURCES_DATA = {
       slug: "is-my-child-actually-learning-if-they-arent-doing-worksheets",
       title: "“Is My Child Actually Learning If They Aren't Doing Worksheets?”",
       subtitle: "What learning looks like before it looks like school.",
-      quote: "The absence of a worksheet does not mean the absence of learning.",
+      quote: "“The absence of a worksheet does not mean the absence of learning.”",
+      orangeItalicLine: "At Nido, we believe that early education should build not only knowledge, but the human capacities that allow knowledge to grow.",
+      contentBlocks: [
+        {
+          type: "bullets",
+          items: [
+            "A child spends twenty minutes pouring water.",
+            "Another child sorts objects.",
+            "Another builds a tower and knocks it down.",
+            "Another repeats the same activity.",
+            "Another spends the morning helping prepare food."
+          ]
+        },
+        { type: "paragraph", text: "A parent may look at all this and wonder: “But what are they actually learning?”\n\nIt is a fair question.\n\nWe are accustomed to seeing learning in visible forms." },
+        {
+          type: "bullets",
+          items: [
+            "Letters.",
+            "Numbers.",
+            "Writing.",
+            "Worksheets.",
+            "Correct answers."
+          ]
+        },
+        { type: "paragraph", text: "But young children are building foundations long before learning begins to look academic." },
+        { type: "h2", text: "The Absorbent Mind" },
+        { type: "paragraph", text: "Montessori described the young child as having an Absorbent Mind. The child is taking in their environment." },
+        {
+          type: "bullets",
+          items: [
+            "Language.",
+            "Movement.",
+            "Order.",
+            "Culture.",
+            "Social behaviour.",
+            "Ways of doing things."
+          ]
+        },
+        { type: "paragraph", text: "They are not simply waiting for an adult to teach them. They are actively constructing themselves through experience." },
+        { type: "h2", text: "Look again at ordinary activities" },
+        { type: "h3", text: "Pouring water" },
+        {
+          type: "bullets",
+          items: [
+            "The child is developing control of movement.",
+            "They are learning about quantity.",
+            "They are coordinating vision and hand.",
+            "They are experiencing cause and effect.",
+            "They are learning to notice and correct an error."
+          ]
+        },
+        { type: "h3", text: "Dressing" },
+        {
+          type: "bullets",
+          items: [
+            "The child is coordinating movements.",
+            "Following a sequence.",
+            "Persisting through difficulty.",
+            "Becoming independent."
+          ]
+        },
+        { type: "h3", text: "Sorting" },
+        {
+          type: "bullets",
+          items: [
+            "The child is noticing similarities and differences.",
+            "Creating categories.",
+            "Developing discrimination."
+          ]
+        },
+        { type: "h3", text: "Building" },
+        {
+          type: "bullets",
+          items: [
+            "The child is experimenting with balance, space, size and relationships."
+          ]
+        },
+        { type: "h3", text: "Repeating" },
+        {
+          type: "bullets",
+          items: [
+            "The child may be refining movement or developing concentration."
+          ]
+        },
+        { type: "h2", text: "But isn't academic learning important?" },
+        { type: "paragraph", text: "Of course it is. Montessori does not reject academic learning. It asks us to consider readiness, sequence and the developmental needs of the child. The early years are not empty years before “real learning.” They are years in which many of the foundations for later learning are being built. A child who can concentrate, persist, coordinate movement, listen, communicate and work independently has developed capacities that support future academic work." },
+        { type: "h2", text: "So what should parents look for?" },
+        { type: "paragraph", text: "Instead of asking only: “What did my child learn today?” try noticing:" },
+        {
+          type: "bullets",
+          items: [
+            "What did they concentrate on?",
+            "What did they repeat?",
+            "What did they attempt independently?",
+            "What problem did they solve?",
+            "What new language did they use?",
+            "How did they respond to difficulty?",
+            "How did they care for another person or the environment?"
+          ]
+        },
+        { type: "paragraph", text: "These are also signs of development." },
+        { type: "h2", text: "Learning doesn't always look impressive from a distance" },
+        { type: "paragraph", text: "A child quietly repeating an activity may look like nothing is happening. But inside that repetition, something may be changing. The movement is becoming more precise. The sequence is becoming familiar. The child is becoming more confident. Concentration is lasting longer. The child is becoming capable.\n\nSometimes the most important work of early childhood is the work adults are least likely to notice.\n\nThe absence of a worksheet does not mean the absence of learning. Sometimes it means the learning is happening somewhere deeper." }
+      ],
       sections: [
         {
-          heading: "Foundations Before Academic Symbols",
-          content: `A child spends twenty minutes pouring water. Another child sorts objects. Another builds a tower. A parent may wonder: “What are they actually learning?”\n\nWe are accustomed to seeing learning in visible forms: letters, numbers, worksheets. But young children are building foundations long before learning looks academic. Pouring water develops motor control, cause-and-effect, and concentration. Sorting builds categorization and discrimination.`
+          heading: "Beyond Visible Worksheets",
+          content: "A child spends twenty minutes pouring water. Another child sorts objects. Another builds a tower and knocks it down. Another repeats the same activity. Another spends the morning helping prepare food. A parent may wonder: “But what are they actually learning?”\n\nWe are accustomed to seeing learning in visible forms: letters, numbers, writing, worksheets, correct answers. But young children are building foundations long before learning begins to look academic."
         },
         {
-          heading: "Readiness and Human Capacities",
-          content: `Montessori does not reject academic learning. It considers readiness, sequence and developmental needs. A child who can concentrate, persist, coordinate movement, listen and work independently has developed capacities that support future academic work.\n\nAt Nido, we believe early education should build not only knowledge, but the human capacities that allow knowledge to grow.`
+          heading: "The Absorbent Mind",
+          content: "Montessori described the young child as having an Absorbent Mind. The child is taking in their environment: language, movement, order, culture, social behaviour, ways of doing things. They are not simply waiting for an adult to teach them. They are actively constructing themselves through experience."
+        },
+        {
+          heading: "Ordinary Activities as Deep Learning",
+          content: "Pouring water develops control of movement, quantity understanding, hand-eye coordination, cause and effect, and error correction. Dressing requires sequencing, coordination, and persisting through difficulty. Sorting builds categorization and discrimination. Building experiments with balance and space."
+        },
+        {
+          heading: "Foundations for Future Academics",
+          content: "Montessori does not reject academic learning. It asks us to consider readiness and sequence. A child who can concentrate, persist, coordinate movement, listen, communicate and work independently has developed capacities that support future academic work. The absence of a worksheet does not mean the absence of learning."
         }
       ]
     },
@@ -1193,37 +1753,88 @@ export const RESOURCES_DATA = {
       slug: "why-doesnt-montessori-give-children-more-homework",
       title: "“Why Doesn't Montessori Give Children More Homework?”",
       subtitle: "If children aren't bringing worksheets home, what are they actually doing?",
-      quote: "Work is not always written work.",
+      quote: "“What meaningful work can my child participate in today?”",
+      orangeItalicLine: "Montessori does not mean children never practise. It means we think carefully about what kind of practice serves the child—and why.",
+      contentBlocks: [
+        { type: "paragraph", text: "If children aren't bringing worksheets home, what are they actually doing?\n\nIt is understandable for parents to wonder. If my child isn't carrying worksheets home… If there isn't a page to complete…If nobody is asking us to practise ten letters tonight…How do I know learning is happening?\n\nThe answer begins with what Montessori considers meaningful work." },
+        { type: "h2", text: "Work is not always written work" },
+        { type: "paragraph", text: "For a young child, work may mean:" },
+        {
+          type: "bullets",
+          items: [
+            "pouring water.",
+            "building.",
+            "sorting.",
+            "washing.",
+            "reading.",
+            "drawing.",
+            "counting.",
+            "preparing food.",
+            "putting something away.",
+            "repeating an activity.",
+            "solving a problem.",
+            "These activities can demand concentration, coordination, persistence and thought."
+          ]
+        },
+        { type: "paragraph", text: "They may not look like homework but are still work. The child needs opportunities, not constant assignments. The Absorbent Mind is particularly active during the early years. Children are taking in language, movement, social patterns, order and culture from everyday experiences.\n\nHome therefore does not need to become a second classroom. The child already has a world to explore." },
+        { type: "h2", text: "What can meaningful home learning look like?" },
+        { type: "paragraph", text: "Instead of asking your child to complete a worksheet about numbers, you might invite them to:" },
+        {
+          type: "bullets",
+          items: [
+            "Count plates for dinner.",
+            "Sort laundry.",
+            "Measure ingredients.",
+            "Set the table.",
+            "Notice numbers around the house.",
+            "Instead of practising writing for an hour, they might:",
+            "Draw.",
+            "Look at books.",
+            "Make marks.",
+            "Write a shopping list together.",
+            "Tell a story."
+          ]
+        },
+        { type: "paragraph", text: "The aim is not to disguise homework as household chores. It is to recognise that meaningful experiences are already educational." },
+        { type: "h2", text: "But shouldn't children practise?" },
+        { type: "paragraph", text: "Yes, practice matters. Montessori environments give children time to repeat activities. But repetition is most valuable when it has meaning for the child. A child who wants to read the same book five times is practising.\n\nA child who wants to write their name repeatedly is practising. A child who wants to count everything they see is practising. We don't always need to impose repetition from outside.\n\nSometimes the child is already telling us what they are ready to practise." },
+        { type: "h2", text: "What if parents still want to support learning?" },
+        { type: "paragraph", text: "The simplest answer is: Live thoughtfully with your child." },
+        {
+          type: "bullets",
+          items: [
+            "Talk.",
+            "Read.",
+            "Cook.",
+            "Walk.",
+            "Listen.",
+            "Let them help.",
+            "Answer questions.",
+            "Ask questions.",
+            "Visit places.",
+            "Give them time to play.",
+            "Let them experience boredom.",
+            "Allow them to try."
+          ]
+        },
+        { type: "paragraph", text: "Give them responsibilities that are appropriate for their age. You do not need to turn every evening into school. The question we might ask instead “What homework should my child do tonight?” try:\n\n“What meaningful work can my child participate in today?” That question opens a much larger world." }
+      ],
       sections: [
         {
-          heading: "Meaningful Everyday Work",
-          content: `For a young child, work may mean pouring water, building, sorting, reading, drawing, counting, preparing food, and putting things away. These demand concentration, coordination, persistence and thought.\n\nHome does not need to become a second classroom. The child already has a world to explore.`
+          heading: "What Meaningful Work Means in Early Childhood",
+          content: "If children aren't bringing worksheets home, what are they actually doing? It is understandable for parents to wonder: If there isn't a page to complete, how do I know learning is happening?\n\nWork is not always written work. For a young child, work may mean pouring water, building, sorting, washing, reading, drawing, counting, preparing food, putting something away, repeating an activity, solving a problem. These demand concentration, coordination, persistence and thought."
         },
         {
-          heading: "What Meaningful Home Learning Looks Like",
-          content: `Instead of worksheet drills, invite your child to count plates for dinner, sort laundry, measure ingredients, notice numbers around the house, make marks, write a shopping list together, or tell a story.\n\nLive thoughtfully with your child: talk, read, cook, walk, listen, let them help, answer questions, visit places, give them time to play and experience boredom. Try asking: “What meaningful work can my child participate in today?”\n\nMontessori does not mean children never practise. It means we think carefully about what kind of practice serves the child—and why.`
-        }
-      ]
-    },
-    {
-      id: "res-10",
-      number: 10,
-      slug: "how-do-i-set-boundaries-without-punishments-or-rewards",
-      title: "“How Do I Set Boundaries Without Punishments or Rewards?”",
-      subtitle: "Why kindness and firmness must work together in the Montessori home.",
-      quote: "Freedom within limits is not the absence of boundaries; it is the presence of respect.",
-      sections: [
-        {
-          heading: "The Misunderstanding of Freedom",
-          content: `When parents first encounter Montessori, they often hear about “freedom of choice” and “child-led learning.” Some worry this means complete permissiveness: letting children do whatever they want, whenever they want. Others swing to the opposite extreme, relying on sticker charts, bribes, time-outs, or punishments to enforce compliance.\n\nMontessori offers a different path: Freedom within limits. Freedom and discipline are two sides of the same coin. A child cannot be truly free if they cannot control their own impulses; and a child cannot learn self-control if adults constantly control them through fear or external bribes.`
+          heading: "The Home as an Environment of Discovery",
+          content: "Home does not need to become a second classroom. The child already has a world to explore. Instead of worksheet drills, invite your child to count plates for dinner, sort laundry, measure ingredients, notice numbers around the house, make marks, write a shopping list together, or tell a story."
         },
         {
-          heading: "Natural and Logical Consequences",
-          content: `In a Montessori environment, limits are held without anger or shame. When a child spills water, the consequence is not scolding or losing privileges; it is getting a cloth and being shown how to wipe the floor. When a child misuses a material or endangers someone, the adult calmly steps in: “I cannot let you throw that. It might break or hurt someone. Let's put it on the shelf until you are ready to use it gently.”\n\nThe boundary is clear and unshakeable, but the adult remains a safe, regulated ally rather than an angry adversary.`
+          heading: "Practice That Comes From Within",
+          content: "Yes, practice matters. But repetition is most valuable when it has meaning for the child. A child who wants to read the same book five times is practising. A child who wants to write their name repeatedly is practising. A child who wants to count everything they see is practising. We don't always need to impose repetition from outside."
         },
         {
-          heading: "Staying Calm and Consistent",
-          content: `Children test limits not because they are manipulative, but because they are scientists testing the solidity of their world. If a boundary bends when they scream, they learn that screaming is effective. If the boundary remains steady, gentle, and predictable, the child feels safe.\n\nNext time a limit is needed, speak less. Don't lecture. Hold the boundary physically and kindly: “I'm keeping your hands safe. I will stay with you while you feel angry.”\n\nDiscipline is not something we do TO a child; it is a capacity we help build WITHIN the child.`
+          heading: "Live Thoughtfully with Your Child",
+          content: "The simplest answer is: Live thoughtfully with your child. Talk, read, cook, walk, listen, let them help, answer questions, visit places, give them time to play and experience boredom. Try asking: “What meaningful work can my child participate in today?”"
         }
       ]
     }

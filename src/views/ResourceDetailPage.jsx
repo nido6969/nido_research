@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams, Link } from '../lib/navigation';
 import { RESOURCES_DATA } from '../data/researchData';
-import { ArrowLeft, ArrowRight, BookOpen, Share2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import TrustBar from '../components/TrustBar';
 import SEO from '../components/SEO';
 
@@ -119,91 +119,198 @@ export default function ResourceDetailPage() {
             {/* Subtitle */}
             <div style={{
               fontSize: '1.1rem',
-              fontStyle: 'italic',
-              color: '#C88528',
-              fontWeight: 600,
-              lineHeight: 1.45,
-              marginBottom: '2rem'
+              color: '#554F47',
+              fontWeight: 500,
+              lineHeight: 1.5,
+              marginBottom: '2.5rem'
             }}>
               {article.subtitle}
             </div>
 
-            {/* Featured Quote Callout Card */}
-            {article.quote && (
-              <div style={{
-                backgroundColor: '#FAF3E2',
-                borderLeft: '4px solid #C88528',
-                padding: '1.25rem 1.75rem',
-                borderRadius: '0 12px 12px 0',
-                marginBottom: '2.5rem'
-              }}>
-                <div style={{
-                  fontSize: '1.15rem',
-                  fontStyle: 'italic',
+            {/* Article Content Rendered Exactly from Word Document */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              {article.contentBlocks ? (
+                article.contentBlocks.map((block, bIdx) => {
+                  if (block.type === 'h2') {
+                    return (
+                      <h2 
+                        key={bIdx} 
+                        style={{
+                          fontFamily: "'Newsreader', Georgia, serif",
+                          fontSize: 'clamp(1.35rem, 2.2vw, 1.65rem)',
+                          fontWeight: 700,
+                          color: '#234338',
+                          marginTop: '2rem',
+                          marginBottom: '0.75rem',
+                          lineHeight: 1.3
+                        }}
+                      >
+                        {block.text}
+                      </h2>
+                    );
+                  }
+                  if (block.type === 'h3') {
+                    return (
+                      <h3 
+                        key={bIdx} 
+                        style={{
+                          fontSize: '1.08rem',
+                          fontWeight: 700,
+                          color: '#234338',
+                          marginTop: '1.35rem',
+                          marginBottom: '0.5rem',
+                          lineHeight: 1.4
+                        }}
+                      >
+                        {block.text}
+                      </h3>
+                    );
+                  }
+                  if (block.type === 'bullets') {
+                    return (
+                      <ul 
+                        key={bIdx} 
+                        style={{
+                          listStyle: 'none',
+                          paddingLeft: 0,
+                          margin: '0.5rem 0 1.25rem 0',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        {block.items.map((item, iIdx) => (
+                          <li 
+                            key={iIdx} 
+                            style={{
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: '0.75rem',
+                              fontSize: '1.02rem',
+                              color: '#1A1714',
+                              lineHeight: 1.7
+                            }}
+                          >
+                            <span 
+                              style={{
+                                color: '#234338',
+                                fontWeight: 700,
+                                fontSize: '1.1rem',
+                                lineHeight: 1.6,
+                                flexShrink: 0,
+                                userSelect: 'none'
+                              }}
+                              aria-hidden="true"
+                            >
+                              ➢
+                            </span>
+                            <span style={{ flex: 1, whiteSpace: 'pre-line' }}>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  if (block.type === 'numbered') {
+                    return (
+                      <ol 
+                        key={bIdx} 
+                        style={{
+                          listStyle: 'none',
+                          paddingLeft: 0,
+                          margin: '0.5rem 0 1.25rem 0',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        {block.items.map((item, iIdx) => (
+                          <li 
+                            key={iIdx} 
+                            style={{
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: '0.75rem',
+                              fontSize: '1.02rem',
+                              color: '#1A1714',
+                              lineHeight: 1.7
+                            }}
+                          >
+                            <span 
+                              style={{
+                                color: '#234338',
+                                fontWeight: 700,
+                                minWidth: '1.5rem',
+                                flexShrink: 0
+                              }}
+                            >
+                              {iIdx + 1}.
+                            </span>
+                            <span style={{ flex: 1, whiteSpace: 'pre-line' }}>{item}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    );
+                  }
+                  // Standard Paragraph
+                  return (
+                    <p 
+                      key={bIdx} 
+                      style={{
+                        fontSize: '1.02rem',
+                        color: '#1A1714',
+                        lineHeight: 1.8,
+                        marginBottom: '1rem',
+                        whiteSpace: 'pre-line'
+                      }}
+                    >
+                      {block.text}
+                    </p>
+                  );
+                })
+              ) : (
+                // Fallback to sections if contentBlocks is not available
+                article.sections?.map((section, sIdx) => (
+                  <section key={sIdx} style={{ borderTop: sIdx > 0 ? '1px solid #F0EAE1' : 'none', paddingTop: sIdx > 0 ? '2rem' : '0' }}>
+                    <h2 style={{
+                      fontFamily: "'Newsreader', Georgia, serif",
+                      fontSize: '1.5rem',
+                      fontWeight: 700,
+                      color: '#1A1714',
+                      marginBottom: '1rem',
+                      lineHeight: 1.3
+                    }}>
+                      {section.heading}
+                    </h2>
+                    <div style={{
+                      fontSize: '1.02rem',
+                      color: '#1A1714',
+                      lineHeight: 1.8,
+                      whiteSpace: 'pre-line'
+                    }}>
+                      {section.content}
+                    </div>
+                  </section>
+                ))
+              )}
+            </div>
+
+            {/* Orange Italic Concluding Line at the bottom of each resource topic */}
+            {article.orangeItalicLine && (
+              <div 
+                style={{
+                  marginTop: '2.5rem',
+                  paddingTop: '1.75rem',
+                  borderTop: '1px solid #E5DFD2',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.7,
                   color: '#C88528',
-                  fontWeight: 600,
-                  fontFamily: "'Newsreader', Georgia, serif",
-                  lineHeight: 1.4
-                }}>
-                  {article.quote}
-                </div>
+                  fontStyle: 'italic',
+                  fontWeight: 500
+                }}
+              >
+                {article.orangeItalicLine}
               </div>
             )}
-
-            {/* Article Sections */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
-              {article.sections?.map((section, sIdx) => (
-                <section key={sIdx} style={{ borderTop: sIdx > 0 ? '1px solid #F0EAE1' : 'none', paddingTop: sIdx > 0 ? '2rem' : '0' }}>
-                  <h2 style={{
-                    fontFamily: "'Newsreader', Georgia, serif",
-                    fontSize: '1.5rem',
-                    fontWeight: 700,
-                    color: '#1A1714',
-                    marginBottom: '1rem',
-                    lineHeight: 1.3
-                  }}>
-                    {section.heading}
-                  </h2>
-                  <div style={{
-                    fontSize: '1.02rem',
-                    color: '#1A1714',
-                    lineHeight: 1.8,
-                    whiteSpace: 'pre-line'
-                  }}>
-                    {section.content}
-                  </div>
-                </section>
-              ))}
-            </div>
-
-            {/* Article Footer & Key Takeaway */}
-            <div style={{
-              marginTop: '3.5rem',
-              padding: '1.75rem 2rem',
-              backgroundColor: '#F8FAF8',
-              border: '1px solid #E3EBE5',
-              borderRadius: '12px'
-            }}>
-              <div style={{
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#234338',
-                marginBottom: '0.5rem'
-              }}>
-                A REFLECTION FOR PARENTS & EDUCATORS
-              </div>
-              <p style={{
-                margin: 0,
-                fontSize: '0.96rem',
-                color: '#1A1714',
-                lineHeight: 1.65
-              }}>
-                At Nido Montessori, we observe before we interpret. When everyday moments challenge our patience, we look for the developing capability underneath. What can we make possible for the child today?
-              </p>
-            </div>
-
           </article>
 
           {/* Bottom Pagination / Guide Switcher */}

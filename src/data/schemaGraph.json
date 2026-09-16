@@ -1545,58 +1545,6 @@
           "item": "https://research.nidomontessori.in/resources/why-doesnt-montessori-give-children-more-homework/"
         }
       ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://research.nidomontessori.in/resources/how-do-i-set-boundaries-without-punishments-or-rewards/#article",
-      "isPartOf": {
-        "@id": "https://research.nidomontessori.in/#website"
-      },
-      "headline": "How Do I Set Boundaries Without Punishments or Rewards?",
-      "description": "Implementing freedom within limits through natural consequences and calm adult consistency.",
-      "url": "https://research.nidomontessori.in/resources/how-do-i-set-boundaries-without-punishments-or-rewards/",
-      "mainEntityOfPage": "https://research.nidomontessori.in/resources/how-do-i-set-boundaries-without-punishments-or-rewards/",
-      "inLanguage": "en",
-      "publisher": {
-        "@id": "https://research.nidomontessori.in/#organization"
-      },
-      "author": {
-        "@id": "https://research.nidomontessori.in/#organization"
-      },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "Montessori Pedagogy"
-        },
-        {
-          "@type": "Thing",
-          "name": "Early Childhood Education"
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://research.nidomontessori.in/resources/how-do-i-set-boundaries-without-punishments-or-rewards/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://research.nidomontessori.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Resources",
-          "item": "https://research.nidomontessori.in/resources/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "How Do I Set Boundaries Without Punishments or Rewards?",
-          "item": "https://research.nidomontessori.in/resources/how-do-i-set-boundaries-without-punishments-or-rewards/"
-        }
-      ]
     }
   ]
 }

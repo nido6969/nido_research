@@ -87,6 +87,9 @@ const SpecularButton = ({
   autoAnimate = false,
   disabled = false,
   onClick,
+  href,
+  target,
+  rel,
   className = '',
   style = {},
   type = 'button'
@@ -226,12 +229,24 @@ const SpecularButton = ({
     };
   }, []);
 
+  const Component = href ? 'a' : 'button';
+  const componentProps = href
+    ? {
+        href,
+        target,
+        rel: target === '_blank' ? (rel || 'noopener noreferrer') : rel,
+        onClick
+      }
+    : {
+        type,
+        disabled,
+        onClick
+      };
+
   return (
-    <button
+    <Component
       ref={btnRef}
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
+      {...componentProps}
       className={`specular-button specular-button--${size}${className ? ` ${className}` : ''}`}
       style={{
         '--sb-radius': `${radius}px`,
@@ -239,12 +254,13 @@ const SpecularButton = ({
         '--sb-tint-opacity': tintOpacity,
         '--sb-blur': `${blur}px`,
         '--sb-text-color': textColor,
+        textDecoration: 'none',
         ...style
       }}
     >
       <span ref={fxRef} className="specular-button__fx" aria-hidden="true" />
       <span className="specular-button__label">{children}</span>
-    </button>
+    </Component>
   );
 };
 
