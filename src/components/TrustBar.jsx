@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Sprout } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export default function TrustBar() {
   return (
@@ -34,7 +34,7 @@ export default function TrustBar() {
               flexShrink: 0,
               marginTop: '0.15rem'
             }}>
-              <Sprout size={20} color="#234338" />
+              <GraduationCap size={20} color="#234338" strokeWidth={1.75} />
             </div>
 
             <div>

@@ -27,9 +27,9 @@ export default function ExploreWorkSection({ onOpenSearch }) {
     },
     {
       id: "insights",
-      title: "Educator Insights",
-      eyebrow: "What happens when educators slow down and observe?",
-      subtitle: "Read reflections, conversations and practical insights from educators working closely with children every day.",
+      title: "Parent Insight",
+      eyebrow: "What happens when parents slow down and observe?",
+      subtitle: "Read reflections, conversations and practical insights for parents working closely with children every day.",
       linkText: "Read Insights",
       path: "/parent-insights",
       icon: <Lightbulb size={22} color="#234338" />

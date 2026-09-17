@@ -133,7 +133,8 @@ export default function ResourcesPage() {
           marginBottom: '3.5rem'
         }}>
           {RESOURCES_DATA.articles.map((art) => {
-            const previewText = art.contentBlocks?.[0]?.text
+            const firstParagraph = art.contentBlocks?.find((b) => b.type === 'paragraph')?.text;
+            const previewText = firstParagraph
               || (art.sections?.[0]?.content ? art.sections[0].content.split('\n\n')[0].replace(/\n/g, ' ') : art.subtitle);
 
             return (

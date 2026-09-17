@@ -42,9 +42,26 @@ export default function Footer() {
     <footer style={{
       backgroundColor: 'var(--bg-parchment, #FAF3E2)',
       borderTop: '1px solid #E5DAC0',
-      paddingTop: '3.5rem'
+      paddingTop: '3.5rem',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      <div className="container-standard">
+      {/* Soft botanical background — kept very low so copy stays readable */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(/images/footer-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.12,
+          pointerEvents: 'none',
+          zIndex: 0
+        }}
+      />
+      <div className="container-standard" style={{ position: 'relative', zIndex: 1 }}>
         
         <div style={{
           display: 'grid',
@@ -64,7 +81,8 @@ export default function Footer() {
 
             <p style={{
               fontSize: '0.85rem',
-              color: '#6E675F',
+              color: '#8B2030',
+              fontStyle: 'italic',
               lineHeight: 1.55,
               marginBottom: '1.5rem',
               maxWidth: '280px'
