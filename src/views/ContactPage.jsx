@@ -324,7 +324,7 @@ export default function ContactPage() {
                   Visiting Our Campus
                 </h4>
                 <p style={{ fontSize: '0.84rem', color: '#554F47', lineHeight: 1.5, margin: 0 }}>
-                  To preserve uninterrupted classroom flow for the children, visits to our Children's Houses and observation environments are scheduled in advance by appointment.
+                  To preserve uninterrupted classroom flow for the children, visits to our environments are scheduled in advance by appointment.
                 </p>
               </div>
             </BorderGlow>
