@@ -4,6 +4,7 @@ import { Link } from '../lib/navigation';
 import { MapPin, Mail, Phone, X, Shield, FileText } from 'lucide-react';
 import NidoLogo from './NidoLogo';
 import GoogleMiniMap from './GoogleMiniMap';
+import { WhatsAppIcon, WHATSAPP_URL } from './WhatsAppFloat';
 
 // Crisp SVG icons for social platforms
 const LinkedinIcon = () => (
@@ -81,7 +82,7 @@ export default function Footer() {
 
             <p style={{
               fontSize: '0.85rem',
-              color: '#8B2030',
+              color: '#3c0008',
               fontStyle: 'italic',
               lineHeight: 1.55,
               marginBottom: '1.5rem',
@@ -215,6 +216,37 @@ export default function Footer() {
               >
                 <YoutubeIcon />
               </a>
+
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank" 
+                rel="noreferrer" 
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #D6D0C4',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#25D366',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#25D366';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#25D366';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  e.currentTarget.style.color = '#25D366';
+                  e.currentTarget.style.borderColor = '#D6D0C4';
+                }}
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon size={14} />
+              </a>
             </div>
           </div>
 
@@ -321,11 +353,33 @@ export default function Footer() {
               </a>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', fontSize: '0.85rem', color: '#554F47' }}>
-              <Phone size={16} color="#C99428" style={{ flexShrink: 0 }} />
-              <a href="tel:9618853888" style={{ color: 'inherit' }}>
-                +91 96188 53888
-              </a>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', fontSize: '0.85rem', color: '#554F47' }}>
+              <Phone size={16} color="#C99428" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <a href="tel:+919618853888" style={{ color: 'inherit' }}>
+                    +91 96188 53888
+                  </a>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="WhatsApp +91 96188 53888"
+                    title="WhatsApp"
+                    style={{
+                      color: '#25D366',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <WhatsAppIcon size={15} />
+                  </a>
+                </div>
+                <a href="tel:+918712034644" style={{ color: 'inherit' }}>
+                  +91 87120 34644
+                </a>
+              </div>
             </div>
 
             {/* Google Mini Map */}

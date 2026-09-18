@@ -3,7 +3,6 @@ import React from 'react';
 import { useNavigate } from '../lib/navigation';
 import HeroSection from '../components/HeroSection';
 import FeaturedStudySection from '../components/FeaturedStudySection';
-import ResearchUpdatesBar from '../components/ResearchUpdatesBar';
 import ExploreWorkSection from '../components/ExploreWorkSection';
 import NewsletterSection from '../components/NewsletterSection';
 import TrustBar from '../components/TrustBar';
@@ -42,11 +41,6 @@ export default function HomePage() {
           }
         }}
         onViewAll={() => navigate('/publications')}
-      />
-
-      {/* Research Updates Strip */}
-      <ResearchUpdatesBar 
-        onOpenArchive={() => navigate('/publications')}
       />
 
       {/* Explore Our Work - 4 Cards */}

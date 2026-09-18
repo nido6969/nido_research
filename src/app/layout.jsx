@@ -3,6 +3,7 @@ import '../index.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 import schemaGraphData from '../data/schemaGraph.json';
 
 export const metadata = {
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

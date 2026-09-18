@@ -23,6 +23,8 @@ export const INSTITUTION_INFO = {
     email: "info@nidomontessori.in",
     phone: "9618853888",
     formattedPhone: "+91 96188 53888",
+    whatsapp: "919618853888",
+    whatsappUrl: "https://wa.me/919618853888",
     address: "Nido Montessori School, Bachupally, Hyderabad, Telangana",
     mapsUrl: "https://maps.app.goo.gl/naRP5GC3BFH92j5v6",
     tagline: "A research initiative emerging from the classrooms of Nido Montessori, Bachupally."
@@ -1870,32 +1872,32 @@ export const ABOUT_DATA = {
   principles: [
     {
       number: "01",
-      title: "THE CHILD FIRST",
+      title: "The child first",
       description: "Research should never become more important than the wellbeing of the child."
     },
     {
       number: "02",
-      title: "OBSERVE BEFORE INTERPRETING",
+      title: "Observe before interpreting",
       description: "We try to distinguish what we actually see from what we think it means."
     },
     {
       number: "03",
-      title: "EVIDENCE MATTERS",
+      title: "Evidence matters",
       description: "We value Montessori wisdom while also engaging with contemporary research in early childhood development."
     },
     {
       number: "04",
-      title: "BE HONEST ABOUT LIMITATIONS",
+      title: "Be honest about limitations",
       description: "Not every observation is a finding. Not every association is a cause. We believe credibility grows when limitations are acknowledged."
     },
     {
       number: "05",
-      title: "SHARE GENEROUSLY",
+      title: "Share generously",
       description: "Research should not sit behind complicated language or inaccessible walls. Whenever possible, we make our work understandable to parents, educators and the wider community."
     },
     {
       number: "06",
-      title: "KEEP LEARNING",
+      title: "Keep learning",
       description: "No study is the final word on a child. There is always more to observe. Every child is a BEING!"
     }
   ],
@@ -1913,6 +1915,8 @@ export const ABOUT_DATA = {
     subheading: "We would love to hear from educators, researchers, parents and organisations interested in early childhood and Montessori education.",
     email: "info@nidomontessori.in",
     phone: "9618853888",
+    formattedPhone: "+91 96188 53888",
+    whatsappUrl: "https://wa.me/919618853888",
     visit: "Nido Montessori School, Bachupally, Hyderabad, Telangana",
     mapsUrl: "https://maps.app.goo.gl/naRP5GC3BFH92j5v6",
     tagline: "A research initiative emerging from the classrooms of Nido Montessori, Bachupally."
