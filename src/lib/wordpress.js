@@ -1,5 +1,4 @@
-const DEFAULT_WORDPRESS_URL =
-  "https://blognidomontessoriin-14b003d.ingress-earth.ewp.live";
+const DEFAULT_WORDPRESS_URL = "https://nido-14b003d.ingress-bonde.ewp.live";
 const DEFAULT_CATEGORY = "research";
 const CACHE_MS = 15_000;
 

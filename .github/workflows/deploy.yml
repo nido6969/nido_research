@@ -19,7 +19,7 @@ jobs:
       AWS_REGION: ap-south-1
       ECR_REPOSITORY: nido-research
       APP_RUNNER_SERVICE: nido-research
-      WORDPRESS_URL: https://blognidomontessoriin-14b003d.ingress-earth.ewp.live
+      WORDPRESS_URL: https://nido-14b003d.ingress-bonde.ewp.live
       WORDPRESS_CATEGORY: research
     steps:
       - uses: actions/checkout@v4
